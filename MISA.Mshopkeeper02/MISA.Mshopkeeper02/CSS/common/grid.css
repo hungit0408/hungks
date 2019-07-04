@@ -1,0 +1,569 @@
+﻿/*CreatedBy: NNLam 01/05/2019*/
+table {
+    width: 100%;
+    
+}
+/*css cho tbody phần dòng*/ 
+table tbody tr{
+    background-color: #fff;
+    /*height: 31px;*/
+}
+/*set hover cho tr*/
+table tbody tr:hover {
+    background-color: #dee3e8;
+}
+
+/*css phần tiêu đề trong thead*/
+table thead .column-title {
+    height: 32px;
+    line-height: 27px;
+    text-align: center;
+    background-color: #f0f0f0 !important
+}
+/*setting th của thead dùng chung*/
+table thead th {
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0 ;
+    padding:0px;
+}
+/*setting tr của tfoot dùng chung*/
+    table tfoot tr {
+        background-color: #fcdeb8;
+        height: 32px;
+        border-color: #ccc !important;
+    }
+/*css phần tiêu đề dùng chung*/
+table .column-filter {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: calc(100% - 32px);
+    background-color: #fff;
+    align-items: center;
+    padding-right: 3px;
+}
+/*set defaul phần thead tr cho mọi table*/
+table thead tr {
+    height: 54px;
+    width: 100%;
+    position: relative;
+    border: 1px solid #d0d0d0;
+}
+
+/*css phần option*/
+table thead .column-filter .filter-option {
+    position: relative;
+    width: 27px;
+    height: 27px;
+    right: 0px;
+    text-align: center;
+    background-image: url('../../Contents/Images/common-icon.png');
+}
+    /*css trạng thái mặc định ban đầu*/
+    table thead .column-filter .filter-option:before {
+        line-height: 27px;
+        text-align: center;
+    }
+/*css phần nhập của thể input*/
+table thead .filter-input {
+    position:relative;
+    width: 100%;
+    height:26.6px;
+    margin-left: 2px;
+    margin-right:2px;
+    border: 0px;
+    padding-left: 5px;
+}
+/*css phần nhập của thể input type : checkbox */
+table thead .filter-input-checkbox {
+    margin-top: 20.6px;
+    margin-left: 3.6px;
+}
+
+/*----------------------------------------*/
+/*đổi màu row khi row dc chọn*/
+table tbody .row-selected {
+    background-color: #c3ecff !important;
+}
+
+/*css bao chứa phần content*/
+.grid {
+    position: relative;
+    /*height:570px;*/
+    height: calc(100% - 100px);
+    width: 100%;
+    display: block;
+    font-size: 13px;
+    font-family: Roboto-Regular,Arial, Helvetica, sans-serif !important;
+}
+/*css grid cho table*/
+.grid-table {
+    display: flex;
+    /*position: absolute;*/
+    height: 435px;
+    width: 100%;
+    z-index:99;
+    top:0;
+}
+/*css phần cuối nội dung grid */
+.grid.grid-fooder.grid-fooder {
+    height: 100px;
+    width: 100%;
+    background-color: #ff0000
+}
+/*css bảng MoneyFund*/
+.grid-table table#tblMoneyFund {
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+     
+/*phần body của table*/
+table#tblMoneyFund tbody {
+    position: absolute;
+    overflow-y: scroll;
+    /*height: 341px;*/
+    /*width: calc(100% + 20px);*/
+    min-width: 100%;
+   
+}
+tbody#tbodyListVoucher {
+    display: block;
+    overflow: auto;
+}
+tbody#tbodyListVoucher td {
+    width:auto
+}
+/*setting cột ngày và mã chứng từ*/
+.col-colspan {
+    width: 10%;
+}
+/*setting cột check box*/
+.col-colspan-cb{
+    width:30.4px;
+}
+/*setting cột loại chứng từ*/
+.col-colspan-lct {
+    width: 20%;
+}
+/*setting cột đối tượng*/
+.col-colspan-obj {
+    width: 30%;
+}
+/*setting cột loại tổng tiền*/
+.col-colspan-tt{
+    width: 14%;
+}
+/*setting cột lý do*/
+.col-colspan-reason{
+    width: calc(26% - 48.4px) ;
+}
+/*fix css of resizable and config jquery-ui*/
+.ui-icon-gripsmall-diagonal-se {
+    background-position: unset;
+}
+/*fix css of resizable and config jquery-ui*/
+table thead th div.ui-icon {
+    background-image: unset;
+}
+/*fix css of resizable and config jquery-ui*/
+.ui-resizable-e {
+    cursor: e-resize;
+    width: 3px;
+    right: -5px;
+    top: 0;
+    height: 100%;
+}
+/*phần tfoot của table có id : tblMoneyFund*/
+.grid-table table#tblMoneyFund tfoot {
+    position: relative;
+    margin-bottom: 0px;
+    z-index: 0;
+}
+/*css phần tính total*/
+.grid-total {
+    height: 60px;
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+}
+/*phần fooder của trang*/
+.grid-fooder {
+    /*height: calc(100% - 502px);*/
+    height: calc(100% - 479px);
+    width: 100%;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.grid-fooder-detail {
+    position: relative;
+    height: 30px;
+    width: 100%;
+    background-color: #d0d0d0;
+    text-align: center;
+    padding-top: 5px
+}
+
+    .grid-fooder-detail .ct-detail {
+        position: relative;
+        width: 60px;
+        height: 100%;
+        border-right: 1px solid #e9e9e9;
+        border-bottom: 2px solid #0094ff
+    }
+/*-------------------kết thúc phần footer-------------*/
+
+/*bảng chi tiết quỹ tiền*/
+table.moneyFundDetail {
+    position: absolute;
+    top: 30;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    /*margin-right:8px;
+    right :8px;*/
+    
+}
+    table.moneyFundDetail thead tr{
+        height: 32px;
+    }
+    table.moneyFundDetail tbody tr{
+        /*height: 32px !important;*/
+        overflow: scroll;
+    }
+    table .moneyFundDetail thead tr {
+        width: 100%;
+    }
+
+    table.moneyFundDetail tbody tr {
+        background-color: #fff;
+    }
+    table.moneyFundDetail tbody tr td {
+        padding: 0 20px;
+    }
+/*-----kết thúc phần bảng chi tiết quỹ tiền-----*/
+
+/*display hình bàn tay khi dialog chuột vào table*/
+table tr:hover {
+    cursor: pointer;
+}
+
+    table thead tr .misa-column {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        min-width: 29px;
+        left: 0px;
+        margin-left: 0px;
+        right: auto;
+        white-space: nowrap;
+        background-color: #fff;
+        text-align: center;
+    }
+
+.column-input-checkbox {
+    min-width:20px;
+    height: 54px;
+    background-color: #fff;
+}
+.icon-calendar {
+    background-position: 0 -417px;
+}
+.icon-search {
+    background-position: -350px 249px;
+}
+.icon-arow-down-line {
+    background-position: 0 -390px;
+}
+.icon-star::before {
+    background-image: unset;
+    background-repeat: no-repeat;
+    content: '*';
+    
+    background-position: 0 -390px;
+}
+/*CSS filter với date picker*/
+.date-icon-picker {
+    min-width: 16px;
+    height: 16px;
+    background: #fff url('../../Contents/Icons/common-icon.png') -3px -177px no-repeat;
+    background-repeat: no-repeat;
+    margin-left: 5px;
+}   
+    td, th {
+        border: 1px solid #e9e9e9;
+        text-align: center;
+        padding: 8px;
+        /*height: 27px;*/
+    }
+/*dòng chẵn màu #f0f0f0*/
+tr:nth-child(even) {
+    background-color: #f0f0f0;
+}
+/*hightlight cho dòng strong table*/
+.hightlight {
+    position: relative;
+    background-color: #ee921c !important;
+}
+/*css phần lựa chọn khác*/
+.filt-optionOther {
+    position: relative;
+    width: 27px;
+    height: 100%;
+    padding-top: 4px;
+    right: 0px;
+    text-align: center;
+    border: 1px solid #f0f0f0;
+}
+/*css mục chứa các thành phần khác của filter*/
+.filt-compare-container {
+    background-color: #fff;
+    position: absolute;
+    z-index: 999;
+    top: 30px;
+    min-width: 130px;
+    width:200px;
+    font-size: 12px;
+    box-shadow: 2px 2px 2px #aaaaaa;
+    border-radius: 5px;
+    text-align:left;
+    padding-left:3px;
+}
+.filt-compare-value {
+    position: relative;
+    height: 100%;
+    text-align: center;
+    background-image: none;
+    
+}
+/*CSS phần cài đặt hiện thị table*/
+.show-option {
+    max-width: 100%;
+    padding: 0 8px;
+    margin-right:16px;
+    height: 36px;
+    background-color: #fff;
+    justify-content: space-between;
+}
+
+    .show-option .page-option .square {
+        border: 2px solid #41a7d1;
+        width: 20px;
+        height: 20px;
+        padding: 1px;
+        font-size: 14px;
+        color: #41a7d1;
+        text-align: center;
+        line-height: 15px;
+        margin-right: 1px;
+        cursor: default;
+        user-select: none;
+    }
+
+    .show-option .page-option > div:not(:last-child) {
+        margin-right: 7px;
+    }
+/*phần table strong popup*/
+.table-vouchers {
+    width: 100%;
+    height: 170px;
+}
+/*phần tab*/
+.border-table-tab {
+    border-right: 2px solid #d0d0d0
+}
+/*table chọn phiếu*/
+table.table-select-voucher {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 98px);
+    width: calc(100% - 16px);
+}
+/*dialog phần container chứ table*/
+#dialgoSelectVoucher .ui-container-table {
+    height: calc(100% - 98px);
+    margin: 8px;
+
+}
+/*css dòng cho thead bảng chọn phiếu*/
+table.table-select-voucher thead tr {
+    height: 40px;
+    width: 100%;
+    position: relative;
+    border: 1px solid #d0d0d0;
+    padding: 8px
+}
+/*css dòng cho tbofy bảng chọn phiếu*/
+table.table-select-voucher tbody tr {
+    background-color: #fff;
+    position: relative;
+    height: 33px;
+    padding: 8px
+}
+/*css dòng cho td, th bảng chọn phiếu*/
+table.table-select-voucher td, th {
+    padding: 8px;
+    height: unset
+}
+/*màu bảng chọn phiếu*/
+table.table-select-voucher .col-color {
+    background-color: #d0d0d0
+}
+/*gird chọn đối tượng*/
+table.tb-ObjectType {
+    display: none;
+    position: absolute;
+    z-index: 90;
+    width: 324px;
+    margin-left: -290px;
+    margin-top: 27px;
+    max-height: 400px;
+    overflow: scroll;
+}
+/*gird thead đối tượng*/
+table.tb-ObjectType thead tr {
+    height: 39px;
+    padding: 8px;
+}
+/*không dùng sự kiện khi chọn tr*/
+table.table-select-voucher tbody tr.row-selected {
+    background-color: unset !important;
+}
+ /*css cho input ở phần tfoot ( nhập trong td)*/
+.tfoot-inputTxt {
+    border: none;
+    height: 20px;
+    width: 100%;
+}
+
+/*CSS phần phân trang table*/
+.show-option {
+    max-width: 100%;
+    padding: 0 8px;
+    min-height: 36px;
+    background-color: #fff;
+    justify-content: space-between;
+}
+
+
+.option-left {
+    display: flex;
+    justify-content: space-between;
+}
+.option-right {
+    margin-right: 10px;
+}
+    .option-left > div {
+        margin-right: 15px;
+    }
+
+.left-arrow > span, .right-arrow > span {
+    margin-left: 3px;
+    color: #4b4c4c;
+}
+
+.option-left .left-arrow, .option-left .right-arrow, .curent-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .curent-page input {
+        width: 50px;
+        border: 1px solid #d0d0d0;
+        height: 26px;
+        border-radius: 3px;
+        outline: none;
+        margin-right: 3px;
+        padding: 0px 3px;
+        text-align: center;
+    }
+
+
+.arrow-icon {
+    border: 1px solid #0088c278;
+    height: 24px;
+    width: 24px;
+    border-radius: 3px;
+}
+.load-data-icon {
+    border: 1px solid #026b97;
+    height: 24px;
+    width: 24px;
+    border-radius: 3px;
+}
+
+.arrow-icon.arrow-left-double {
+    background: url('../../Contents/Icons/common-icon.png') no-repeat -650px -150px;
+}
+
+.arrow-icon.arrow-left-single {
+    background: url('../../Contents/Icons/common-icon.png') no-repeat -700px -150px;
+}
+
+.arrow-icon.arrow-right-double {
+    background: url('../../Contents/Icons/common-icon.png') no-repeat -799px -150px;
+}
+
+.arrow-icon.arrow-right-single {
+    background: url('../../Contents/Icons/common-icon.png') no-repeat -749px -150px;
+}
+
+.load-data-icon {
+    background: url('../../Contents/Icons/common-icon.png') no-repeat -850px -124px;
+}
+
+select.pageNumber {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url('../../../Contents/Icons/arrow-down-line.png') no-repeat 31px;
+    height: 26px;
+    border-radius: 3px;
+    border: 1px solid #80808061;
+    width: 50px;
+    margin-left: 3px;
+    padding: 0px 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+option:hover {
+    background: grey !important;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+/*css cho các phần hyperlink*/
+.cls-hyperlink {
+    color: #007abc;
+}
+    .cls-hyperlink:hover {
+        color: #007abc;
+        text-decoration: underline;
+    }
+/*config css td khi td là input*/
+.input-in-td{
+    padding: 0px !important;
+}
+.input-td {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-left: 8px;
+}
+/*even css khi tr dc address thêm class*/
+.eventClickRow {
+    background-color: #c3ecff !important;
+}
+#dialogSelectObject select {
+    flex-basis: 140px;
+    margin-left: 10px;
+    height: 28px;
+}

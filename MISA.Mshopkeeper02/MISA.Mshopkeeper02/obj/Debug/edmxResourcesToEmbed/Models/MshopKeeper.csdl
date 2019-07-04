@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MshopKeeperModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Reckoning">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VoucherId" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="InvoiceCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ObjectCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Debit" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PaidNumber" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Pay" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Explain" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Created" Type="DateTime" Precision="0" />
+    <Property Name="Updated" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Voucher">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VoucherCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="VoucherType" Type="Int32" />
+    <Property Name="Marked" Type="Boolean" />
+    <Property Name="ObjectCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmployeeCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ActionPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reason" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MoneyNumber" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Created" Type="DateTime" Precision="0" />
+    <Property Name="Updated" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Object">
+    <Key>
+      <PropertyRef Name="ObjectCode" />
+      <PropertyRef Name="ObjectName" />
+      <PropertyRef Name="ObjectType" />
+    </Key>
+    <Property Name="ObjectCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ObjectName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ObjectType" Type="Int32" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Created" Type="DateTime" Precision="0" />
+    <Property Name="Updated" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityContainer Name="DataContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Reckoning" EntityType="Self.Reckoning" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Voucher" EntityType="Self.Voucher" />
+    <EntitySet Name="Object" EntityType="Self.Object" />
+  </EntityContainer>
+</Schema>

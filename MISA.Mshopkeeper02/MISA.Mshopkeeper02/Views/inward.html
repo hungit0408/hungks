@@ -1,0 +1,925 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Nhập kho</title>
+    <!--<link href="../CSS/bootstrap.min.css" rel="stylesheet" />-->
+    <link rel='shortcut icon' href='/Contents/images/favicon.ico' />
+    <link href="../CSS/lib/jquery-ui.min.css" rel="stylesheet" />
+    <link href="../CSS/lib/jquery.timepicker.min.css" rel="stylesheet" />
+    <link href="../CSS/lib/toastr.css" rel="stylesheet" />
+    <link href="../CSS/common/common.css" rel="stylesheet" />
+    <link href="../CSS/common/dropdown.css" rel="stylesheet" />
+    <link href="../CSS/common/toolbar.css" rel="stylesheet" />
+    <link href="../CSS/common/table.css" rel="stylesheet" />
+    <link href="../CSS/common/filter.css" rel="stylesheet" />
+    <link href="../CSS/common/tab.css" rel="stylesheet" />
+    <link href="../CSS/common/buttons.css" rel="stylesheet" />
+    <link href="../CSS/common/dialog.css" rel="stylesheet" />
+    <link href="../CSS/Views/inward.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <!-- Phần header -->
+    <div class="header flex-center">
+        <div class="logo-mshopkeeper">
+            <div class="logo-img"></div>
+        </div>
+        <div class="header-content">
+            <div class="header-left flex-center">
+                <h2>Nhập kho</h2>
+                <button href="#" class="one-button help">
+                    <span class="button-icon">
+
+                    </span>
+                    <span class="button-title">
+                        Trợ giúp
+                    </span>
+                </button>
+            </div>
+            <div class="header-right flex-center">
+                <div class="branch flex-center">
+                    <div>Tất cả chi nhánh</div>
+                    <div class="arow-down-line"></div>
+                </div>
+
+                <div class="user-setting flex-center">
+                    <div class="user-img"></div>
+                    <div class="user-name">Nguyễn Huy Thông</div>
+                    <div class="arow-down-line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main chính -->
+    <div class="main" style="display: flex">
+        <!-- Sidebar bên trái -->
+        <div class="misa-sidebar">
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-overview"></div>
+                <div class="sidebar-menu-title">Tổng quan</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-buy"></div>
+                <div class="sidebar-menu-title">Mua hàng</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-inventory"></div>
+                <div class="sidebar-menu-title">Kho</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-cash"></div>
+                <div class="sidebar-menu-title">Quỹ tiền</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-cost"></div>
+                <div class="sidebar-menu-title">Chi phí</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-promotion"></div>
+                <div class="sidebar-menu-title">Khuyến mại</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-dictionary"></div>
+                <div class="sidebar-menu-title">Danh mục</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-report"></div>
+                <div class="sidebar-menu-title">Báo cáo</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-setting"></div>
+                <div class="sidebar-menu-title">Thiết lập</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-product"></div>
+                <div class="sidebar-menu-title">Hàng hóa</div>
+            </div>
+        </div>
+        <!-- Content bên phải -->
+        <div class="main-container">
+            <div class="content">
+                <div class="misa-toolbar">
+                    <button class="toolbar-item toolbar-add" id="btn-Add" title="CTRL+1">
+                        <div class="toolbar-item-img btn-add"></div>
+                        <div class="toolbar-item-title">Thêm mới</div>
+                        <div class="toolbar-item-dropdown"></div>
+                    </button>
+                    <button class="toolbar-item toolbar-duplicate" id="btn-duplicate">
+                        <div class="toolbar-item-img btn-duplicate"></div>
+                        <div class="toolbar-item-title">Nhân bản</div>
+                    </button>
+                    <button class="toolbar-item toolbar-view" id="btn-view">
+                        <div class="toolbar-item-img btn-view"></div>
+                        <div class="toolbar-item-title">Xem</div>
+                    </button>
+                    <button class="toolbar-item toolbar-edit" id="btn-edit" title="CTRL+E">
+                        <div class="toolbar-item-img btn-edit"></div>
+                        <div class="toolbar-item-title">Sửa</div>
+                    </button>
+                    <button class="toolbar-item toolbar-delete" id="btn-delete" title="CTRL+D">
+                        <div class="toolbar-item-img btn-delete"></div>
+                        <div class="toolbar-item-title">Xóa</div>
+                    </button>
+                    <button class="toolbar-item toolbar-load" id="btn-load" title="CTRL+Y">
+                        <div class="toolbar-item-img btn-load"></div>
+                        <div class="toolbar-item-title">Nạp</div>
+                    </button>
+                    <button class="toolbar-item toolbar-print" id="btn-print">
+                        <div class="toolbar-item-img btn-print"></div>
+                        <div class="toolbar-item-title">In</div>
+                        <div class="toolbar-item-dropdown"></div>
+
+                    </button>
+                </div>
+                <div class="filter-data">
+                    <div style="margin-right: 10px">
+                        <select id="" class="py-md-1 select-date">
+                            <option value="today">Hôm nay</option>
+                            <option value="yesterday">Hôm qua</option>
+                            <option value="this week">Tuần này</option>
+                            <option value="week ago">Tuần trước</option>
+                            <option value="this month" selected>Tháng này</option>
+                            <option value="month ago">Tháng trước</option>
+                            <option value="this quarter">Quý này</option>
+                            <option value="quarter ago">Quý trước</option>
+                            <option value="six months ago">6 tháng trước</option>
+                            <option value="this year">Năm nay</option>
+                            <option value="year ago">Năm trước</option>
+                            <option value="other">Khác</option>
+                        </select>
+                    </div>
+                    <span>Từ</span>
+                    <div class="flex-center rectangle startdate">
+                        <input type="text" id="startDate" class="date-picker txtStartDate" name="inpdate" value="" data-type="date" />
+                    </div>
+                    <span>đến</span>
+                    <div class="flex-center rectangle enddate">
+                        <input type="text" id="endDate" class="date-picker txtEndDate" name="inpdate" value="" data-type="date" />
+                    </div>
+                    <button class="rectangle getdata startFilterData flex-center">
+                        <div class="filt-icon "></div>Lấy dữ liệu
+                    </button>
+                </div>
+                <div class="table-data">
+                    <!-- Table master -->
+                    <div class="table-master">
+                        <div class="table-container">
+                            <table id="inwardtable">
+                                <thead>
+                                    <tr>
+                                        <th style="background-color: #fff" class="text-align-center">
+                                            <label class="misa-checkbox">
+                                                <input type="checkbox" name="" value="" id="ckbRoot" />
+                                                <span class="checkbox-square"></span>
+                                            </label>
+                                        </th>
+                                        <th>
+                                            <div class="title-head">Ngày</div>
+                                            <div class="flex-center fil-text">
+                                                <input type="text" name="" id="" class="date-picker" field-data="RefDate" data-type="date">
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="title-head">Số phiếu nhập</div>
+                                            <div class="flex-center">
+                                                <div class="filter filter-sreach">
+                                                </div>
+                                                <div class="fil-text">
+                                                    <input type="text" name="" value="" field-data="RefNo" />
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="title-head">Nhà cung cấp</div>
+                                            <div class="flex-center">
+                                                <div class="filter filter-sreach">
+                                                </div>
+                                                <div class="fil-text">
+                                                    <input type="text" name="" value="" field-data="AccountObjectName" />
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="title-head">Tổng tiền</div>
+                                            <div class="flex-center">
+                                                <select field-data="CompareTotalAmountType">
+                                                    <option value="=">= Bằng</option>
+                                                    <option value="<">&lt; Bé hơn</option>
+                                                    <option value="<=">&le; Bé hơn hoặc bằng</option>
+                                                    <option value=">">&gt; Lớn hơn</option>
+                                                    <option value=">=">&ge; Lớn hơn hoặc bằng</option>
+                                                </select>
+                                                <div class="fil-text">
+                                                    <input type="text" name="" value="" field-data="TotalAmount" data-type="currency" />
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="title-head">Diễn giải</div>
+                                            <div class="flex-center">
+                                                <div class="filter filter-sreach">
+                                                </div>
+                                                <div class="fil-text">
+                                                    <input type="text" name="" value="" field-data="Description" />
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="title-head">Loại chứng từ</div>
+                                            <div>
+                                                <select field-data="RefType">
+                                                    <option value="">Tất cả</option>
+                                                    <option value="0">Phiếu nhập hàng - Tiền mặt</option>
+                                                    <option value="1">Phiếu nhập hàng - Tiền gửi</option>
+                                                    <option value="2">Phiếu nhập hàng - Ghi nợ</option>
+                                                    <option value="3">Phiếu nhập kho hàng trả lại</option>
+                                                    <option value="4">Phiếu nhập kho điều chuyển</option>
+                                                    <option value="5">Phiếu nhập kho kiểm kê</option>
+                                                    <option value="6">Phiếu nhập kho khác</option>
+                                                </select>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!--<tr class="row-selected">
+                                        <td class="text-align-center">
+                                            <label class="misa-checkbox">
+                                                <input type="checkbox" name="ckbRow" value="" />
+                                                <span class="checkbox-square"></span>
+                                            </label>
+                                        </td>
+                                        <td>21/2/2017</td>
+                                        <td>NCC000001</td>
+                                        <td>Gen Việt</td>
+                                        <td>300.000</td>
+                                        <td></td>
+                                        <td>Phiếu nhập hàng - Tiền mặt</td>
+                                    </tr>-->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="summary flex-center">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div style="text-align: right; padding-right: 8px" class="total-money"></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="show-option flex-center">
+                            <div class="option-left">
+                                <div class="left-arrow">
+                                    <button class="arrow-icon arrow-left-double"></button>
+                                    <button class="arrow-icon arrow-left-single"></button>
+                                </div>
+                                <div class="curent-page">
+                                    <span>Trang</span>
+                                    <input type="text" name="PageNumber" class="paging" value="1" />
+                                    <span>trên <span class="total-page">1</span></span>
+                                </div>
+                                <div class="right-arrow">
+                                    <button class="arrow-icon arrow-right-single"></button>
+                                    <button class="arrow-icon arrow-right-double"></button>
+                                    <button class="load-data-icon"></button>
+                                    <select class="paging" name="NumberRow">
+                                        <option value="15" selected>15</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="option-right"><!--5-15 trong 30 kết quả--></div>
+                        </div>
+                    </div>
+                    <div class="dragbar"></div>
+
+                    <div class="table-detail">
+                        <div class="tab-container">
+                            <div class="tab-buttons">
+                                <button class="active">Chi tiết</button>
+                            </div>
+                            <!--Chi tiết content-->
+                            <div class="first-tab">
+                                <table id="inward-table-detail">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã hàng hóa</th>
+                                            <th>Tên hàng hóa</th>
+                                            <th>Kho</th>
+                                            <th>Đơn vị tính</th>
+                                            <th>Đơn giá</th>
+                                            <th>Số lượng</th>
+                                            <th>Thành tiền</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!--<tr class="">
+                                            <td>AKK37246</td>
+                                            <td>Áo khoác kaki nam</td>
+                                            <td>Chi nhánh Cầu Giấy</td>
+                                            <td>Chiếc</td>
+                                            <td>350.000</td>
+                                            <td>2</td>
+                                            <td>700.000</td>
+                                        </tr>-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- menu chuột phải -->
+    <div class="menu-rightclick" style="display: none">
+        <button class="menu-item toolbar-add" id="menu-btn-Add">
+            <div class="menu-item-img btn-add"></div>
+            <div class="menu-item-title">Thêm mới</div>
+            <div class="menu-item-dropdown"></div>
+        </button>
+        <button class="menu-item toolbar-duplicate">
+            <div class="menu-item-img btn-duplicate"></div>
+            <div class="menu-item-title">Nhân bản</div>
+        </button>
+        <button class="menu-item toolbar-view">
+            <div class="menu-item-img btn-view"></div>
+            <div class="menu-item-title">Xem</div>
+        </button>
+        <button class="menu-item toolbar-edit">
+            <div class="menu-item-img btn-edit"></div>
+            <div class="menu-item-title">Sửa</div>
+        </button>
+        <button class="menu-item toolbar-delete">
+            <div class="menu-item-img btn-delete"></div>
+            <div class="menu-item-title">Xóa</div>
+        </button>
+        <button class="menu-item toolbar-print">
+            <div class="menu-item-img btn-print"></div>
+            <div class="menu-item-title">In</div>
+            <div class="menu-item-dropdown"></div>
+        </button>
+    </div>
+    <!-- Dialog thêm mới phiếu nhập kho điều chuyển -->
+    <div id="dialogform" style="display: none">
+        <div class="misa-toolbar">
+            <button class="toolbar-item form-button-before" disabled>
+                <div class="toolbar-item-img btn-before"></div>
+                <div class="toolbar-item-title">Trước</div>
+                <div class="toolbar-item-dropdown"></div>
+            </button>
+            <button class="toolbar-item form-button-after" disabled>
+                <div class="toolbar-item-title">Sau</div>
+                <div class="toolbar-item-img btn-after"></div>
+                <div class="toolbar-item-dropdown"></div>
+            </button>
+            <button class="toolbar-item form-button-add" disabled>
+                <div class="toolbar-item-img btn-add"></div>
+                <div class="toolbar-item-title">Thêm mới</div>
+                <div class="toolbar-item-dropdown"></div>
+            </button>
+            <button class="toolbar-item form-button-edit" disabled>
+                <div class="toolbar-item-img btn-edit"></div>
+                <div class="toolbar-item-title">Sửa</div>
+
+            </button>
+            <button class="toolbar-item form-button-save" title="CTRL+S">
+                <div class="toolbar-item-img btn-save"></div>
+                <div class="toolbar-item-title">Lưu</div>
+            </button>
+            <button class="toolbar-item forn-button-delete" disabled>
+                <div class="toolbar-item-img btn-delete"></div>
+                <div class="toolbar-item-title">Xóa</div>
+
+            </button>
+            <button class="toolbar-item form-button-stop" disabled>
+                <div class="toolbar-item-img btn-stop"></div>
+                <div class="toolbar-item-title">Hoãn</div>
+            </button>
+            <button class="toolbar-item form-button-print" disabled>
+
+                <div class="toolbar-item-img btn-print"></div>
+                <div class="toolbar-item-title">In</div>
+                <div class="toolbar-item-dropdown"></div>
+
+            </button>
+            <button class="toolbar-item">
+                <div class="toolbar-item-img btn-help"></div>
+                <div class="toolbar-item-title">Trợ giúp</div>
+            </button>
+            <button class="toolbar-item" id="close-dialogAdd">
+                <div class="toolbar-item-img btn-close"></div>
+                <div class="toolbar-item-title">Đóng</div>
+            </button>
+        </div>
+        <div class="ui-container">
+            <div class="flex-center row-container">
+                <div style="width: 120px">Mục đích</div>
+                <div class="flex-center purpose-select">
+                    <div class="">
+                        <label class="misa-radio">
+                            <input type="radio" name="rdtypeVoucher" value="other" id="other" checked/>
+                            <span class="radio-circle"></span>
+                        </label>
+                        Khác
+                    </div>
+                    <div class="">
+                        <label class="misa-radio">
+                            <input type="radio" name="rdtypeVoucher" value="fromOtherStore" id="fromOtherStore"/>
+                            <span class="radio-circle"></span>
+                        </label>
+                        Điều chuyển từ cửa hàng khác
+                    </div>
+                    <button class="selectVoucher">Chọn chứng từ điều chuyển</button>
+                </div>
+            </div>
+            <div class="flex row-container">
+                <div class="information">
+                    <div class="title">Thông tin chung</div>
+                    <div class="">
+                        <div class="information-row">
+                            <div class="label">Đối tượng</div>
+                            <div class="input-container w-50 right-icon">
+                                <input type="text" name="name" value="" field-data="AccountObjectCode" />
+                                <button class="arow-down-line"></button>
+                                <button class="search-icon" id="select-object"></button>
+                            </div>
+                            <div class="input-container w-50">
+                                <input type="text" name="name" value="" field-data="AccountObjectName" />
+                            </div>
+                        </div>
+                        <div class="information-row">
+                            <div class="label">Người giao</div>
+                            <div class="input-container">
+                                <input type="text" name="name" value="" field-data="ContactName" />
+                            </div>
+                        </div>
+                        <div class="information-row">
+                            <div class="label">Diễn giải</div>
+                            <div class="input-container">
+                                <input type="text" name="name" value="" field-data="Description" />
+                            </div>
+                        </div>
+                        <div class="information-row">
+                            <div class="label">Tham chiếu</div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="voucher">
+                    <div class="title">Chứng từ</div>
+                    <div>
+                        <div class="information-row">
+                            <div class="label">Số phiếu nhập</div>
+                            <div class="input-container require">
+                                <input type="text" name="txtVoucherCode" value="" field-data="RefNo" />
+                            </div>
+                            <div class="icon-exclamation" style="display: none"></div>
+                        </div>
+                        <div class="information-row">
+                            <div class="label">Ngày nhập</div>
+                            <div class="input-container require right-icon">
+                                <input type="text" name="txtDateInWard" value="" field-data="RefDate" class="input-date-picker" data-type="date" />
+                            </div>
+                            <div class="icon-exclamation" style="display: none"></div>
+                        </div>
+                        <div class="information-row">
+                            <div class="label">Giờ nhập</div>
+                            <div class="input-container require right-icon">
+                                <input type="text" name="txtTimeInWard" field-data="RefTime" value="" data-type="time" />
+                                <button class="icon-time"></button>
+                            </div>
+                            <div class="icon-exclamation" style="display: none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-container">
+                <div class="title">Chi tiết</div>
+                <div class="table-form-detail">
+                    <table id="form-add-detail">
+                        <thead>
+                            <tr>
+                                <th>Mã SKU</th>
+                                <th>Tên hàng hóa</th>
+                                <th>Kho</th>
+                                <th>Đơn vị tính</th>
+                                <th>Đơn giá</th>
+                                <th>Số lượng</th>
+                                <th>Thành tiền</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbodyData">
+                            <!--<tr class="product">
+                                <td>ASM2561514-D-S</td>
+                                <td>Áo sơ mi (Đỏ/S)</td>
+                                <td>Chi nhánh Cầu Giấy</td>
+                                <td>Chiếc</td>
+                                <td>
+                                    <input type="text" name="UnitPrice" value="" />
+                                </td>
+                                <td>
+                                    <input type="number" name="Quantity" value="11" min="0" max="999"/>
+                                </td>
+                                <td>660.000</td>
+                                <td><button class="delete-icon"></button></td>
+                            </tr>-->
+                        </tbody>
+                        <tbody>
+                            <tr class="row-search">
+                                <td>
+                                    <div class="input-container right-icon">
+                                        <input type="text" name="InventoryItem" value="" placeholder="Tìm mã hoặc tên" />
+                                        <button class="arow-down-line"></button>
+                                        <button class="search-icon open-selectproduct"></button>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                        <!--<tfoot>
+                            <tr>
+                                <td class="number-row">Số dòng = 0</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="total-quantity">0</td>
+                                <td class="total-amount">0</td>
+                                <td></td>
+                            </tr>
+                        </tfoot>-->
+                    </table>
+                </div>
+                <div class="tfoot flex-center">
+                    <div class="number-row">Số dòng = 0</div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div class="total-quantity">0</div>
+                    <div class="total-amount">0</div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Dialog chọn chứng từ -->
+    <div id="dialgoSelectVoucher">
+        <div class="dialog-filter-data">
+            <div style="margin-right: 10px">
+                <select id="" class="py-md-1 select-date">
+                    <option value="today">Hôm nay</option>
+                    <option value="yesterday">Hôm qua</option>
+                    <option value="this week">Tuần này</option>
+                    <option value="week ago">Tuần trước</option>
+                    <option value="this month">Tháng này</option>
+                    <option value="month ago">Tháng trước</option>
+                    <option value="this quarter">Quý này</option>
+                    <option value="quarter ago">Quý trước</option>
+                    <option value="six months ago">6 tháng trước</option>
+                    <option value="this year">Năm nay</option>
+                    <option value="year ago">Năm trước</option>
+                    <option value="other">Khác</option>
+                </select>
+            </div>
+            <span>Từ</span>
+            <div class="flex-center rectangle startdate">
+                <input type="text" id="startDate" class="date-picker txtStartDate" name="inpdate" value="" />
+            </div>
+            <span>đến</span>
+            <div class="flex-center rectangle enddate">
+                <input type="text" id="endDate" class="date-picker txtEndDate" name="inpdate" value="" />
+            </div>
+            <button class="rectangle getdata startFilterData flex-center">
+                <div class="filt-icon "></div>Lấy dữ liệu
+            </button>
+        </div>
+        <div class="ui-container">
+            <table id="table-select-voucher">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Ngày</th>
+                        <th>Số chứng từ</th>
+                        <th>Cửa hàng điều chuyển</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--<tr class="store-select row-selected">
+                        <td>
+                            <label class="misa-radio">
+                                <input type="radio" name="ckbRow-voucher" value="" checked />
+                                <span class="radio-circle"></span>
+                            </label>
+                        </td>
+                        <td field-data="RefDate">01/03/2017</td>
+                        <td field-data="RefCode">XK00002</td>
+                        <td field-data="StockName">Chi nhánh Cầu Giấy</td>
+                    </tr>-->
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Dialog chọn đối tượng -->
+    <div id="dialogSelectObject" class="dialog-select-object" style="display: none;">
+        <div class="ui-container">
+            <div class="flex-center row-container" style="justify-content: space-between">
+                <div>Loại đối tượng</div>
+                <select class="objectType">
+                    <option value="0">Tất cả</option>
+                    <option value="1">Nhà cung cấp</option>
+                    <option value="2">Đối tác giao hàng</option>
+                    <option value="3">Khách hàng</option>
+                    <option value="4">Nhân viên</option>
+                    <option value="5">Khác</option>
+                </select>
+                <div class="input-container w-30">
+                    <input type="text" name="objectFilter" value="" placeholder="Nhập mã đối tượng, tên đối tượng" />
+                </div>
+                <button class="rectangle flex-center search-object">
+                    <div class="search-icon-blue">
+                    </div>
+                    <div class="search-object-text">Tìm kiếm</div>
+                </button>
+            </div>
+            <div class="table-object-wrapper">
+                <table id="table-select-object">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Mã đối tượng</th>
+                            <th>Tên đối tượng</th>
+                            <th>Loại đối tượng</th>
+                            <th>Địa chỉ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--<tr class="object-select row-selected">
+                            <td>
+                                <label class="misa-radio">
+                                    <input type="radio" name="ckbRow-Object" value="" checked />
+                                    <span class="radio-circle"></span>
+                                </label>
+                            </td>
+                            <td>KH00001</td>
+                            <td>Nguyễn Huy Thông</td>
+                            <td>Khách hàng</td>
+                            <td>Bạc Hồng-Hồng Lĩnh-Hà Tĩnh</td>
+                        </tr>-->
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <!-- Dialog chọn hàng hóa -->
+    <div id="dialogSelectProduct" class="dialog-select dialogProduct" style="display: none;">
+        <div class="ui-container">
+            <div class="flex-center row-container" style="justify-content: space-between">
+                <div>Nhóm hàng hóa</div>
+                <select field-data="InventoryItemCategoryID">
+                    <option value="" selected>Tất cả</option>
+                </select>
+                <div class="input-container">
+                    <input type="text" name="filterSearch" value="" placeholder="Nhập mã SKU, tên hàng hóa" />
+                </div>
+                <button class="rectangle flex-center search-object" style="margin-right: 0">
+                    <div class="search-icon-blue">
+                    </div>
+                    <div class="search-object-text">Tìm kiếm</div>
+                </button>
+            </div>
+            <div class="select-status"><!--1 mẫu mã (5 hàng hóa) đã được chọn--></div>
+            <div class="table">
+                <table id="table-select-product">
+                    <thead>
+                        <tr>
+                            <th>Mã SKU</th>
+                            <th>Tên hàng hóa</th>
+                            <th>Nhóm hàng hóa</th>
+                            <th>Đơn vị tính</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--<tr class="row-product product-parent">
+                            <td>
+                                <div class="flex-center">
+                                    <div class="parent-tree icon-plus"></div>
+                                    <label class="misa-checkbox">
+                                        <input type="checkbox" name="cbRowParent" value="" />
+                                        <span class="checkbox-square"></span>
+                                    </label>
+                                    <div class="product-code">AKN2556587</div>
+                                    <div class="number-child">3</div>
+                                </div>
+                            </td>
+                            <td>Áo khoác nỉ</td>
+                            <td>Áo thu đông</td>
+                            <td>Chiếc</td>
+                        </tr>
+                        <tr class="row-child-container" style="display: none;">
+                            <td colspan="4">
+                                <table>
+                                    <tr class="row-product product-child">
+                                        <td>
+                                            <div class="flex-center">
+                                                <label class="misa-checkbox">
+                                                    <input type="checkbox" name="cbRowChild" value="" />
+                                                    <span class="checkbox-square"></span>
+                                                </label>
+                                                <div class="product-code">AKN2556587-DO-M</div>
+                                            </div>
+                                        </td>
+                                        <td>Áo khoác nỉ (Đỏ/M)</td>
+                                        <td>Áo thu đông</td>
+                                        <td>Chiếc</td>
+                                    </tr>
+                                    <tr class="row-product product-child">
+                                        <td>
+                                            <div class="flex-center">
+                                                <label class="misa-checkbox">
+                                                    <input type="checkbox" name="cbRowChild" value="" />
+                                                    <span class="checkbox-square"></span>
+                                                </label>
+                                                <div class="product-code">AKN2556587-DO-S</div>
+                                            </div>
+                                        </td>
+                                        <td>Áo khoác nỉ (Đỏ/S)</td>
+                                        <td>Áo thu đông</td>
+                                        <td>Chiếc</td>
+                                    </tr>
+                                    <tr class="row-product product-child">
+                                        <td>
+                                            <div class="flex-center">
+                                                <label class="misa-checkbox">
+                                                    <input type="checkbox" name="cbRowChild" value="" />
+                                                    <span class="checkbox-square"></span>
+                                                </label>
+                                                <div class="product-code">AKN2556587-VA-M</div>
+                                            </div>
+                                        </td>
+                                        <td>Áo khoác nỉ (Vàng/M)</td>
+                                        <td>Áo thu đông</td>
+                                        <td>Chiếc</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>-->
+                        <!--<tr class="row-template">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Dialog xem hàng hóa đã chọn -->
+    <div id="dialogConfirmProduct" class="dialog-select dialogProduct" style="display: none;">
+        <div class="ui-container">
+            <div class="flex-center row-container" style="justify-content: space-between">
+                <div>Nhóm hàng hóa</div>
+                <select field-data="InventoryItemCategoryID">
+                    <option value="" selected>Tất cả</option>
+                </select>
+                <div class="input-container">
+                    <input type="text" name="filterSearch" value="" placeholder="Nhập mã SKU, tên hàng hóa" />
+                </div>
+                <button class="rectangle flex-center search-object">
+                    <div class="search-icon-blue">
+                    </div>
+                    <div class="search-object-text">Tìm kiếm</div>
+                </button>
+            </div>
+            <div class="select-status"></div>
+            <div class="table">
+                <table id="table-confirm-product">
+                    <thead>
+                        <tr>
+                            <th>Mã SKU</th>
+                            <th>Tên hàng hóa</th>
+                            <th>Nhóm hàng hóa</th>
+                            <th>Đơn vị tính</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--<tr class="row-product product-parent">
+                            <td>
+                                <div class="flex-center">
+                                    <div class="parent-tree icon-minus"></div>
+                                    <div class="product-code">ALN2561255</div>
+                                    <div class="number-child">2</div>
+                                </div>
+                            </td>
+                            <td>Áo len Polo</td>
+                            <td>Áo thu đông</td>
+                            <td>Chiếc</td>
+                            <td>
+                                <div class="flex-center">
+                                    <div class="delete-icon"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="row-child-container">
+                            <td colspan="5">
+                                <table>
+                                    <tr class="row-product product-child">
+                                        <td>
+                                            <div class="flex-center">
+                                                <div class="product-code">ALN2561255-DO-M</div>
+                                            </div>
+                                        </td>
+                                        <td>Áo len Polo (Đỏ/M)</td>
+                                        <td>Áo thu đông</td>
+                                        <td>Chiếc</td>
+                                        <td>
+                                            <div class="flex-center">
+                                                <div class="delete-icon"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="row-product product-child">
+                                        <td>
+                                            <div class="flex-center">
+                                                <div class="product-code">ALN2561255-VA-M</div>
+                                            </div>
+                                        </td>
+                                        <td>Áo len Polo (Vàng/M)</td>
+                                        <td>Áo thu đông</td>
+                                        <td>Chiếc</td>
+                                        <td>
+                                            <div class="flex-center">
+                                                <div class="delete-icon"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="row-template">
+                            <td colspan="5"></td>
+                        </tr>-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Dialog xác nhận xóa chứng từ -->
+    <div id="dialogConfirmDelete" style="display: none">
+        <div class="ui-container flex-center">
+            <div class="icon-question"></div>
+            <div>
+                Bạn chắc chắn muốn xóa <span class="ref-detail"></span> không?
+            </div>
+        </div>
+
+    </div>
+    <!--Dialog xác nhận đóng form-->
+    <div id="dialogConfirmClose" style="display: none">
+        <div class="ui-container flex-center">
+            <div class="icon-question"></div>
+            <div class="detail-confirm">
+                Dữ liệu đã thay đổi bạn có muốn lưu không?
+            </div>
+        </div>
+
+    </div>
+    <!-- Dialog xác nhận -->
+    <div id="dialogConfirm" style="display: none">
+        <div class="ui-container flex-center">
+            <div class="icon-question"></div>
+            <div class="detail-confirm">
+
+            </div>
+        </div>
+
+    </div>
+    <script src="../Scripts/lib/jquery-3.3.1.min.js"></script>
+    <script src="../Scripts/lib/jquery-ui.min.js"></script>
+    <script src="../Scripts/lib/jquery.timepicker.min.js"></script>
+    <script src="../Scripts/lib/toastr.js"></script>
+    <script src="../Scripts/lib/jquery.mask.min.js"></script>
+    <script src="../Scripts/common/common.js"></script>
+    <script src="../Scripts/Views/table.js"></script>
+    <script src="../Scripts/Views/tab.js"></script>
+    <script src="../Scripts/base/form-inward.js"></script>
+    <script src="../Scripts/Views/inward.js"></script>
+</body>
+</html>

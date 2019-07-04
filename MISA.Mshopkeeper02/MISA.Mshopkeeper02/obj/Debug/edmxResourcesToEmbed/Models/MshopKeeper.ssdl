@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MshopKeeperModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'MshopKeeper.dbo.Employee' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Employee">
+          <Property Name="EmployeeCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="20" />
+          <Property Name="EmployeeType" Type="int" />
+          <Property Name="Addrees" Type="nvarchar" MaxLength="255" />
+          <Property Name="Created" Type="date" />
+          <Property Name="Updated" Type="date" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MshopKeeper.dbo.Object' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Object">
+    <Key>
+      <PropertyRef Name="ObjectCode" />
+      <PropertyRef Name="ObjectName" />
+      <PropertyRef Name="ObjectType" />
+    </Key>
+    <Property Name="ObjectCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ObjectName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ObjectType" Type="int" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="date" />
+    <Property Name="Updated" Type="date" />
+  </EntityType>
+  <EntityType Name="Reckoning">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="VoucherId" Type="varchar" MaxLength="255" />
+    <Property Name="InvoiceCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ObjectCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Debit" Type="money" />
+    <Property Name="PaidNumber" Type="money" />
+    <Property Name="Pay" Type="money" />
+    <Property Name="Explain" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="date" />
+    <Property Name="Updated" Type="date" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Voucher">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="VoucherCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="VoucherType" Type="int" />
+    <Property Name="Marked" Type="bit" />
+    <Property Name="ObjectCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="EmployeeCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="ActionPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="Reason" Type="nvarchar" MaxLength="255" />
+    <Property Name="MoneyNumber" Type="money" />
+    <Property Name="Item" Type="nvarchar" MaxLength="50" />
+    <Property Name="Created" Type="date" />
+    <Property Name="Updated" Type="date" />
+  </EntityType>
+  <EntityContainer Name="MshopKeeperModelStoreContainer">
+    <EntitySet Name="Reckoning" EntityType="Self.Reckoning" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Voucher" EntityType="Self.Voucher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Object" EntityType="Self.Object" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Object].[ObjectCode] AS [ObjectCode], 
+    [Object].[ObjectName] AS [ObjectName], 
+    [Object].[ObjectType] AS [ObjectType], 
+    [Object].[Address] AS [Address], 
+    [Object].[Created] AS [Created], 
+    [Object].[Updated] AS [Updated]
+    FROM [dbo].[Object] AS [Object]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,677 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*CSS cho phần layout*/
+
+body {
+    background-color: #e5e6eb;
+    font-size: 13px;
+    line-height: 17px;
+    font-family: 'Roboto',Tahoma,sans-serif;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+input {
+    background-color: transparent;
+}
+
+a {
+    font: 400 13px Roboto !important;
+    text-decoration: none;
+    color: #007abc;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.tooltip-default {
+    background-color: #000;
+    color: #fff;
+}
+
+.tooltip-warning {
+    background-color: #ff0000;
+    color: #fff;
+    z-index: 999;
+    width: 250px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+}
+/*CSS cho phần header*/
+.header {
+    width: 100%;
+    height: 48px;
+    position: relative;
+    background-color: #fff;
+}
+
+    .header .logo-mshopkeeper .logo-img {
+        width: 30px;
+        height: 30px;
+        background-image: url('../../Contents/Images/logo-mshopkeeper.png');
+        background-repeat: no-repeat;
+        background-position: 0 2px;
+        background-size: 150px;
+    }
+
+    .header .logo-mshopkeeper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100%;
+        background-color: #006189;
+        cursor: pointer;
+    }
+
+    .header .header-content {
+        width: calc(100% - 100px);
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-right: 8px;
+    }
+
+        .header .header-content .header-left {
+            padding-left: 8px;
+        }
+            .header .header-content .header-left h2 {
+                margin-right: 10px;
+            }
+
+            .header .header-content .header-left .one-button.help {
+                position: static;
+                border: none;
+            }
+
+                .header .header-content .header-left .one-button.help .button-title {
+                    color: #026b97;
+                }
+
+                .header .header-content .header-left .one-button.help:hover .button-title {
+                    text-decoration: underline;
+                }
+
+
+            .header .header-content .header-right > div:not(:last-child) {
+                margin-right: 15px;
+            }
+
+.header-right .branch > div:not(:last-child) {
+    margin-right: 5px;
+}
+
+.header-right .user-setting > div:not(:last-child) {
+    margin-right: 5px;
+}
+
+.header-right .user-img {
+    width: 28px;
+    height: 28px;
+    background-image: url('../../Contents/Images/EmployeeImage_2.png');
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*CSS cho phần main*/
+.main {
+    max-width: 100vw;
+    height: calc(100vh - 48px);
+}
+
+    /*CSS phần sidebar*/
+    .main .misa-sidebar {
+        width: 100px;
+        height: calc(100vh - 48px);
+        background-color: #026b97;
+        overflow-y: auto;
+    }
+
+.misa-sidebar .sidebar-menu {
+    padding: 5px;
+    height: 60px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+    .misa-sidebar .sidebar-menu:last-child {
+        border-top: 1px solid #004765;
+    }
+
+    .misa-sidebar .sidebar-menu:hover {
+        background-color: #00577b;
+    }
+
+.sidebar-menu-img {
+    width: 25px;
+    height: 25px;
+    background-image: url('../../Contents/Images/slibarmenu.png');
+    background-repeat: no-repeat;
+}
+
+.sidebar-menu-title {
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+
+/*CSS backgound-position cho từng sidebar-menu*/
+.sidebar-menu-img.icon-menu-overview {
+    background-position: 0 0;
+}
+
+.sidebar-menu-img.icon-menu-buy {
+    background-position: 0 -40px;
+}
+
+.sidebar-menu-img.icon-menu-inventory {
+    background-position: 0 -80px;
+}
+
+.sidebar-menu-img.icon-menu-cash {
+    background-position: 0 -120px;
+}
+
+.sidebar-menu-img.icon-menu-cost {
+    background-position: 0 -160px;
+}
+
+.sidebar-menu-img.icon-menu-promotion {
+    background-position: 0 -200px;
+}
+
+.sidebar-menu-img.icon-menu-dictionary {
+    background-position: 0 -240px;
+}
+
+.sidebar-menu-img.icon-menu-report {
+    background-position: 0 -280px;
+}
+
+.sidebar-menu-img.icon-menu-setting {
+    background-position: 0 -320px;
+}
+
+.sidebar-menu-img.icon-menu-product {
+    background-position: 0 -360px;
+}
+
+
+.main .main-container {
+    width: calc(100% - 100px);
+    height: 100%;
+    padding: 8px;
+    background-color: #e5e6eb;
+}
+
+.main-container .content {
+    min-width: 800px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/*Kết thúc CSS cho phần layout*/
+/*CSS cho phần table*/
+.table-data {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 81px);
+    width: 100%;
+}
+
+.table-data .dragbar {
+    height: 10px;
+    width: 100%;
+    cursor: row-resize;
+}
+
+.table-master {
+    background-color: #fff;
+    height: 60%;
+    min-height: 30%;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.table-master .filter {
+    margin: 0;
+}
+
+select[field-data="CompareTotalAmountType"] {
+    background: none;
+    text-align: center;
+    width: 27px;
+    height: 27px;
+    padding-left: 10px;
+    margin: 0;
+}
+
+.table-master .summary {
+    position: absolute;
+    bottom: 36px;
+}
+
+    .table-master .show-option {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+.table-detail {
+    background-color: #fff;
+    height: 40%;
+    min-height: 20%;
+    position: relative;
+}
+
+    .table-detail #inward-table-detail {
+        position: relative;
+    }
+
+    .table-container table thead tr th {
+        padding: 0;
+    }
+
+    .table-container table thead tr th > div:last-child {
+        background-color: #fff;
+    }
+
+#inward-table-detail tbody tr td:first-child {
+    text-align: left;
+}
+/*Căn lề table*/
+/*table chính*/
+#inwardtable tbody tr td:nth-child(1) {
+    text-align: center;
+}
+
+#inwardtable tbody tr td:nth-child(2) {
+    text-align: center;
+}
+
+#inwardtable tbody tr td:nth-child(5) {
+    text-align: right;
+}
+/*table phụ*/
+#inward-table-detail tbody tr td:nth-child(5) {
+    text-align: right;
+}
+
+#inward-table-detail tbody tr td:nth-child(6) {
+    text-align: right;
+}
+
+#inward-table-detail tbody tr td:nth-child(7) {
+    text-align: right;
+}
+/*table form thêm phiếu nhập kho*/
+#form-add-detail tr td input[type="number"] {
+    text-align: right;
+}
+
+#form-add-detail tr td input[name="UnitPrice"] {
+    text-align: right;
+}
+
+#form-add-detail :not(thead) tr td:nth-child(5) {
+    text-align: right;
+}
+
+#form-add-detail :not(thead) tr td:nth-child(6) {
+    text-align: right;
+}
+
+#form-add-detail :not(thead) tr td:nth-child(7) {
+    text-align: right;
+}
+
+#form-add-detail tfoot tr td {
+    font-weight: bold;
+}
+/*table form chọn chứng từ*/
+#table-select-voucher tbody tr td:nth-child(1) {
+    text-align: center;
+}
+
+#table-select-voucher tbody tr td:nth-child(2) {
+    text-align: center;
+}
+
+#table-select-object tbody tr td:nth-child(1) {
+    text-align: center;
+}
+
+
+/*Chỉnh độ rộng từng trường table*/
+/*table chính*/
+#inwardtable tr td:nth-child(1), #inwardtable thead th:nth-child(1), .summary div:nth-child(1) {
+    width: 50px;
+}
+
+#inwardtable tr td:nth-child(2), #inwardtable thead th:nth-child(2), .summary div:nth-child(2) {
+    width: 110px;
+}
+
+#inwardtable tr td:nth-child(3), #inwardtable thead th:nth-child(3), .summary div:nth-child(3) {
+    width: 150px;
+}
+
+#inwardtable tr td:nth-child(4), #inwardtable thead th:nth-child(4) {
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#inwardtable tr td:nth-child(5), #inwardtable thead th:nth-child(5), .summary div:nth-child(5) {
+    width: 120px;
+}
+
+#inwardtable tr td:nth-child(6), #inwardtable thead th:nth-child(6), .summary div:nth-child(6) {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#inwardtable thead tr td:last-child, #inwardtable thead th:last-child, .summary div:last-child {
+    width: 250px;
+}
+/*Bảng chi tiết*/
+#inward-table-detail tr td:nth-child(1), #inward-table-detail thead th:nth-child(1) {
+    width: 150px;
+}
+
+#inward-table-detail tr td:nth-child(2), #inward-table-detail thead th:nth-child(2) {
+    width: 20%;
+}
+
+#inward-table-detail tr td:nth-child(4), #inward-table-detail thead th:nth-child(4) {
+    width: 150px;
+}
+
+#inward-table-detail tr td:nth-child(5), #inward-table-detail thead th:nth-child(5) {
+    width: 120px;
+}
+
+#inward-table-detail tr td:nth-child(6), #inward-table-detail thead th:nth-child(6) {
+    width: 120px;
+}
+
+#inward-table-detail tr td:nth-child(7), #inward-table-detail thead th:nth-child(7) {
+    width: 150px;
+}
+/*table form thêm mới*/
+#form-add-detail tr td:nth-child(1), .tfoot div:nth-child(1) {
+    width: 150px;
+}
+
+#form-add-detail tr td:nth-child(4), .tfoot div:nth-child(4) {
+    width: 100px;
+}
+
+#form-add-detail tr td:nth-child(6), .tfoot div:nth-child(6) {
+    width: 90px;
+}
+
+#form-add-detail tr td:nth-child(7), .tfoot div:nth-child(7) {
+    width: 110px;
+}
+
+#form-add-detail tr td:nth-child(8), .tfoot div:nth-child(8) {
+    width: 40px;
+}
+/*table form chọn chứng từ*/
+#table-select-voucher tr td:nth-child(1) {
+    width: 50px;
+}
+
+#table-select-voucher tr td:nth-child(2) {
+    width: 150px;
+}
+
+#table-select-voucher tr td:nth-child(3) {
+    width: 150px;
+}
+
+/*table form chọn đối tượng*/
+#table-select-object tr td:nth-child(1) {
+    width: 50px;
+}
+
+#table-select-object tr td:nth-child(2) {
+    width: 110px;
+}
+
+#table-select-object tr td:nth-child(3) {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#table-select-object tr td:nth-child(4) {
+    width: 120px;
+}
+
+#table-select-object tr td:nth-child(5) {
+    white-space: normal;
+}
+
+/*table form chọn hàng hóa*/
+#dialogSelectProduct table tr td:nth-child(1) {
+    width: 250px;
+    position: relative;
+}
+#dialogSelectProduct table tr td:nth-child(2) {
+    width: 300px;
+}
+#dialogSelectProduct table tr td:nth-child(4) {
+    width: 100px;
+}
+/*table xem hàng hóa đã chọn*/
+#dialogConfirmProduct table tr td:nth-child(1) {
+    width: 250px;
+    position: relative;
+}
+#dialogConfirmProduct table tr td:nth-child(2) {
+    width: 300px;
+}
+#dialogConfirmProduct table tr td:nth-child(4) {
+    width: 100px;
+}
+#dialogConfirmProduct table tr td:nth-child(5) {
+    width: 40px;
+}
+
+.dialogProduct table tr td .number-child {
+    position: absolute;
+    right: 20px;
+}
+/*CSS fixed thead and scroll tbody*/
+.table-container {
+    height: calc(100% - 70px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+table thead tr:first-child th {
+    background-color: #f6f6f6;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.table-detail .tab-container {
+    height: 100%;
+}
+
+.table-detail .first-tab {
+    height: calc(100% - 38px);
+    overflow-y: auto;
+}
+
+.tfoot {
+    width: 100%;
+    height: 34px;
+    background-color: #fcdeb8;
+    border: 1px solid #e9e9e9;
+}
+
+    .tfoot div {
+        text-align: right;
+        font-weight: bold;
+        line-height: 34px;
+        height: 100%;
+        border-right: 1px solid #F1C387;
+        padding: 0 8px;
+    }
+    .tfoot div:first-child {
+        text-align: left;
+    }
+
+.table-form-detail table {
+    height: unset;
+}
+
+/*Kết thúc CSS fixed thead tfoot and scroll tbody*/
+
+/*CSS cho phần tổng kết bảng*/
+.summary {
+    width: 100%;
+    height: 34px;
+    background-color: #fcdeb8;
+    border: 1px solid #e9e9e9;
+}
+
+    .summary div {
+        text-align: center;
+        font-weight: bold;
+        line-height: 34px;
+        height: 100%;
+    }
+
+    .summary div {
+        border-right: 1px solid #F1C387;
+    }
+/*CSS phần menu right click*/
+.menu-rightclick {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    box-shadow: 1px 1px 1px #ccc;
+    position: absolute;
+    background-color: #fff;
+    padding: 1px;
+}
+
+    .menu-rightclick .menu-item {
+        display: flex;
+        align-items: center;
+        padding: 5px 7px;
+        background-color: #fff;
+        color: #000;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .menu-rightclick .menu-item[disabled] {
+        opacity: 0.6;
+        cursor: default;
+    }
+
+        .menu-rightclick .menu-item:hover:not([disabled]) {
+            background-color: #0088c2;
+            color: #fff;
+        }
+
+            .menu-rightclick .menu-item:hover .menu-item-dropdown {
+                border-color: #fff transparent transparent transparent;
+            }
+
+        .menu-rightclick .menu-item .menu-item-img {
+            min-width: 16px;
+            height: 16px;
+            background-image: url('../../Contents/Icons/common-icon.png');
+            background-repeat: no-repeat;
+        }
+
+        .menu-rightclick .menu-item .menu-item-title {
+            padding: 0 5px;
+            white-space: nowrap;
+        }
+
+        .menu-rightclick .menu-item .menu-item-dropdown {
+            min-width: 8px;
+            height: 8px;
+            border: 4px solid;
+            border-color: #000 transparent transparent transparent;
+            margin-top: 4px;
+        }
+/*CSS backgroud của các menu right click item*/
+.menu-item-img.btn-add {
+    background-position: -150px -178px;
+}
+
+.menu-item-img.btn-duplicate {
+    background-position: -49px -178px;
+}
+
+.menu-item-img.btn-view {
+    background-position: -1651px -129px;
+}
+
+.menu-item-img.btn-edit {
+    background-position: -77px -178px;
+}
+
+.menu-item-img.btn-delete {
+    background-position: -102px -178px;
+}
+
+.menu-item-img.btn-print {
+    background-position: -128px -178px;
+}
+/*CSS backgroud của các menu right click item khi hover*/
+.menu-item:hover:not([disabled]) .menu-item-img.btn-add {
+    background-position: -1px -127px;
+}
+
+.menu-item:hover:not([disabled]) .menu-item-img.btn-duplicate {
+    background-position: -976px -127px;
+}
+
+.menu-item:hover:not([disabled]) .menu-item-img.btn-view {
+    background-position: -1602px -127px;
+}
+
+.menu-item:hover:not([disabled]) .menu-item-img.btn-edit {
+    background-position: -77px -203px;
+}
+
+.menu-item:hover:not([disabled]) .menu-item-img.btn-delete {
+    background-position: -1078px -127px;
+}
+
+.menu-item:hover:not([disabled]) .menu-item-img.btn-print {
+    background-position: -77px -51px;
+}

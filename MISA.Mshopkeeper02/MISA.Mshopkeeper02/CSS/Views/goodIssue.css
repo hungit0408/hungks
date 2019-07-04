@@ -1,0 +1,788 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*CSS cho phần layout*/
+
+body {
+    overflow: hidden;
+    background-color: #e5e6eb;
+    font-size: 13px;
+    line-height: 17px;
+    font-family: 'Roboto',Tahoma,sans-serif;
+}
+/*CSS cho phần header*/
+.header {
+    width: 100%;
+    height: 48px;
+    position: relative;
+    background-color: #fff;
+}
+
+    .header .logo-mshopkeeper .logo-img {
+        width: 30px;
+        height: 30px;
+        background-image: url('../../Contents/Images/logo-mshopkeeper.png');
+        background-repeat: no-repeat;
+        background-position: 0 2px;
+        background-size: 150px;
+    }
+
+    .header .logo-mshopkeeper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100%;
+        background-color: #006189;
+        cursor: pointer;
+    }
+
+    .header .header-content {
+        width: calc(100% - 100px);
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-right: 8px;
+    }
+
+        .header .header-content .header-left {
+            padding: 8px;
+        }
+
+
+
+        .header .header-content .header-right > div:not(:last-child) {
+            margin-right: 15px;
+        }
+
+.header-left .help {
+    margin-left: 20px;
+}
+
+.header-left .icon-help {
+    background-image: url('/Contents/images/icon-help-18-hover.png');
+    background-repeat: no-repeat;
+    width: 18px;
+    height: 18px;
+}
+
+    .header-left .icon-help:hover {
+        cursor: pointer;
+    }
+
+.header-left .contentHelp:hover {
+    cursor: pointer;
+}
+
+.header-right .branch > div:not(:last-child) {
+    margin-right: 5px;
+}
+
+.header-right .user-setting > div:not(:last-child) {
+    margin-right: 5px;
+}
+
+.header-right .user-img {
+    width: 28px;
+    height: 28px;
+    background-image: url('../../Contents/Images/EmployeeImage_2.png');
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*CSS content*/
+.content {
+    max-width: 100vw;
+    height: calc(100vh - 48px);
+}
+
+    /*CSS phần sidebar*/
+    .content .misa-sidebar {
+        width: 100px;
+        height: calc(100vh - 48px);
+        background-color: #026b97;
+        overflow-y: auto;
+    }
+
+.misa-sidebar .sidebar-menu {
+    padding: 5px;
+    height: 50px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+    .misa-sidebar .sidebar-menu:last-child {
+        border-top: 1px solid #004765;
+    }
+
+    .misa-sidebar .sidebar-menu:hover {
+        background-color: #00577b;
+    }
+
+.sidebar-menu-img {
+    width: 25px;
+    height: 25px;
+    background-image: url('../../Contents/Images/slibarmenu.png');
+    background-repeat: no-repeat;
+}
+
+.sidebar-menu-title {
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+/*CSS backgound-position cho từng sidebar-menu*/
+.sidebar-menu-img.icon-menu-overview {
+    background-position: 0 0;
+}
+
+.sidebar-menu-img.icon-menu-buy {
+    background-position: 0 -40px;
+}
+
+.sidebar-menu-img.icon-menu-inventory {
+    background-position: 0 -80px;
+}
+
+.sidebar-menu-img.icon-menu-cash {
+    background-position: 0 -120px;
+}
+
+.sidebar-menu-img.icon-menu-cost {
+    background-position: 0 -160px;
+}
+
+.sidebar-menu-img.icon-menu-promotion {
+    background-position: 0 -200px;
+}
+
+.sidebar-menu-img.icon-menu-dictionary {
+    background-position: 0 -240px;
+}
+
+.sidebar-menu-img.icon-menu-report {
+    background-position: 0 -280px;
+}
+
+.sidebar-menu-img.icon-menu-setting {
+    background-position: 0 -320px;
+}
+
+.sidebar-menu-img.icon-menu-product {
+    background-position: 0 -360px;
+}
+
+
+.content .main-container {
+    width: calc(100% - 100px);
+    height: 100%;
+    padding: 8px;
+    background-color: #e5e6eb;
+}
+
+.main-container .content-main {
+    min-width: 800px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+/*CSS cho phần table*/
+th, td {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.group-table {
+    height: calc(100% - 100px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.master-table {
+    background-color: #fff;
+    height: calc(60% - 10px);
+    width: 100%;
+    position: relative;
+}
+
+    .master-table .summary {
+        position: absolute;
+        bottom: 36px;
+    }
+
+    .master-table .show-option {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+.detail-table {
+    background-color: #fff;
+    margin-top: 0px;
+    /*height: calc(41%);*/
+    height: 211px;
+    overflow: hidden auto;
+    flex: 1;
+}
+
+.table-container table thead tr th {
+    padding: 0;
+}
+
+    .table-container table thead tr th > .title-head {
+        padding: 7px 10px 8px;
+        border-bottom: 1px solid #e9e9e9;
+    }
+
+    .table-container table thead tr th > div:nth-child(2) {
+        background-color: #fff;
+    }
+
+table thead tr:first-child th {
+    border-top: none;
+}
+
+thead tr:first-child {
+    border-top: none;
+}
+
+.filter-data {
+    border-bottom: 1px solid #cccccc;
+    height: 46px !important;
+}
+
+.tab-container .tab-buttons {
+    border-bottom: 1px solid #cccccc;
+}
+
+#outward-table-detail tbody tr td:first-child {
+    text-align: left;
+}
+
+/*Căn lề table*/
+/*table chính*/
+#outward-table tbody tr td:nth-child(1) {
+    text-align: center;
+}
+
+#outward-table tbody tr td:nth-child(2) {
+    text-align: center;
+}
+
+
+
+#outward-table tbody tr td:nth-child(5) {
+    text-align: right;
+}
+/*table phụ*/
+#outward-table-detail tbody tr td:nth-child(5) {
+    text-align: right;
+}
+
+#outward-table-detail tbody tr td:nth-child(6) {
+    text-align: right;
+}
+
+#outward-table-detail tbody tr td:nth-child(7) {
+    text-align: right;
+}
+
+/*Chỉnh độ rộng từng trường table*/
+/*table chính*/
+#outward-table thead tr th:nth-child(1) {
+    width: 50px;
+}
+
+#outward-table thead tr th:nth-child(2) {
+    width: 150px;
+}
+
+#outward-table thead tr th:nth-child(3) {
+    width: 150px;
+}
+
+#outward-table thead tr th:nth-child(4) {
+    width: 250px;
+}
+
+#outward-table thead tr th:nth-child(5) {
+    width: 150px;
+}
+
+#outward-table thead tr th:last-child {
+    width: 300px;
+}
+
+#outward-table tr th:first-child, #outward-table tr td:first-child {
+    border-left: none;
+}
+
+#outward-table tr th:last-child, #outward-table tr td:last-child {
+    border-right: none;
+}
+/*Bảng chi tiết*/
+#outward-table-detail thead tr th:nth-child(1) {
+    width: 150px;
+}
+
+#outward-table-detail thead tr th:nth-child(4) {
+    width: 150px;
+}
+
+#outward-table-detail thead tr th:nth-child(5) {
+    width: 150px;
+}
+
+#outward-table-detail thead tr th:nth-child(6) {
+    width: 150px;
+}
+
+#outward-table-detail thead tr th:nth-child(7) {
+    width: 150px;
+}
+
+#outward-table-detail tr th:first-child, #outward-table-detail tr td:first-child {
+    border-left: none;
+}
+
+#outward-table-detail tr th:last-child, #outward-table-detail tr td:last-child {
+    border-right: none;
+}
+/*CSS fixed thead and scroll tbody*/
+.table-container {
+    height: calc(100% - 70px);
+    overflow: hidden auto;
+}
+
+table thead tr:first-child th {
+    background-color: #f6f6f6;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+/*CSS phần sumary*/
+.summary {
+    width: 100%;
+    height: 34px;
+    background-color: #ffc16b;
+    border: 1px solid #e9e9e9;
+    border-width: 1px 0px;
+}
+
+    .summary div {
+        text-align: center;
+        font-weight: bold;
+        line-height: 34px;
+        height: 100%;
+    }
+
+    .summary div {
+        border-right: 1px solid #e9e9e9;
+    }
+/*định dạng thẻ a khi hover*/
+a:hover {
+    text-decoration: none;
+}
+
+.row-selected {
+    background-color: #c3ecff !important;
+}
+/*Custom icon-dialog */
+button {
+    border: none;
+    background-color: transparent;
+}
+
+
+
+.ui-widget-overlay {
+    opacity: 0.8;
+}
+/*Custom css form-dialog*/
+.other-shop {
+    border: 1px solid #cccccc;
+    margin-left: 20px;
+    line-height: 20px;
+    padding: 5px;
+    display: flex;
+    visibility: hidden;
+}
+
+    .other-shop .name-shop {
+        margin-right: 0 !important;
+    }
+
+.arow-down-line {
+    min-width: 16px;
+    background-image: url(../../Contents/Images/arrow-down-line.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/*Css preload*/
+.preloader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.master-table .preloader {
+    background-color: rgb(136, 136, 136);
+}
+
+    .master-table .preloader .loader-container {
+        z-index: 100000;
+        background-color: #ccc;
+        padding: 5px 10px;
+        font: normal 12px/18px 'Segoe UI';
+    }
+
+    .master-table .preloader img {
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+    }
+
+.table-detail .preloader {
+    background-color: rgb(136, 136, 136);
+}
+
+    .table-detail .preloader .loader-container {
+        z-index: 100000;
+        background-color: #ccc;
+        padding: 5px 10px;
+        font: normal 12px/18px 'Segoe UI';
+    }
+
+    .table-detail .preloader img {
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+    }
+
+.table-detail .preloader {
+    position: absolute;
+    width: 100%;
+    height: 35%;
+    z-index: 99999;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*Custom css resizeable*/
+.resize {
+    border: 1px solid #000000;
+}
+
+.ui-resizable-e {
+    cursor: col-resize;
+    width: 10px;
+}
+
+
+.ui-resizable-s {
+    height: 7px;
+    cursor: row-resize !important;
+    width: 100%;
+    left: 0;
+    background-color: #ccc;
+}
+
+.icon-container {
+    width: 44px;
+    height: 44px;
+    background-image: url(../../Contents/images/icon-popup.png);
+    background-position: -165px -2px;
+}
+
+.content-container {
+    padding-left: 10px;
+}
+
+/*Tooltip*/
+.tooltip-warning {
+    background-color: #ff0000;
+    color: #fff;
+    z-index: 999;
+    width: 250px;
+}
+
+#dialogform .misa-toolbar {
+    border: 1px solid #ccc;
+    border-width: 0px 1px;
+}
+
+input {
+    outline: none;
+}
+
+/*#dialogform button {
+    outline: none;
+}*/
+/*Menu chuột phải*/
+.menu-rightclick {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 120px;
+    box-shadow: 0px 1px 10px -2px;
+    position: absolute;
+    background-color: #fff;
+    padding: 1px;
+    border: 1px solid #dfdfdf;
+    border-radius: 3px;
+    z-index: 999;
+}
+
+    .menu-rightclick .menu-item {
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        background-color: #fff;
+        color: #000;
+        cursor: pointer;
+        user-select: none;
+    }
+
+        .menu-rightclick .menu-item[disabled] {
+            opacity: 0.6;
+            cursor: default;
+        }
+
+        .menu-rightclick .menu-item:hover:not([disabled]) {
+            background-color: #0088c2;
+            color: #fff;
+        }
+
+        .menu-rightclick .menu-item:hover .menu-item-dropdown {
+            border-color: #fff transparent transparent transparent;
+        }
+
+        .menu-rightclick .menu-item .menu-item-img {
+            min-width: 16px;
+            height: 16px;
+            background-image: url('../../Contents/Icons/common-icon.png');
+            background-repeat: no-repeat;
+        }
+
+        .menu-rightclick .menu-item .menu-item-title {
+            padding: 0 5px;
+            white-space: nowrap;
+        }
+
+        .menu-rightclick .menu-item .menu-item-dropdown {
+            min-width: 8px;
+            height: 8px;
+            border: 4px solid;
+            border-color: #000 transparent transparent transparent;
+            margin-top: 4px;
+        }
+
+/*CSS backgroud của các menu right click item*/
+.menu-item-img.btn-add {
+    background-position: -150px -178px;
+}
+
+.menu-item-img.btn-duplicate {
+    background-position: -49px -178px;
+}
+
+.menu-item-img.btn-view {
+    background-position: -1651px -129px;
+}
+
+.menu-item-img.btn-edit {
+    background-position: -77px -178px;
+}
+
+.menu-item-img.btn-delete {
+    background-position: -102px -178px;
+}
+
+.menu-item-img.btn-print {
+    background-position: -128px -178px;
+}
+/*CSS backgroud của các menu right click item khi hover*/
+.menu-item:hover:not([disabled]) .menu-item-img.btn-add {
+    background-position: -1px -127px;
+}
+
+.menu-item:hover:not([disabled]) .menu-item-img.btn-duplicate {
+    background-position: -976px -127px;
+}
+
+.menu-item:hover:not([disabled]) .menu-item-img.btn-view {
+    background-position: -1602px -127px;
+}
+
+.menu-item:hover:not([disabled]) .menu-item-img.btn-edit {
+    background-position: -77px -203px;
+}
+
+.menu-item:hover:not([disabled]) .menu-item-img.btn-delete {
+    background-position: -1078px -127px;
+}
+
+.menu-item:hover:not([disabled]) .menu-item-img.btn-print {
+    background-position: -77px -51px;
+}
+
+/*table form chọn đối tượng*/
+#table-select-object tbody tr td:nth-child(1) {
+    text-align: center;
+}
+
+#table-select-object tr td:nth-child(1) {
+    width: 50px;
+}
+
+#table-select-object tr td:nth-child(2) {
+    width: 110px;
+}
+
+#table-select-object tr td:nth-child(3) {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#table-select-object tr td:nth-child(4) {
+    width: 120px;
+}
+
+#table-select-object tr td:nth-child(5) {
+    white-space: normal;
+}
+/*Table View Đối tượng*/
+.show-Object {
+    position: absolute;
+    z-index: 99999;
+    top: 155px;
+    left: 127px;
+    box-shadow: rgb(136, 136, 136) 0px 0px 6px;
+    overflow: auto;
+    height: 137px;
+}
+
+    .show-Object table {
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+    }
+
+        .show-Object table thead {
+            background-color: #ccc;
+        }
+
+            .show-Object table thead th {
+                position: sticky;
+                top: 0;
+            }
+
+                .show-Object table thead th:nth-child(1) {
+                    width: 150px;
+                }
+
+        .show-Object table tr td:nth-child(2) {
+            max-width: 250px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .show-Object table thead th:nth-child(3) {
+            width: 100px;
+        }
+
+        .show-Object table tbody {
+            background-color: #fff;
+        }
+
+            .show-Object table tbody tr:nth-child(even) {
+                background-color: #fff;
+            }
+
+            .show-Object table tbody tr:hover {
+                cursor: pointer;
+                background-color:#026b97;
+                color:#fff;
+            }
+/*Căn chỉnh dữ liệu bảng hàng hóa*/
+tr.product td:nth-child(5) {
+    text-align:right
+}
+tr.product td:nth-child(6) {
+    text-align: right
+}
+tr.product td:nth-child(7) {
+    text-align: right
+}
+#form-add-detail input:disabled {
+    background-color:#fff;
+}
+.disabeled {
+    pointer-events:none;
+}
+/*chỉnh css select loại so sánh tổng tiền*/
+select[field-data="CompareTotalAmountType"] {
+    background: none;
+    text-align: center;
+    width: 27px;
+    height: 27px;
+    padding-left: 10px;
+    margin: 0;
+}
+/*Class warning*/
+.warning {
+    border-color: red !important;
+}
+
+/*timepicker*/
+.ui-timepicker-wrapper {
+    max-height: 145px;
+    width: 120px;
+    text-align: center;
+}
+/* Custom css table children trong dialog chọn hàng hóa*/
+#dialogSelectProduct table tr td:nth-child(1) {
+    width: 250px;
+    position: relative;
+}
+#dialogSelectProduct table tr td:nth-child(2) {
+    width: 288px;
+    position: relative;
+}
+#dialogSelectProduct table tr td:nth-child(3) {
+    width: 185px;
+    position: relative;
+}
+.dialogProduct table tr td .number-child {
+    position: absolute;
+    right: 20px;
+}
+/*custom css dialog confirm hàng hóa*/
+#dialogConfirmProduct table tr td:nth-child(1) {
+    width: 250px;
+    position: relative;
+}
+#dialogConfirmProduct table tr td:nth-child(2) {
+    width: 300px;
+}
+#dialogConfirmProduct table tr td:nth-child(4) {
+    width: 100px;
+}
+#dialogConfirmProduct table tr td:nth-child(5) {
+    width: 40px;
+}

@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C6200D42-7866-4E24-B53F-E0BC570C2956}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MISA.Mshopkeeper02</RootNamespace>
+    <AssemblyName>MISA.Mshopkeeper02</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.2.0\lib\net45\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Unity.Abstractions, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.1\lib\net46\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Configuration, Version=5.0.3.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.2.0\lib\net45\Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.1\lib\net46\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception, Version=5.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.2.0\lib\net45\Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception.Configuration, Version=5.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.2.0\lib\net45\Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RegistrationByConvention, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.2.0\lib\net45\Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ServiceLocation, Version=2.0.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.2.0\lib\net45\Unity.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.WebApi, Version=5.3.0.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.WebAPI.5.3.0\lib\net45\Unity.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Contents\icons\arrow-down-line.png" />
+    <Content Include="Contents\icons\delete-white.png" />
+    <Content Include="Contents\icons\exclamation.png" />
+    <Content Include="Contents\icons\help.png" />
+    <Content Include="Contents\icons\icon-popup.png" />
+    <Content Include="Contents\icons\minus.png" />
+    <Content Include="Contents\icons\not-save.png" />
+    <Content Include="Contents\icons\plus.png" />
+    <Content Include="Contents\icons\Product.png" />
+    <Content Include="Contents\icons\Search-blue.png" />
+    <Content Include="Contents\images\arrow-down-line.png" />
+    <Content Include="Contents\images\check.png" />
+    <Content Include="Contents\images\checkbox-parrent.png" />
+    <Content Include="Contents\images\common-icon.png" />
+    <Content Include="Contents\images\EmployeeImage_2.png" />
+    <Content Include="Contents\images\favicon.ico" />
+    <Content Include="Contents\images\hide_password.png" />
+    <Content Include="Contents\images\icon-help-18-hover.png" />
+    <Content Include="Contents\images\icon-popup.png" />
+    <Content Include="Contents\images\loading1.gif" />
+    <Content Include="Contents\images\loading.gif" />
+    <Content Include="Contents\images\radio-check.png" />
+    <Content Include="Contents\images\radio-uncheck.png" />
+    <Content Include="Contents\images\slibarmenu.png" />
+    <Content Include="Contents\images\uncheck.png" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="CSS\common\buttons.css" />
+    <Content Include="CSS\common\dialog.css" />
+    <Content Include="CSS\common\dropdown.css" />
+    <Content Include="CSS\common\filter.css" />
+    <Content Include="CSS\common\tab.css" />
+    <Content Include="CSS\common\table.css" />
+    <Content Include="CSS\icon\all.css" />
+    <Content Include="CSS\lib\jquery.timepicker.min.css" />
+    <Content Include="CSS\lib\selectize.css" />
+    <Content Include="CSS\lib\selectize.js" />
+    <Content Include="CSS\Views\employee\component.css" />
+    <Content Include="CSS\Views\employee\employee.css" />
+    <Content Include="CSS\Views\employee\subdialog.css" />
+    <Content Include="CSS\Views\inward.css" />
+    <Content Include="CSS\Views\outward.css" />
+    <Content Include="CSS\Views\goodIssue.css" />
+    <Content Include="CSS\webfonts\fa-brands-400.svg" />
+    <Content Include="CSS\webfonts\fa-regular-400.svg" />
+    <Content Include="CSS\webfonts\fa-solid-900.svg" />
+    <Content Include="Models\MshopKeeper.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MshopKeeper.edmx</DependentUpon>
+      <LastGenOutput>MshopKeeper.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\MshopKeeper.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MshopKeeper.edmx</DependentUpon>
+      <LastGenOutput>MshopKeeper.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\base\form-inward.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Scripts\lib\jquery-ui.min.js" />
+    <Content Include="Scripts\lib\jquery.timepicker.min.js" />
+    <Content Include="Scripts\lib\tableHeadFixer.js" />
+    <Content Include="Scripts\lib\toastr.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\views\dropdown.js" />
+    <Content Include="Scripts\views\employeePage\callApi.js" />
+    <Content Include="Scripts\views\employeePage\employee.js" />
+    <Content Include="Scripts\views\filter.js" />
+    <Content Include="Scripts\views\inward.js" />
+    <Content Include="Scripts\views\moneyFund.js" />
+    <Content Include="Scripts\views\outward.js" />
+    <Content Include="Scripts\views\goodIssue\ajaxAPI.js" />
+    <Content Include="Scripts\views\goodIssue\dialogGoodIssue.js" />
+    <Content Include="Scripts\views\goodIssue\formGoodIssue.js" />
+    <Content Include="Scripts\views\goodIssue\goodIssue.js" />
+    <Content Include="Scripts\views\sidebar.js" />
+    <Content Include="Scripts\views\tab.js" />
+    <Content Include="Scripts\views\table.js" />
+    <Content Include="Scripts\views\toolbar.js" />
+    <Content Include="Contents\icons\common-icon.png" />
+    <Content Include="Contents\icons\Edit16.png" />
+    <Content Include="Contents\icons\IconSprite.png" />
+    <Content Include="Contents\images\logo-mshopkeeper.png" />
+    <Content Include="CSS\bootstrap.min.css" />
+    <Content Include="CSS\common\common.css" />
+    <Content Include="CSS\common\grid.css" />
+    <Content Include="CSS\common\toolbar.css" />
+    <Content Include="CSS\lib\images\ui-icons.png" />
+    <Content Include="CSS\lib\images\ui-icons_444444_256x240.png" />
+    <Content Include="CSS\lib\images\ui-icons_555555_256x240.png" />
+    <Content Include="CSS\lib\images\ui-icons_777620_256x240.png" />
+    <Content Include="CSS\lib\images\ui-icons_777777_256x240.png" />
+    <Content Include="CSS\lib\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="CSS\lib\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="CSS\lib\jquery-ui.min.css" />
+    <Content Include="CSS\Views\index.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\base\dialog.js" />
+    <Content Include="Scripts\common\common.js" />
+    <Content Include="Scripts\lib\bootstrap.min.js" />
+    <Content Include="Scripts\lib\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\lib\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\lib\popper.min.js" />
+    <Content Include="Views\employee.html" />
+    <Content Include="Views\inventory.html" />
+    <Content Include="Views\inward.html" />
+    <Content Include="Views\moneyBook.html" />
+    <Content Include="Views\outward.html" />
+    <Content Include="Views\moneyFund.html" />
+    <Content Include="Views\goodsIssue.html" />
+    <Content Include="Views\template.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Common\DataAccess.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\InwardController.cs" />
+    <Compile Include="Controllers\MoneyFundController.cs" />
+    <Compile Include="Controllers\OutwardController.cs" />
+    <Compile Include="Controllers\OutwardkylsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AjaxResult.cs" />
+    <Compile Include="Models\DAL\RepositoryImpl\ObjectRepositoryImpl.cs" />
+    <Compile Include="Models\DAL\RepositoryImpl\ReckoningRepositoryImpl.cs" />
+    <Compile Include="Models\DAL\RepositoryImpl\Repository.cs" />
+    <Compile Include="Models\DAL\RepositoryImpl\VoucherRepositoryImpl.cs" />
+    <Compile Include="Models\DAL\Repository\IRepository.cs" />
+    <Compile Include="Models\DAL\Repository\ObjectRepository.cs" />
+    <Compile Include="Models\DAL\Repository\ReckoningRepository.cs" />
+    <Compile Include="Models\DAL\Repository\VoucherRepository.cs" />
+    <Compile Include="Models\EntityBase.cs" />
+    <Compile Include="Models\MshopKeeper.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MshopKeeper.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MshopKeeper.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MshopKeeper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MshopKeeper.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MshopKeeper.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Object.cs">
+      <DependentUpon>MshopKeeper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Outwardkyls.cs" />
+    <Compile Include="Models\Reckoning.cs">
+      <DependentUpon>MshopKeeper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RequestData\FilterVoucherByTimeRequest.cs" />
+    <Compile Include="Models\RequestData\ObjectRequest.cs" />
+    <Compile Include="Models\RequestData\VoucherRequest.cs" />
+    <Compile Include="Models\ResponseData\RefVoucherResponse.cs" />
+    <Compile Include="Models\ResponseData\VoucherResponse.cs" />
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>MshopKeeper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Contents\fonts\fontello.woff" />
+    <Content Include="Contents\fonts\Tahoma_Bold.woff" />
+    <Content Include="Contents\fonts\Tahoma_Regular.woff" />
+    <Content Include="CSS\webfonts\fa-brands-400.eot" />
+    <Content Include="CSS\webfonts\fa-brands-400.ttf" />
+    <Content Include="CSS\webfonts\fa-brands-400.woff" />
+    <Content Include="CSS\webfonts\fa-brands-400.woff2" />
+    <Content Include="CSS\webfonts\fa-regular-400.eot" />
+    <Content Include="CSS\webfonts\fa-regular-400.ttf" />
+    <Content Include="CSS\webfonts\fa-regular-400.woff" />
+    <Content Include="CSS\webfonts\fa-regular-400.woff2" />
+    <Content Include="CSS\webfonts\fa-solid-900.eot" />
+    <Content Include="CSS\webfonts\fa-solid-900.ttf" />
+    <Content Include="CSS\webfonts\fa-solid-900.woff" />
+    <Content Include="CSS\webfonts\fa-solid-900.woff2" />
+    <EntityDeploy Include="Models\MshopKeeper.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MshopKeeper.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\MshopKeeper.edmx.diagram">
+      <DependentUpon>MshopKeeper.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="CSS\lib\toastr.css" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\Common\" />
+    <Folder Include="UploadedImage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MISA.BLL\MISA.BLL.csproj">
+      <Project>{ba38e2db-4bd7-4f02-8a34-cb5674f7c9a3}</Project>
+      <Name>MISA.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MISA.Common\MISA.Common.csproj">
+      <Project>{ba8aa539-4b24-4206-bc96-aae3ec7efed0}</Project>
+      <Name>MISA.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MISA.DAL\MISA.DAL.csproj">
+      <Project>{6aa63ccb-feae-4f93-89f7-6026ece945ac}</Project>
+      <Name>MISA.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MISA.Entities\MISA.Entities.csproj">
+      <Project>{f06fefa3-0924-4d22-a563-a5c63f24b91e}</Project>
+      <Name>MISA.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2344</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2344/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

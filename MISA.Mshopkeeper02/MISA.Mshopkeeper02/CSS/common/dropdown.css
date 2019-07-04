@@ -1,0 +1,247 @@
+﻿/*CreatedBy::after NNLam 01/05/2019*/
+.dropdown-content {
+    position: absolute;
+    margin-top: 27px;
+    width: 100%;
+    display: none;
+    z-index: 90;
+}
+
+/*hiển thị dropdown*/
+.show {
+    display: block !important;
+}
+/*biểu tượng mũi tên chỉ xuống*/
+.arow-down-line {
+    min-width: 16px;
+    height: 16px;
+    background-image: url('../../Contents/Images/arrow-down-line.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 3px;
+    cursor: pointer;
+}
+
+/*Biểu tượng thùng rác đỏ*/
+.delete-icon {
+    min-width: 16px;
+    height: 16px;
+    background-image: url('../../Contents/Images/common-icon.png');
+    background-position: -2px -3px;
+    cursor: pointer;
+}
+
+/*Biểu tượng đồng hồ*/
+.icon-time {
+    min-width: 16px;
+    height: 16px;
+    background-image: url('../../Contents/Images/common-icon.png');
+    background-repeat: no-repeat;
+    background-position: -27px -177px;
+    margin: 0 3px;
+    cursor: pointer;
+}
+
+/*Biểu tượng kính lúp*/
+.search-icon {
+    min-width: 16px;
+    height: 16px;
+    background-image: url('../../Contents/Images/common-icon.png');
+    background-repeat: no-repeat;
+    background-position: -352px -2px;
+    margin: 0 3px;
+    cursor: pointer;
+}
+/*Biểu tượng kính lúp màu blue*/
+.search-icon-blue {
+    min-width: 16px;
+    height: 16px;
+    background-image: url('../../Contents/Icons/Search-blue.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 3px;
+    cursor: pointer;
+}
+
+/*Biểu tượng dấu cộng*/
+.icon-plus {
+    min-width: 16px;
+    height: 16px;
+    background-image: url('../../Contents/Icons/plus.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+/* Biểu tượng dấu trừ*/
+.icon-minus {
+    min-width: 16px;
+    height: 16px;
+    background-image: url('../../Contents/Icons/minus.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+/*Biểu tượng mũi tên quay lại*/
+.icon-back {
+    display: inline-block;
+    min-width: 16px;
+    height: 16px;
+    background-image: url('../../Contents/Images/common-icon.png');
+    background-position: -454px -148px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+/*Biểu tượng cảnh báo*/
+.icon-exclamation {
+    min-width: 16px;
+    height: 16px;
+    margin: 0 5px;
+    background-image: url('../../Contents/Icons/exclamation.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/*Biểu tượng dấu hỏi*/
+.icon-question {
+    min-width: 44px;
+    height: 44px;
+    background: url('../../Contents/icons/icon-popup.png') no-repeat -165px -2px;
+    margin: 0 5px;
+}
+
+/*Biểu tượng loading*/
+.icon-loading {
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url('../../Contents/images/loading.gif');
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+/*Checkbox hình vuông*/
+.misa-checkbox {
+    position: relative;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin: 0 5px;
+}
+
+    .misa-checkbox input[type="checkbox"] {
+        opacity: 0;
+    }
+
+    .misa-checkbox .checkbox-square {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('../../Contents/Images/uncheck.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        transition: 0.2s;
+    }
+
+    .misa-checkbox input[type="checkbox"]:focus + .checkbox-square {
+        transform: scale(1.2);
+        box-shadow: 0 0 13px #888;
+    }
+
+    .misa-checkbox input[type="checkbox"]:checked + .checkbox-square {
+        background-image: url('../../Contents/Images/check.png');
+    }
+
+    .misa-checkbox input[type="checkbox"].check-parent:not(:checked) + .checkbox-square {
+        background-image: url('../../Contents/Images/checkbox-parrent.png');
+    }
+/*misa radio*/
+.misa-radio {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+    .misa-radio input[type="radio"] {
+        opacity: 0;
+    }
+
+    .misa-radio .radio-circle {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('../../Contents/Images/radio-uncheck.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        transition: 0.2s;
+    }
+
+    .misa-radio input[type="radio"]:focus + .radio-circle {
+        transform: scale(1.2);
+        box-shadow: 0 0 13px #888;
+    }
+
+    .misa-radio input[type="radio"]:checked + .radio-circle {
+        background-image: url('../../Contents/Images/radio-check.png');
+    }
+
+/*dropdown toolbar add*/
+.dropdown-add {
+    position: absolute;
+    top: 50px;
+    left: -98px;
+    width: 107px;
+    height: 60px;
+    margin-left: 108px;
+    display: none;
+    border-radius: 4px 4px 0px 0px;
+    background-color: #fff;
+    color: #000000;
+    z-index: 2;
+    box-shadow: 1px 1px #888888;
+}
+/*dropdown toolbar add phiếu chi tiền*/
+.add-vouchers {
+    position: relative;
+    width: 100%;
+    height: 29px;
+    text-align: center;
+    align-items: center;
+    padding-top: 5px;
+    border-bottom: 1px solid #ffffff;
+}
+    /*set hover*/
+    .add-vouchers:hover {
+        background-color: #0088c2;
+        color: #fff;
+    }
+
+/*dropdown toolbar add phiếu thu tiền*/
+.add-receipts {
+    position: relative;
+    width: 100%;
+    height: 26px;
+    text-align: center;
+    align-items: center;
+    padding-top: 9px;
+}
+    /*set hover*/
+    .add-receipts:hover {
+        background-color: #0088c2;
+        color: #fff;
+    }

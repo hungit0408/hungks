@@ -1,0 +1,474 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Template</title>
+    <link href="../CSS/lib/jquery-ui.min.css" rel="stylesheet" />
+    <link href="../CSS/common/table.css" rel="stylesheet" />
+    <link href="../CSS/common/filter.css" rel="stylesheet" />
+    <link href="../CSS/common/tab.css" rel="stylesheet" />
+    <link href="../CSS/Views/employee/component.css" rel="stylesheet" />
+    <link href="../CSS/common/toolbar.css" rel="stylesheet" />
+    <link href="../CSS/common/dropdown.css" rel="stylesheet" />
+    <link href="../CSS/common/buttons.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Tollbar</h1>
+    <h2>Cần file toolbar.css</h2>
+    <h2>Thêm class "diable" vào những button cần ẩn</h2>
+    <div class="misa-toolbar">
+        <div class="toolbar-item">
+            <div class="toolbar-item-img btn-before"></div>
+            <div class="toolbar-item-title">Trước</div>
+            <div class="toolbar-item-dropdown"></div>
+        </div>
+        <div class="toolbar-item">
+            <div class="toolbar-item-title">Sau</div>
+            <div class="toolbar-item-img btn-after"></div>
+            <div class="toolbar-item-dropdown"></div>
+        </div>
+        <div class="toolbar-item">
+            <div class="toolbar-item-img btn-save"></div>
+            <div class="toolbar-item-title">Lưu</div>
+        </div>
+        <div class="toolbar-item">
+            <div class="toolbar-item-img btn-stop"></div>
+            <div class="toolbar-item-title">Hoãn</div>
+        </div>
+        <div class="toolbar-item">
+            <div class="toolbar-item-img btn-add"></div>
+            <div class="toolbar-item-title">Thêm mới</div>
+            <div class="toolbar-item-dropdown"></div>
+        </div>
+        <div class="toolbar-item disable">
+
+            <div class="toolbar-item-img btn-duplicate"></div>
+            <div class="toolbar-item-title">Nhân bản</div>
+
+        </div>
+        <div class="toolbar-item">
+            <div class="toolbar-item-img btn-view"></div>
+            <div class="toolbar-item-title">Xem</div>
+        </div>
+        <div class="toolbar-item">
+
+            <div class="toolbar-item-img btn-edit"></div>
+            <div class="toolbar-item-title">Sửa</div>
+
+        </div>
+        <div class="toolbar-item">
+
+            <div class="toolbar-item-img btn-delete"></div>
+            <div class="toolbar-item-title">Xóa</div>
+
+        </div>
+        <div class="toolbar-item">
+
+            <div class="toolbar-item-img btn-load"></div>
+            <div class="toolbar-item-title">Nạp</div>
+
+        </div>
+        <div class="toolbar-item">
+            <div class="toolbar-item-img btn-print"></div>
+            <div class="toolbar-item-title">In</div>
+            <div class="toolbar-item-dropdown"></div>
+        </div>
+        <div class="toolbar-item">
+            <div class="toolbar-item-img btn-help"></div>
+            <div class="toolbar-item-title">Trợ giúp</div>
+        </div>
+        <div class="toolbar-item">
+            <div class="toolbar-item-img btn-close"></div>
+            <div class="toolbar-item-title">Đóng</div>
+        </div>
+    </div>
+    <h1>Filter </h1>
+    <h2>Cần file filter.css, table.js, filter.js</h2>
+    <h2>Tạo thẻ  có class="filter-data" là xong</h2>
+    <div class="filter-data">
+        <!--<div class="rectangle timerange">
+            <div class="timerange-value">Tháng này</div>
+            <div class="timerange-arrowdown"></div>
+            <div class="timerange-container" style="display: none">
+                <div>Hôm nay</div>
+                <div>Hôm qua</div>
+                <div>Tuần này</div>
+                <div>Tuần trước</div>
+                <div>Tháng này</div>
+                <div>Tháng trước</div>
+                <div>Quý này</div>s
+                <div>Quý trước</div>
+                <div>6 tháng trước</div>
+                <div>Năm nay</div>
+                <div>Năm trước</div>
+                <div>Khác</div>
+            </div>
+        </div>
+        <span>Từ</span>
+        <div class="flex-center rectangle startdate">
+            <input type="text" class="date-picker" name="txtstartDate" value="" />
+            <div class="date-icon-picker"></div>
+        </div>
+        <span>đến</span>
+        <div class="flex-center rectangle enddate">
+            <input type="text" class="date-picker" name="txtstartDate" value="" />
+            <div class="date-icon-picker"></div>
+        </div>
+        <div class="rectangle getdata flex-center">
+            <div class="filt-icon"></div>
+            Lấy dữ liệu
+        </div>-->
+    </div>
+    <h1>Table chung cho dự án</h1>
+    <h2>Cần file table.css, table.js</h2>
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2" style="text-align:center">
+                    <input type="checkbox" name="" value="" id="ckbRoot" />
+                </th>
+                <th>Tìm kiếm</th>
+                <th>Tìm kiếm</th>
+                <th>Drop box</th>
+                <th>Biểu thức</th>
+                <th>Ngày tháng</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="flex-center">
+                        <div class="filter filter-sreach">
+                        </div>
+                        <div class="fil-text">
+                            <input type="text" name="" value="" />
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="flex-center">
+                        <div class="filter filt-compare">
+                            <div class="filt-compare-value">*</div>
+                            <div class="filt-compare-container" style="display: none">
+                                <div>
+                                    <span>*</span> : Chứa
+                                </div>
+                                <div>
+                                    <span>=</span> : Bằng
+                                </div>
+                                <div>
+                                    <span>+</span> : Bắt đầu bằng
+                                </div>
+                                <div>
+                                    <span>-</span> : Kết thúc bằng
+                                </div>
+                                <div>
+                                    <span>!</span> : Không chứa
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fil-text">
+                            <input type="text" name="" value="" />
+                        </div>
+
+
+                    </div>
+
+                </td>
+                <td>
+                    <select>
+                        <option value="value">Tất cả</option>
+                        <option value="value">Loại 1</option>
+                        <option value="value">Loại 2</option>
+                    </select>
+                </td>
+                <td>
+                    <div>
+                        <div class="flex-center">
+                            <div class="filter filt-compare">
+                                <div class="filt-compare-value">=</div>
+                                <div class="filt-compare-container" style="display: none">
+                                    <div>
+                                        <span>=</span> : Bằng
+                                    </div>
+                                    <div>
+                                        <span><</span> : Nhỏ hơn
+                                    </div>
+                                    <div>
+                                        <span>&le;</span> : Nhỏ hơn hoặc bằng
+                                    </div>
+                                    <div>
+                                        <span>></span> : Lớn hơn
+                                    </div>
+                                    <div>
+                                        <span>&ge;</span> : Lớn hơn hoặc bằng
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fil-text">
+                                <input type="text" name="" value="" />
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="flex-center fil-text">
+                        <input type="text" name="" id="" class="date-picker">
+                    </div>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="ckbRow" value="" /></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="row-selected">
+                <td><input type="checkbox" name="ckbRow" value="" /></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ckbRow" value="" /></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ckbRow" value="" /></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ckbRow" value="" /></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ckbRow" value="" /></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>2.000.000</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+    <div class="show-option flex-center">
+        <div class="option-left">
+            <div class="left-arrow">
+                <span class="arrow-icon arrow-left-double"></span>
+                <span class="arrow-icon arrow-left-single"></span>
+                <span>Trang</span>
+            </div>
+            <div class="curent-page">
+                <input type="text" name="name" value="1" />
+                <span>trên 1</span>
+            </div>
+            <div class="right-arrow">
+                <span class="arrow-icon arrow-right-single"></span>
+                <span class="arrow-icon arrow-right-double"></span>
+                <span class="load-data-icon"></span>
+                <select>
+                    <option value="value">15</option>
+                    <option value="value">25</option>
+                    <option value="value">50</option>
+                    <option value="value">100</option>
+                </select>
+            </div>
+        </div>
+        <div class="option-right">5-15 trong 30 kết quả</div>
+    </div>
+
+
+    <!--tab component-->
+
+    <div>
+        <h3>Tap cho du an</h3>
+        <div class="tab-container">
+            <div class="tab-buttons">
+                <button class="active">Tab 1</button>
+                <button>Tab 2</button>
+                <button>Tab 3</button>
+                <button>Tab 4</button>
+            </div>
+            <div class="tab-panel first-tab">
+                Tab1 : content
+            </div>
+            <div class="tab-panel">
+                Tab2 : content
+            </div>
+            <div class="tab-panel">
+                Tab3 : content
+            </div>
+            <div class="tab-panel">
+                Tab4 : content
+            </div>
+        </div>
+
+    </div>
+    <h1>Checkbox và radio</h1>
+    <h2>dropdown.css</h2>
+    <label class="misa-checkbox">
+        <input type="checkbox" name="" value="" />
+        <span class="checkbox-square"></span>
+    </label>
+    <label class="misa-radio">
+        <input type="radio" name="radioName" value="" />
+        <span class="radio-circle"></span>
+    </label>
+    <label class="misa-radio">
+        <input type="radio" name="radioName" value="" />
+        <span class="radio-circle"></span>
+    </label>
+
+    <!--button component-->
+    <div style="margin: 20px">
+        <!--1 button-->
+        <button class="one-button select">
+            <span class="button-icon">
+
+            </span>
+            <span class="button-title">
+                Chọn
+            </span>
+        </button>
+        <!--1 button-->
+        <button class="one-button cancel">
+            <span class="button-icon">
+
+            </span>
+            <span class="button-title">
+                Hủy bỏ
+            </span>
+        </button>
+        <!--1 button-->
+        <button class="one-button back">
+            <span class="button-icon">
+
+            </span>
+            <span class="button-title">
+                Quay lại
+            </span>
+        </button>
+        <!--1 button-->
+        <button class="one-button acept">
+            <span class="button-icon">
+
+            </span>
+            <span class="button-title">
+                Đòng ý
+            </span>
+        </button>
+        <!--1 button-->
+        <button class="one-button add-element">
+            <span class="button-icon">
+
+            </span>
+            <span class="button-title">
+                Thêm thành phần
+            </span>
+        </button>
+        <!--1 button-->
+        <button class="one-button save">
+            <span class="button-icon">
+
+            </span>
+            <span class="button-title">
+                Lưu
+            </span>
+        </button>
+        <!--1 button-->
+        <button class="one-button save-duplicate">
+            <span class="button-icon">
+
+            </span>
+            <span class="button-title">
+                Lưu và nhân bản
+            </span>
+        </button>
+        <!--1 button-->
+        <button class="one-button add-duplicate">
+            <span class="button-icon">
+
+            </span>
+            <span class="button-title">
+                Lưu và nhân bản
+            </span>
+        </button>
+
+        <!--1 button-->
+        <button class="one-button help">
+            <span class="button-icon">
+
+            </span>
+            <span class="button-title">
+                Trợ giúp
+            </span>
+        </button>
+        <!--1 button-->
+        <button class="one-button delete">
+            <span class="button-icon">
+
+            </span>
+            <span class="button-title">
+                Xóa
+            </span>
+        </button>
+        <!--1 button-->
+        <button class="one-button not-save">
+            <span class="button-icon">
+
+            </span>
+            <span class="button-title">
+                Không lưu
+            </span>
+        </button>
+        <!--1 button-->
+        <button class="one-button continute" disabled>
+
+            <span class="button-title">
+                Tiếp tục
+            </span>
+            <span class="button-icon">
+
+            </span>
+        </button>
+
+    </div>
+
+
+    <script src="../Scripts/lib/jquery-3.3.1.min.js"></script>
+    <script src="../Scripts/lib/jquery-ui.min.js"></script>
+    <script src="../Scripts/common/common.js"></script>
+    <script src="../Scripts/base/dialog.js"></script>
+    <script src="../Scripts/Views/table.js"></script>
+    <script src="../Scripts/Views/filter.js"></script>
+    <script src="../Scripts/Views/dropdown.js"></script>
+    <script src="../Scripts/Views/tab.js"></script>
+</body>
+</html>

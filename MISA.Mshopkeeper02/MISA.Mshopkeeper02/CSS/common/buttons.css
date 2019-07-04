@@ -1,0 +1,129 @@
+﻿.one-button {
+    cursor: pointer;
+    padding: 7px 12px;
+    border-radius: 3px;
+    font-weight: 600 !important;
+    display: inline-flex;
+    align-items: center;
+    height: 35px;
+}
+
+    .one-button .button-icon {
+        display: inline-block !important;
+        height: 16px;
+        width: 16px;
+        margin-right: 3px;
+    }
+
+    .one-button.select {
+        background: #026b97;
+        border: 1px solid #026b97;
+        color: white;
+    }
+
+        .one-button.select .button-icon {
+            background: url('../../Contents/Icons/common-icon.png') no-repeat -377px -127px;
+        }
+
+    /*cancel button*/
+    .one-button.cancel, .one-button.help {
+        background: #fff;
+        border: 1px solid #fff;
+    }
+
+        .one-button.cancel:hover, .one-button.help:hover {
+            border: 1px solid #026b97;
+        }
+
+        .one-button.cancel .button-icon {
+            background: url('../../Contents/Icons/common-icon.png') no-repeat -251px -127px;
+        }
+
+    /*back button*/
+
+    .one-button.back {
+        background: #fff;
+        border: 1px solid #026b97;
+    }
+
+        .one-button.back .button-icon {
+            background: url('../../Contents/Icons/common-icon.png') no-repeat -453px -126px;
+        }
+
+    /*accept button*/
+
+    .one-button.acept {
+        background: #fff;
+        border: 1px solid #026b97;
+    }
+
+        .one-button.acept .button-icon {
+            background: url('../../Contents/Icons/common-icon.png') no-repeat -352px -127px;
+        }
+
+    /* add element button*/
+
+    .one-button.add-element, .one-button.save-duplicate, .one-button.add-duplicate, .one-button.not-save {
+        background: #fff;
+        border: 1px solid #026b97;
+    }
+
+        .one-button.add-element .button-icon {
+            background: url('../../Contents/Icons/common-icon.png') no-repeat -26px -127px;
+        }
+
+        .one-button.add-duplicate .button-icon {
+            background: url('../../../contents/icons/common-icon.png') no-repeat -29px -127px;
+        }
+
+    /* save button*/
+
+    .one-button.save, .one-button.continute {
+        background: #026b97;
+        border: 1px solid #026b97;
+        color: #fff;
+    }
+
+        .one-button.save .button-icon {
+            background: url('../../Contents/Icons/common-icon.png') no-repeat -325px -127px;
+        }
+
+    /* save-duplicate button*/
+
+    .one-button.save-duplicate .button-icon {
+        background: url('../../Contents/Icons/common-icon.png') no-repeat -952px -126px;
+    }
+
+    /* help button*/
+    .one-button.help {
+        position: absolute;
+        left: 0;
+    }
+
+        .one-button.help .button-icon {
+            background: url('../../Contents/Icons/help.png') no-repeat center center;
+        }
+
+    /* delete button*/
+
+    .one-button.delete {
+        background: #df4646;
+        border: 1px solid #df4646;
+        color: #fff;
+    }
+
+        .one-button.delete .button-icon {
+            background: url('../../Contents/Icons/delete-white.png') no-repeat 0px 1px;
+        }
+
+    /* not save button*/
+    .one-button.not-save .button-icon {
+        background: url('../../Contents/Icons/not-save.png') no-repeat;
+    }
+
+    /* continute button*/
+
+    .one-button.continute .button-icon {
+        background: url('../../Contents/Icons/common-icon.png') no-repeat -429px -127px;
+        margin-left: 3px;
+    }

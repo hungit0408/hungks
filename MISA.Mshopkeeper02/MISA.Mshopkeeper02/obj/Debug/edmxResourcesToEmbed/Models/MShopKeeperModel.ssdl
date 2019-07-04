@@ -1,0 +1,590 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MISA.MShopKeeperModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BudgetItem">
+    <Key>
+      <PropertyRef Name="BudgetItemID" />
+    </Key>
+    <Property Name="BudgetItemID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="BudgetItemName" Type="nvarchar" MaxLength="255" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Color">
+    <Key>
+      <PropertyRef Name="ColorCode" />
+    </Key>
+    <Property Name="ColorCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ColorName" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CustomerCategoryID" Type="uniqueidentifier" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="255" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Gender" Type="bit" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="MenberLevelID" Type="uniqueidentifier" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="255" />
+    <Property Name="CompanyTaxCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="Inactive" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="CustomerCategory">
+    <Key>
+      <PropertyRef Name="CustomerCategoryID" />
+    </Key>
+    <Property Name="CustomerCategoryID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerCategoryCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CustomerCategoryName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ParentID" Type="uniqueidentifier" />
+    <Property Name="Descripton" Type="nvarchar" MaxLength="255" />
+    <Property Name="Inactive" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EmployeeCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="EmployeeName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="AllowUseSoftWare" Type="bit" />
+    <Property Name="WorkingStatus" Type="int" />
+    <Property Name="Gender" Type="bit" />
+    <Property Name="MaritalStatus" Type="bit" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="NativeAddress" Type="nvarchar" MaxLength="255" />
+    <Property Name="NativeCountry" Type="nvarchar" MaxLength="255" />
+    <Property Name="NativeProvince" Type="nvarchar" MaxLength="255" />
+    <Property Name="NativeDistrict" Type="nvarchar" MaxLength="255" />
+    <Property Name="NativeVillage" Type="nvarchar" MaxLength="255" />
+    <Property Name="CurrentAddress" Type="nvarchar" MaxLength="255" />
+    <Property Name="CurrentCountry" Type="nvarchar" MaxLength="255" />
+    <Property Name="CurrentProvince" Type="nvarchar" MaxLength="255" />
+    <Property Name="CurrentDistrict" Type="nvarchar" MaxLength="255" />
+    <Property Name="CurrentVillage" Type="nvarchar" MaxLength="255" />
+    <Property Name="StoreID" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="EmployeeRole">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="EmployeeID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleID" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="InventoryItem">
+    <Key>
+      <PropertyRef Name="InventoryItemID" />
+    </Key>
+    <Property Name="InventoryItemID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InventoryItemCategoryID" Type="uniqueidentifier" />
+    <Property Name="SKUCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="BarCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="IventoryItemName" Type="nvarchar" MaxLength="255" />
+    <Property Name="IventoryItemNameAbbr" Type="nchar" MaxLength="255" />
+    <Property Name="CostPrice" Type="money" />
+    <Property Name="UnitPrice" Type="money" />
+    <Property Name="UnitID" Type="int" />
+    <Property Name="MinimumStock" Type="int" />
+    <Property Name="MaximumStock" Type="int" />
+    <Property Name="StockID" Type="uniqueidentifier" />
+    <Property Name="ShowLocation" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShowInMenu" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="InventoryItemCategory">
+    <Key>
+      <PropertyRef Name="InventoryItemCategoryID" />
+    </Key>
+    <Property Name="InventoryItemCategoryID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ItemCategoryCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ItemCategoryName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ParentID" Type="uniqueidentifier" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="Inactive" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="InventoryItemProperty">
+    <Key>
+      <PropertyRef Name="InventoryItemID" />
+      <PropertyRef Name="ColorCode" />
+      <PropertyRef Name="SizeCode" />
+    </Key>
+    <Property Name="InventoryItemID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ColorCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="SizeCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="SKUPropCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="ItemPropName" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Ref">
+    <Key>
+      <PropertyRef Name="RefID" />
+    </Key>
+    <Property Name="RefID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RefType" Type="int" Nullable="false" />
+    <Property Name="RefNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="RefDate" Type="datetime" Nullable="false" />
+    <Property Name="AccountObjectID" Type="uniqueidentifier" />
+    <Property Name="ObjectType" Type="int" />
+    <Property Name="ContactName" Type="nvarchar" MaxLength="100" />
+    <Property Name="EmployeeID" Type="uniqueidentifier" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="TotalAmount" Type="money" />
+    <Property Name="VendorID" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="RefDetail">
+    <Key>
+      <PropertyRef Name="RefDetailID" />
+    </Key>
+    <Property Name="RefDetailID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RefID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InventoryItemID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="StockID" Type="uniqueidentifier" />
+    <Property Name="UnitID" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="UnitPrice" Type="money" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="Amount" Type="money" />
+    <Property Name="BudgetItemID" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Size">
+    <Key>
+      <PropertyRef Name="SizeCode" />
+    </Key>
+    <Property Name="SizeCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Stock">
+    <Key>
+      <PropertyRef Name="StockID" />
+    </Key>
+    <Property Name="StockID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="StockLocation" Type="nvarchar" MaxLength="255" />
+    <Property Name="StockName" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="StoreID" />
+    </Key>
+    <Property Name="StoreID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="StoreName" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Unit">
+    <Key>
+      <PropertyRef Name="UnitID" />
+    </Key>
+    <Property Name="UnitID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UnitName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Descriptiom" Type="nvarchar" MaxLength="255" />
+    <Property Name="Inactive" Type="bit" />
+  </EntityType>
+  <EntityType Name="Vendor">
+    <Key>
+      <PropertyRef Name="VendorID" />
+    </Key>
+    <Property Name="VendorID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Type" Type="int" />
+    <Property Name="VendorCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="VendorName" Type="nvarchar" MaxLength="255" />
+    <Property Name="VendorType" Type="int" />
+    <Property Name="Address" Type="nvarchar" MaxLength="255" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="MaximizeDebtAmount" Type="money" />
+    <Property Name="DueTime" Type="int" />
+    <Property Name="BankAccount" Type="nvarchar" MaxLength="50" />
+    <Property Name="BankName" Type="nvarchar" MaxLength="255" />
+    <Property Name="BankBranchName" Type="nvarchar" MaxLength="255" />
+    <Property Name="ContactName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ContactPrefix" Type="nvarchar" MaxLength="100" />
+    <Property Name="ContactEmail" Type="nvarchar" MaxLength="100" />
+    <Property Name="ContactTitle" Type="nvarchar" MaxLength="255" />
+    <Property Name="ContactTel" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactAddress" Type="nvarchar" MaxLength="255" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_Customer_CustomerGroup">
+    <End Role="CustomerCategory" Type="Self.CustomerCategory" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerCategory">
+        <PropertyRef Name="CustomerCategoryID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="CustomerCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerCategory_CustomerCategory">
+    <End Role="CustomerCategory" Type="Self.CustomerCategory" Multiplicity="0..1" />
+    <End Role="CustomerCategory1" Type="Self.CustomerCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerCategory">
+        <PropertyRef Name="CustomerCategoryID" />
+      </Principal>
+      <Dependent Role="CustomerCategory1">
+        <PropertyRef Name="ParentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Store">
+    <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="StoreID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="StoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeRole_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="EmployeeRole" Type="Self.EmployeeRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="EmployeeRole">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeRole_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="EmployeeRole" Type="Self.EmployeeRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="EmployeeRole">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventoryItemCategory_InventoryItemCategory">
+    <End Role="InventoryItemCategory" Type="Self.InventoryItemCategory" Multiplicity="0..1" />
+    <End Role="InventoryItemCategory1" Type="Self.InventoryItemCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventoryItemCategory">
+        <PropertyRef Name="InventoryItemCategoryID" />
+      </Principal>
+      <Dependent Role="InventoryItemCategory1">
+        <PropertyRef Name="ParentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventoryItemProperty_Color">
+    <End Role="Color" Type="Self.Color" Multiplicity="1" />
+    <End Role="InventoryItemProperty" Type="Self.InventoryItemProperty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Color">
+        <PropertyRef Name="ColorCode" />
+      </Principal>
+      <Dependent Role="InventoryItemProperty">
+        <PropertyRef Name="ColorCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventoryItemProperty_IventoryItem">
+    <End Role="InventoryItem" Type="Self.InventoryItem" Multiplicity="1" />
+    <End Role="InventoryItemProperty" Type="Self.InventoryItemProperty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventoryItem">
+        <PropertyRef Name="InventoryItemID" />
+      </Principal>
+      <Dependent Role="InventoryItemProperty">
+        <PropertyRef Name="InventoryItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventoryItemProperty_Size">
+    <End Role="Size" Type="Self.Size" Multiplicity="1" />
+    <End Role="InventoryItemProperty" Type="Self.InventoryItemProperty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Size">
+        <PropertyRef Name="SizeCode" />
+      </Principal>
+      <Dependent Role="InventoryItemProperty">
+        <PropertyRef Name="SizeCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventoryVoucher_Inventory1">
+    <End Role="Stock" Type="Self.Stock" Multiplicity="0..1" />
+    <End Role="RefDetail" Type="Self.RefDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="StockID" />
+      </Principal>
+      <Dependent Role="RefDetail">
+        <PropertyRef Name="StockID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventoryVoucher_Product1">
+    <End Role="InventoryItem" Type="Self.InventoryItem" Multiplicity="1" />
+    <End Role="RefDetail" Type="Self.RefDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventoryItem">
+        <PropertyRef Name="InventoryItemID" />
+      </Principal>
+      <Dependent Role="RefDetail">
+        <PropertyRef Name="InventoryItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventoryVoucher_Voucher1">
+    <End Role="Ref" Type="Self.Ref" Multiplicity="1" />
+    <End Role="RefDetail" Type="Self.RefDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ref">
+        <PropertyRef Name="RefID" />
+      </Principal>
+      <Dependent Role="RefDetail">
+        <PropertyRef Name="RefID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IventoryItem_Stock">
+    <End Role="Stock" Type="Self.Stock" Multiplicity="0..1" />
+    <End Role="InventoryItem" Type="Self.InventoryItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="StockID" />
+      </Principal>
+      <Dependent Role="InventoryItem">
+        <PropertyRef Name="StockID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IventoryItem_Unit">
+    <End Role="Unit" Type="Self.Unit" Multiplicity="0..1" />
+    <End Role="InventoryItem" Type="Self.InventoryItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit">
+        <PropertyRef Name="UnitID" />
+      </Principal>
+      <Dependent Role="InventoryItem">
+        <PropertyRef Name="UnitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_ProductGroup">
+    <End Role="InventoryItemCategory" Type="Self.InventoryItemCategory" Multiplicity="0..1" />
+    <End Role="InventoryItem" Type="Self.InventoryItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventoryItemCategory">
+        <PropertyRef Name="InventoryItemCategoryID" />
+      </Principal>
+      <Dependent Role="InventoryItem">
+        <PropertyRef Name="InventoryItemCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ref_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Ref" Type="Self.Ref" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="Ref">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ref_Vendor">
+    <End Role="Vendor" Type="Self.Vendor" Multiplicity="0..1" />
+    <End Role="Ref" Type="Self.Ref" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendor">
+        <PropertyRef Name="VendorID" />
+      </Principal>
+      <Dependent Role="Ref">
+        <PropertyRef Name="VendorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RefDetail_BudgetItem">
+    <End Role="BudgetItem" Type="Self.BudgetItem" Multiplicity="0..1" />
+    <End Role="RefDetail" Type="Self.RefDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BudgetItem">
+        <PropertyRef Name="BudgetItemID" />
+      </Principal>
+      <Dependent Role="RefDetail">
+        <PropertyRef Name="BudgetItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RefDetail_Unit">
+    <End Role="Unit" Type="Self.Unit" Multiplicity="0..1" />
+    <End Role="RefDetail" Type="Self.RefDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit">
+        <PropertyRef Name="UnitID" />
+      </Principal>
+      <Dependent Role="RefDetail">
+        <PropertyRef Name="UnitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MISAMShopKeeperModelStoreContainer">
+    <EntitySet Name="BudgetItem" EntityType="Self.BudgetItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Color" EntityType="Self.Color" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerCategory" EntityType="Self.CustomerCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeRole" EntityType="Self.EmployeeRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InventoryItem" EntityType="Self.InventoryItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InventoryItemCategory" EntityType="Self.InventoryItemCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InventoryItemProperty" EntityType="Self.InventoryItemProperty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ref" EntityType="Self.Ref" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RefDetail" EntityType="Self.RefDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Size" EntityType="Self.Size" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stock" EntityType="Self.Stock" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Unit" EntityType="Self.Unit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vendor" EntityType="Self.Vendor" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Customer_CustomerGroup" Association="Self.FK_Customer_CustomerGroup">
+      <End Role="CustomerCategory" EntitySet="CustomerCategory" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerCategory_CustomerCategory" Association="Self.FK_CustomerCategory_CustomerCategory">
+      <End Role="CustomerCategory" EntitySet="CustomerCategory" />
+      <End Role="CustomerCategory1" EntitySet="CustomerCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Store" Association="Self.FK_Employee_Store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeRole_Employee" Association="Self.FK_EmployeeRole_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="EmployeeRole" EntitySet="EmployeeRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeRole_Role" Association="Self.FK_EmployeeRole_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="EmployeeRole" EntitySet="EmployeeRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventoryItemCategory_InventoryItemCategory" Association="Self.FK_InventoryItemCategory_InventoryItemCategory">
+      <End Role="InventoryItemCategory" EntitySet="InventoryItemCategory" />
+      <End Role="InventoryItemCategory1" EntitySet="InventoryItemCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventoryItemProperty_Color" Association="Self.FK_InventoryItemProperty_Color">
+      <End Role="Color" EntitySet="Color" />
+      <End Role="InventoryItemProperty" EntitySet="InventoryItemProperty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventoryItemProperty_IventoryItem" Association="Self.FK_InventoryItemProperty_IventoryItem">
+      <End Role="InventoryItem" EntitySet="InventoryItem" />
+      <End Role="InventoryItemProperty" EntitySet="InventoryItemProperty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventoryItemProperty_Size" Association="Self.FK_InventoryItemProperty_Size">
+      <End Role="Size" EntitySet="Size" />
+      <End Role="InventoryItemProperty" EntitySet="InventoryItemProperty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventoryVoucher_Inventory1" Association="Self.FK_InventoryVoucher_Inventory1">
+      <End Role="Stock" EntitySet="Stock" />
+      <End Role="RefDetail" EntitySet="RefDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventoryVoucher_Product1" Association="Self.FK_InventoryVoucher_Product1">
+      <End Role="InventoryItem" EntitySet="InventoryItem" />
+      <End Role="RefDetail" EntitySet="RefDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventoryVoucher_Voucher1" Association="Self.FK_InventoryVoucher_Voucher1">
+      <End Role="Ref" EntitySet="Ref" />
+      <End Role="RefDetail" EntitySet="RefDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IventoryItem_Stock" Association="Self.FK_IventoryItem_Stock">
+      <End Role="Stock" EntitySet="Stock" />
+      <End Role="InventoryItem" EntitySet="InventoryItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IventoryItem_Unit" Association="Self.FK_IventoryItem_Unit">
+      <End Role="Unit" EntitySet="Unit" />
+      <End Role="InventoryItem" EntitySet="InventoryItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_ProductGroup" Association="Self.FK_Product_ProductGroup">
+      <End Role="InventoryItemCategory" EntitySet="InventoryItemCategory" />
+      <End Role="InventoryItem" EntitySet="InventoryItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ref_Employee" Association="Self.FK_Ref_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Ref" EntitySet="Ref" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ref_Vendor" Association="Self.FK_Ref_Vendor">
+      <End Role="Vendor" EntitySet="Vendor" />
+      <End Role="Ref" EntitySet="Ref" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RefDetail_BudgetItem" Association="Self.FK_RefDetail_BudgetItem">
+      <End Role="BudgetItem" EntitySet="BudgetItem" />
+      <End Role="RefDetail" EntitySet="RefDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RefDetail_Unit" Association="Self.FK_RefDetail_Unit">
+      <End Role="Unit" EntitySet="Unit" />
+      <End Role="RefDetail" EntitySet="RefDetail" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

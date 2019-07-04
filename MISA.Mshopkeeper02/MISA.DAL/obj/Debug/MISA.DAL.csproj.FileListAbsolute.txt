@@ -1,0 +1,11 @@
+C:\Users\ndcong\Source\Workspaces\Misa.Mshopkeeper02\MISA.Mshopkeeper02\MISA.DAL\obj\Debug\MISA.DAL.csprojAssemblyReference.cache
+C:\Users\ndcong\Source\Workspaces\Misa.Mshopkeeper02\MISA.Mshopkeeper02\MISA.DAL\obj\Debug\MISA.DAL.csproj.CoreCompileInputs.cache
+C:\Users\ndcong\Source\Workspaces\Misa.Mshopkeeper02\MISA.Mshopkeeper02\MISA.DAL\bin\Debug\MISA.DAL.dll
+C:\Users\ndcong\Source\Workspaces\Misa.Mshopkeeper02\MISA.Mshopkeeper02\MISA.DAL\bin\Debug\MISA.DAL.pdb
+C:\Users\ndcong\Source\Workspaces\Misa.Mshopkeeper02\MISA.Mshopkeeper02\MISA.DAL\bin\Debug\MISA.Common.dll
+C:\Users\ndcong\Source\Workspaces\Misa.Mshopkeeper02\MISA.Mshopkeeper02\MISA.DAL\bin\Debug\MISA.Entities.dll
+C:\Users\ndcong\Source\Workspaces\Misa.Mshopkeeper02\MISA.Mshopkeeper02\MISA.DAL\bin\Debug\MISA.Common.pdb
+C:\Users\ndcong\Source\Workspaces\Misa.Mshopkeeper02\MISA.Mshopkeeper02\MISA.DAL\bin\Debug\MISA.Entities.pdb
+C:\Users\ndcong\Source\Workspaces\Misa.Mshopkeeper02\MISA.Mshopkeeper02\MISA.DAL\obj\Debug\MISA.DAL.csproj.CopyComplete
+C:\Users\ndcong\Source\Workspaces\Misa.Mshopkeeper02\MISA.Mshopkeeper02\MISA.DAL\obj\Debug\MISA.DAL.dll
+C:\Users\ndcong\Source\Workspaces\Misa.Mshopkeeper02\MISA.Mshopkeeper02\MISA.DAL\obj\Debug\MISA.DAL.pdb

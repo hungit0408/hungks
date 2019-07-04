@@ -1,0 +1,2047 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Danh mục nhân viên</title>
+    <link href="../CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="../CSS/lib/jquery-ui.min.css" rel="stylesheet" />
+    <link href="../CSS/lib/selectize.css" rel="stylesheet" />
+    <link href="../CSS/common/toolbar.css" rel="stylesheet" />
+    <link href="../CSS/common/table.css" rel="stylesheet" />
+    <link href="../CSS/common/filter.css" rel="stylesheet" />
+    <link href="../CSS/common/tab.css" rel="stylesheet" />
+    <link href="../CSS/Views/employee/component.css" rel="stylesheet" />
+    <link href="../CSS/Views/employee/employee.css" rel="stylesheet" />
+    <link href="../CSS/Views/employee/subdialog.css" rel="stylesheet" />
+    <link href="../CSS/common/buttons.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <!--header-->
+    <div class="header flex-center">
+        <div class="logo-mshopkeeper">
+            <div class="logo-img"></div>
+        </div>
+        <div class="header-content">
+            <div class="header-left">
+            </div>
+            <div class="header-right flex-center">
+                <div class="nav-title">
+                    <div>Nhân viên</div>
+                </div>
+                <div class="branch flex-center">
+                    <div>Tất cả chi nhánh</div>
+                    <div class="arow-down-line"></div>
+                </div>
+
+                <div class="user-setting flex-center">
+                    <div class="user-img"></div>
+                    <div class="user-name">Nguyễn Huy Thông</div>
+                    <div class="arow-down-line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--content-->
+    <div class="main" style="display: flex">
+        <!--left menu-->
+        <div class="misa-sidebar">
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-overview"></div>
+                <div class="sidebar-menu-title">Tổng quan</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-buy"></div>
+                <div class="sidebar-menu-title">Mua hàng</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-inventory"></div>
+                <div class="sidebar-menu-title">Kho</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-cash"></div>
+                <div class="sidebar-menu-title">Quỹ tiền</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-cost"></div>
+                <div class="sidebar-menu-title">Chi phí</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-promotion"></div>
+                <div class="sidebar-menu-title">Khuyến mại</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-dictionary"></div>
+                <div class="sidebar-menu-title">Danh mục</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-report"></div>
+                <div class="sidebar-menu-title">Báo cáo</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-setting"></div>
+                <div class="sidebar-menu-title">Thiết lập</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-product"></div>
+                <div class="sidebar-menu-title">Hàng hóa</div>
+            </div>
+        </div>
+        <!--main content-->
+        <div class="main-container">
+            <div class="content">
+                <div class="misa-toolbar">
+                    <div class="toolbar-item add">
+                        <div class="toolbar-item-img btn-add"></div>
+                        <div class="toolbar-item-title">
+                            <span class="tool-tip">
+                                <span class="tool-tip-icon">Thêm mới</span>
+                                <span class="tool-tip-text text-small">Ctrl + S</span>
+                            </span>
+                        </div>
+
+
+                    </div>
+                    <div class="toolbar-item dublicate disable">
+                        <div class="toolbar-item-img btn-duplicate"></div>
+                        <div class="toolbar-item-title">Nhân bản</div>
+                    </div>
+
+                    <div class="toolbar-item edit disable">
+                        <div class="toolbar-item-img btn-edit"></div>
+                        <div class="toolbar-item-title">Sửa</div>
+                    </div>
+                    <div class="toolbar-item delete disable">
+                        <div class="toolbar-item-img btn-delete"></div>
+                        <div class="toolbar-item-title">Xóa</div>
+                    </div>
+
+                </div>
+                <div class="right-click-popup">
+                    <div class="popup-item btn-add">
+                        <span class="add-icon popup-item-icon"></span>
+                        <div class="popup-item-text">Thêm mới</div>
+                    </div>
+                    <div class="popup-item btn-dublicate">
+                        <span class="duplicate-icon popup-item-icon"></span>
+                        <div class="popup-item-text">Nhân bản</div>
+                    </div>
+
+                    <div class="popup-item btn-edit">
+                        <span class="edit-icon popup-item-icon"></span>
+                        <div class="popup-item-text">Sửa</div>
+                    </div>
+                    <div class="popup-item btn-delete">
+                        <span class="delete-icon popup-item-icon"></span>
+                        <div class="popup-item-text">Xóa</div>
+                    </div>
+
+                </div>
+
+                <!--table-->
+
+                <div class="table-data">
+                    <div class="table-master">
+                        <div class="table-container">
+                            <div class="overlay-loader">
+                                <div class="wrap-loader">
+                                    <img src="../Contents/images/loading1.gif" />
+                                    <span>Đang lấy dữ liệu</span>
+                                </div>
+                            </div>
+                            <table class="employee-table">
+                                <thead>
+                                    <tr class="tr-header">
+                                        <th rowspan="2" style="background-color: #fff; width : 60px;">
+                                            <div style="border-bottom : 1px solid #e9e9e9;height: 70px;line-height: 70px;">
+                                                <span class="checkbox-icon"></span>
+                                            </div>
+
+                                        </th>
+                                        <th id="employee-code">
+                                            <div>Mã nhân viên</div>
+                                            <div class="filter-feature">
+                                                <div class="search-icon-filter">
+                                                    <span></span>
+                                                </div>
+                                                <div class="wrap-input-filter">
+                                                    <input type="text" name="employeeCode" value="" class="filter-input-feature" id="EmployeeCodeFilter" />
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th id="employee-name">
+                                            <div>Tên nhân viên</div>
+                                            <div class="filter-feature">
+                                                <div class="search-icon-filter">
+                                                    <span></span>
+                                                </div>
+                                                <div class="wrap-input-filter">
+                                                    <input type="text" name="employeeName" value="" class="filter-input-feature" id="EmployeeNameFilter" />
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th id="employee-gender">
+                                            <div>Giới tính</div>
+                                            <div class="right-arrow">
+                                                <select id="filterGender">
+                                                    <option value="value" style="height : 100px;">Tất cả</option>
+                                                    <option value="value" style="height : 100px;">Nam</option>
+                                                    <option value="value">Nữ</option>
+                                                </select>
+                                            </div>
+
+                                        </th>
+                                        <th id="employee-birthdate">
+                                            <div>Ngày sinh</div>
+                                            <div class="flex-center">
+                                                <div class="filter filt-compare">
+                                                    <div class="filt-compare-value"> <span>=</span> </div>
+                                                    <div class="filt-compare-container" style="display: none">
+                                                        <div>
+                                                            <span>=</span> : Bằng
+                                                        </div>
+                                                        <div>
+                                                            <span><</span> : Nhỏ hơn
+                                                        </div>
+                                                        <div>
+                                                            <span>&le;</span> : Nhỏ hơn hoặc bằng
+                                                        </div>
+                                                        <div>
+                                                            <span>></span> : Lớn hơn
+                                                        </div>
+                                                        <div>
+                                                            <span>&ge;</span> : Lớn hơn hoặc bằng
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="filter-feature">
+                                                    <div class="date-icon-picker"></div>
+                                                    <input type="text" name="" class="date-picker-input" id="datepickerFilter" placeholder="DD/MM/YYYY" value="">
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th id="employee-phone-number">
+                                            <div>Số điện thoại</div>
+                                            <div class="filter-feature">
+                                                <div class="search-icon-filter">
+                                                    <span></span>
+                                                </div>
+                                                <div class="wrap-input-filter">
+                                                    <input type="text" name="mobileFilter" value="" class="filter-input-feature" id="mobileFilter" />
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th id="employee-woking-state">
+                                            <div>Trạng thái làm việc</div>
+                                            <div>
+                                                <select id="workingStatusFilter">
+                                                    <option value="value" style="height : 100px;">Tất cả</option>
+                                                    <option value="value">Chính thức</option>
+                                                    <option value="value">Thử việc</option>
+                                                    <option value="value">Nghỉ việc</option>
+                                                </select>
+                                            </div>
+
+                                        </th>
+                                    </tr>
+                                </thead>
+
+                                <tbody class="employee-list">
+                                    <!--<tr>
+                                        <td>
+                                            <input type="checkbox" name="ckbRow" value="" />
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>-->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="show-option flex-center">
+                            <div class="option-left">
+                                <div class="left-arrow">
+                                    <span class="arrow-icon arrow-left-double"></span>
+                                    <span class="arrow-icon arrow-left-single"></span>
+                                    <span>Trang</span>
+                                </div>
+                                <div class="curent-page">
+                                    <input type="text" name="name" value="1" id="pageNumber" />
+                                    trên &nbsp<span class="pageCounter"></span>
+                                </div>
+                                <div class="right-arrow">
+                                    <span class="arrow-icon arrow-right-single"></span>
+                                    <span class="arrow-icon arrow-right-double"></span>
+                                    <span class="load-data-icon"></span>
+                                    <select id="pageSize">
+                                        <option value="value">15</option>
+                                        <option value="value">25</option>
+                                        <option value="value">50</option>
+                                        <option value="value">100</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="option-right">
+                                <span class="firstRowCount">&nbsp</span>
+                                -
+                                <span class="lastRowCount">&nbsp</span>
+                                trong số
+                                <span class="totalRow">&nbsp</span>
+                                kết quả
+                            </div>
+                        </div>
+                    </div>
+                    <!--detail block-->
+                    <h6 style="margin-top: 10px; font-weight:bold; font-size : 14px;">Chi tiết</h6>
+                    <div class="table-detail customer-page" id="xuan-resize">
+
+                        <div class="tab-container">
+                            <div class="tab-buttons" style="z-index : 10;">
+                                <button class="active">Vai trò</button>
+                                <button>Thông tin liên hệ</button>
+                            </div>
+                            <!--vai tro content-->
+
+                            <div class="tab-panel first-tab">
+                                <div class="overlay-loader" style="top : 72px">
+                                    <div class="wrap-loader">
+                                        <img src="../Contents/images/loading1.gif" />
+                                        <span>Đang lấy dữ liệu</span>
+                                    </div>
+                                </div>
+                                <table style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th width="30%">Tên vai trò</th>
+                                            <th width="70%" style="border-right : none;">Diễn giải</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody style="text-align : left" class="detail"></tbody>
+                                </table>
+                            </div>
+                            <!--dien giai content-->
+
+                            <div class="tab-panel">
+                                <div class="overlay-loader">
+                                    <div class="wrap-loader">
+                                        <img src="../Contents/images/loading1.gif" />
+                                        <span>Đang lấy dữ liệu</span>
+                                    </div>
+                                </div>
+                                <div class="contact-customer-page">
+                                    <div class="normal-contact">
+                                        <span>Liên hệ </span>
+                                        <span>
+                                            <span class="title-row-detail">Đt di động </span>
+                                            <span class="employeeMobile-row"></span>
+                                        </span>
+                                        <span>
+                                            <span class="title-row-detail">Đt nhà riêng</span>
+                                            <span class="employeePhone-row"></span>
+                                        </span>
+                                        <span>
+                                            <span class="title-row-detail">Email</span>
+                                            <span class="employeeEmail-row"></span>
+                                        </span>
+                                        <span>
+                                            <span class="title-row-detail">Địa chỉ</span>
+                                            <span class="employeeNativeAddress-row"></span>
+                                        </span>
+                                    </div>
+                                    <div class="emergency-contact">
+                                        <span>Liên hệ khản cấp</span>
+                                        <span>
+                                            <span class="title-row-detail">Họ và tên </span>
+                                            <span class="employeeName-row"></span>
+                                        </span>
+                                        <span>
+                                            <span class="title-row-detail">ĐT di động </span>
+                                            <span class="employeeMobile-row"></span>
+                                        </span>
+                                        <span>
+                                            <span class="title-row-detail">Đt nhà riêng</span>
+                                            <span class="employeePhone-row"></span>
+                                        </span>
+                                        <span>
+                                            <span class="title-row-detail">Email</span>
+                                            <span class="employeeEmail-row"></span>
+                                        </span>
+                                        <span>
+                                            <span class="title-row-detail">Địa chỉ</span>
+                                            <span class="employeeNativeAddress-row"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Dialog block-->
+    <div id="dialog" style="display:none">
+        <div class="overlay-loader">
+            <div class="wrap-loader">
+                <img src="../Contents/images/loading1.gif" />
+                <span>Đang lấy dữ liệu</span>
+            </div>
+        </div>
+        <div class="tab-container">
+            <div class="tab-buttons">
+                <button class="active">Thông tin cơ bản</button>
+                <button>Thông tin liên hệ</button>
+                <button>Thông tin hồ sơ</button>
+                <button class="time-access-tab tab-four">Thời gian truy cập</button>
+            </div>
+            <div class="tab-panel first-tab">
+                <form>
+                    <div class="container wrap-dialog-content" style="margin-top : 10px">
+                        <div class="left-dialog-content">
+                            <div>
+                                <span>
+                                    Mã nhân viên
+                                    <span class="tool-tip">
+                                        <span style="color:red; display:inline" class="tool-tip-icon">*</span>
+                                        <span class="tool-tip-text">Trường này yêu cầu nhập liệu</span>
+                                    </span>
+                                </span>
+                                <div>
+                                    <input type="text" dataField="employeeCode" value="" autofocus />
+                                    <span class="warning-message-wrap">
+                                        <span class="warning-input-icon"></span>
+                                        <span class="warning-message">Sai roi anh oi</span>
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div>
+                                <span></span>
+                                <div id="susgess-label">
+                                    Dùng làm tên đăng nhập cho hệ thống,có thể sử dụng số điện thoại hoặc email
+                                </div>
+
+                            </div>
+                            <div>
+                                <span>
+                                    Tên nhân viên
+                                    <span class="tool-tip">
+                                        <span style="color:red; display:inline" class="tool-tip-icon">*</span>
+                                        <span class="tool-tip-text">Trường này yêu cầu nhập liệu</span>
+                                    </span>
+                                </span>
+                                <div>
+                                    <input type="text" dataField="employeeName" value="" />
+                                    <span class="warning-message-wrap">
+                                        <span class="warning-input-icon"></span>
+                                        <span class="warning-message">Sai roi anh oi</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
+                                <span>
+                                    <span class="tool-tip">
+                                        <span class="tool-tip-icon">DT</span>
+                                        <span class="tool-tip-text text-small">Điện thoại</span>
+                                    </span>di động
+                                    <span class="tool-tip">
+                                        <span style="color:red; display:inline" class="tool-tip-icon">*</span>
+                                        <span class="tool-tip-text">Trường này yêu cầu nhập liệu</span>
+                                    </span>
+                                </span>
+                                <div>
+                                    <input type="text" name="empoyeePhoneNumber" dataField="empoyeeMobile" value="" />
+                                    <span class="warning-message-wrap">
+                                        <span class="warning-input-icon"></span>
+                                        <span class="warning-message">Sai roi anh oi</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!--right content-->
+                        <div class="wrap-upload-avatar">
+                            <div id="avatar-title">
+                                <div class="flex-title">
+                                    <span>Ảnh nhân viên</span>
+                                    <span>Định dạng ảnh (.jpg, .jepg, .png, .gif) và dung lượng < 5MB</span>
+                                </div>
+                            </div>
+                            <div class="upload-image">
+                                <div class="wrap-image-file">
+                                    <input type="file" id="avatar-input" class="inputfile" />
+                                    <div class="wrap-button-avatar">
+                                        <div class="button-positon">
+                                            <input type="button" for="avatar-input" class="add-avatar" value="..." input>
+                                            <div for="avatar-input" class="delete-avatar">X</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="role-wrap">
+                        <div>
+                            <span>
+                                Vai trò
+                            </span>
+                        </div>
+                        <div class="admin-role">
+                            <span></span>
+                            <div class="checkbox-component">
+                                <input class="checkbox-icon active" type="button" dataField="isAmin"></input>
+                                <span class="checkbox-text">Vai trò quản trị</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrap-grid-layout">
+                        <div class="row-flex role-pickder">
+                            <div class="store">
+
+
+                            </div>
+
+                            <div class="role-tag-picker">
+                                <div class="wrap-tags">
+                                    <input type="text" name="multiple-role" class="dropdown-input short-input" placeholder="Có thể chọn nhiều vai trò" id="tags" />
+                                </div>
+                                <span class="icon-drop-down"></span>
+                                <div class="list-dropdown-item active">
+                                    <div class="xuan-dropdown-item">Thu ngân</div>
+                                    <div class="xuan-dropdown-item">Quản lý hàng hóa</div>
+                                    <div class="xuan-dropdown-item">Quản lý quỹ tiền gửi</div>
+                                    <div class="xuan-dropdown-item">Quản lý cửa hàng</div>
+                                    <div class="xuan-dropdown-item">Quản lý khuyến mại</div>
+                                    <div class="xuan-dropdown-item">Mua hàng</div>
+                                    <div class="xuan-dropdown-item">Quản lý chi phí</div>
+                                    <div class="xuan-dropdown-item">Quản lý kho</div>
+                                    <div class="xuan-dropdown-item">Quản lý kết quả kinh doanh</div>
+                                    <div class="xuan-dropdown-item">Kế toán</div>
+                                    <div class="xuan-dropdown-item">Quản lý chuỗi</div>
+                                    <div class="xuan-dropdown-item">Quản lý quỹ tiền mặt</div>
+                                    <div class="xuan-dropdown-item">Quản lý hệ thống</div>
+                                </div>
+                                <span class="choice-icon-dropdown">...</span>
+                            </div>
+                        </div>
+
+                        <div style="margin-left:133px; margin-top:10px;" class="row">
+                            <div class="access-checkbox">
+                                <span></span>
+                                <div class="checkbox-component">
+                                    <input class="checkbox-icon active" type="button" dataField="allowUseSoftWare"></input>
+                                    <span class="checkbox-text">Cho phép làm việc với phần mềm</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row-grid">
+                            <div class="password-toggle-access">
+                                <span>
+                                    Mật khẩu
+                                    <span class="tool-tip">
+                                        <span style="color:red; display:inline" class="tool-tip-icon">*</span>
+                                        <span class="tool-tip-text">Trường này yêu cầu nhập liệu</span>
+                                    </span>
+                                    <span class="tool-tip">
+                                        <span class="help-icon tool-tip-icon"></span>
+                                        <span class="tool-tip-text">Mật khẩu yêu cầu ít nhất 8 kí tự và chứa ký tự đặc biệt!</span>
+                                    </span>
+                                </span>
+                                <div class="password-componet">
+                                    <input type="password" name="password" value="" placeholder="Ít nhất 6 ký tự" autocomplete="" dataField="password" />
+                                    <span class="warning-message-wrap">
+                                        <span class="warning-input-icon"></span>
+                                        <span class="warning-message">Sai roi anh oi</span>
+                                    </span>
+                                    <span class="eye-show-pass hide"></span>
+                                </div>
+                            </div>
+
+                            <div class="normal-input  password-toggle-access">
+                                <span>
+                                    Xác nhận mật khẩu
+                                    <span class="tool-tip">
+                                        <span style="color:red; display:inline" class="tool-tip-icon">*</span>
+                                        <span class="tool-tip-text">Trường này yêu cầu nhập liệu</span>
+                                    </span>
+                                </span>
+                                <div class="wrap-input-width">
+                                    <input type="password" name="name" value="" autocomplete="" dataField="passwordConfirm" />
+                                    <span class="warning-message-wrap">
+                                        <span class="warning-input-icon"></span>
+                                        <span class="warning-message right-over text-medium"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row-grid" style="margin-top : 3px">
+                            <div style="height : auto">
+                                <span></span>
+                                <span class="checkSecurity"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="row-grid">
+                            <div>
+                                <span>
+                                    Số
+                                    <span class="tool-tip">
+                                        <span class="tool-tip-icon">CMTND</span>
+                                        <span class="tool-tip-text ">Chứnng minh thư nhân dân</span>
+                                    </span>
+                                </span>
+                                <div class="flex-width">
+                                    <input type="text" name="identity-card" value="" dataField="identityCard" class="identity-card" />
+                                </div>
+                            </div>
+
+                            <div>
+                                <span>Ngày cấp</span>
+                                <div class=" picker-date">
+                                    <div class="date-icon-picker"></div>
+                                    <input type="text" name="" class="date-picker-input" dataField="identityCardDateProvider" placeholder="DD/MM/YYYY">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row-grid">
+                            <div>
+                                <span>
+                                    Nơi cấp
+                                    <span class="tool-tip">
+                                        <span class="tool-tip-icon">CMTND</span>
+                                        <span class="tool-tip-text ">Chứnng minh thư nhân dân</span>
+                                    </span>
+                                </span>
+                                <div class="flex-width">
+                                    <input type="text" name="identity-card" value="" dataField="identityCardProvider" class="identity-card" />
+                                </div>
+                            </div>
+
+                            <div>
+                                <span>Ngày sinh</span>
+                                <div class=" picker-date">
+                                    <div class="date-icon-picker"></div>
+                                    <input type="text" name="" class="date-picker-input" dataField="birthday" placeholder="DD/MM/YYYY">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row-grid">
+                            <div>
+                                <span>Trạng thái làm việc</span>
+                                <div class="drop-down ">
+                                    <input type="text" name="workingState" value="Chính thức" dataField="workingStatus" />
+                                    <span class="icon-drop-down"></span>
+                                    <div class="list-dropdown-item ">
+                                        <div class="xuan-dropdown-item">Chính thức</div>
+                                        <div class="xuan-dropdown-item">Thử việc</div>
+                                        <div class="xuan-dropdown-item">Nghỉ việc</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <span>Giới tính</span>
+                                <div class="radio-choice" dataField="employeeGender">
+                                    <div class="radio-box">
+                                        <button class="radio-box-icon active male" type="button"></button>
+                                        <span class="radio-box-text">Nam</span>
+                                    </div>
+                                    <div class="radio-box">
+                                        <button class="radio-box-icon female" type="button"></button>
+                                        <span class="radio-box-text">Nữ</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row-grid">
+                            <div>
+                                <span>Trạng thái hôn nhân</span>
+                                <div class="radio-choice" dataField="maritalStatus">
+                                    <div class="radio-box">
+                                        <button class="radio-box-icon active single" type="button"></button>
+                                        <span class="radio-box-text">Độc thân</span>
+                                    </div>
+                                    <div class="radio-box">
+                                        <button class="radio-box-icon married" type="button"></button>
+                                        <span class="radio-box-text">Đã kết hôn</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+            <!--tab 2 thông tin liên hệ-->
+            <div class="tab-panel">
+                <div class="wrap-tab-content">
+                    <div class="row1">
+                        <div class="normal-input-element">
+                            <span>ĐT nhà riêng</span>
+                            <input type="text" name="name" value="" autofocus" dataField="Phone" />
+                        </div>
+
+                        <div class="normal-input-element">
+                            <span>Email</span>
+                            <input type="text" name="name" value="" dataField="Email" />
+                        </div>
+                    </div>
+
+                    <div class="wrap-block2">
+                        <h6>Hộ khẩu thường trú</h6>
+                        <div class="normal-input-element">
+                            <span>Địa chỉ</span>
+                            <input type="text" name="name" value="" dataField="NativeAddress" />
+                        </div>
+
+                        <div class="row1">
+                            <div class="wrap-drop-down">
+                                <span>Quốc gia</span>
+                                <div class="drop-down">
+                                    <input type="text" name="name" value="" dataField="NativeCountry" />
+                                    <span class="icon-drop-down"></span>
+                                    <div class="list-dropdown-item ">
+                                        <div class="xuan-dropdown-item">Việt Nam</div>
+                                        <div class="xuan-dropdown-item">Lào </div>
+                                        <div class="xuan-dropdown-item">Campuchia</div>
+                                        <div class="xuan-dropdown-item">Mỹ</div>
+                                        <div class="xuan-dropdown-item">Anh</div>
+                                        <div class="xuan-dropdown-item">Trung QUốc</div>
+                                        <div class="xuan-dropdown-item">Hàn Quốc</div>
+                                        <div class="xuan-dropdown-item">Nhật Bản</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="wrap-drop-down">
+                                <span>Tỉnh/Thành phố</span>
+                                <div class="drop-down">
+                                    <input type="text" name="name" value="" dataField="NativeProvince" />
+                                    <span class="icon-drop-down"></span>
+                                    <div class="list-dropdown-item ">
+                                        <div class="xuan-dropdown-item">Hà Nội</div>
+                                        <div class="xuan-dropdown-item">Thành phố HCM</div>
+                                        <div class="xuan-dropdown-item">Thành phố HCM</div>
+                                        <div class="xuan-dropdown-item">Đà Nẵng</div>
+                                        <div class="xuan-dropdown-item">Hả Phòng</div>
+                                        <div class="xuan-dropdown-item">Nghệ An</div>
+                                        <div class="xuan-dropdown-item">Ninh Bình</div>
+                                        <div class="xuan-dropdown-item">Bắc Giang</div>
+                                        <div class="xuan-dropdown-item">Vĩnh Phúc</div>
+                                        <div class="xuan-dropdown-item">Quy Nhơn</div>
+                                        <div class="xuan-dropdown-item">Nam Định</div>
+                                        <div class="xuan-dropdown-item">Bắc Ninh</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row1">
+                            <div class="wrap-drop-down">
+                                <span>Quận/huyện</span>
+                                <div class="drop-down">
+                                    <input type="text" name="name" value="" dataField="NativeDistrict" />
+                                    <span class="icon-drop-down"></span>
+                                    <div class="list-dropdown-item ">
+                                        <div class="xuan-dropdown-item">Hà Nội</div>
+                                        <div class="xuan-dropdown-item">Thành phố HCM</div>
+                                        <div class="xuan-dropdown-item">Thành phố HCM</div>
+                                        <div class="xuan-dropdown-item">Đà Nẵng</div>
+                                        <div class="xuan-dropdown-item">Hả Phòng</div>
+                                        <div class="xuan-dropdown-item">Nghệ An</div>
+                                        <div class="xuan-dropdown-item">Ninh Bình</div>
+                                        <div class="xuan-dropdown-item">Bắc Giang</div>
+                                        <div class="xuan-dropdown-item">Vĩnh Phúc</div>
+                                        <div class="xuan-dropdown-item">Quy Nhơn</div>
+                                        <div class="xuan-dropdown-item">Nam Định</div>
+                                        <div class="xuan-dropdown-item">Bắc Ninh</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="wrap-drop-down">
+                                <span>Xã/Phường</span>
+                                <div class="drop-down">
+                                    <input type="text" name="name" value="" dataField="NativeVillage" />
+                                    <span class="icon-drop-down"></span>
+                                    <div class="list-dropdown-item ">
+                                        <div class="xuan-dropdown-item">Hà Nội</div>
+                                        <div class="xuan-dropdown-item">Thành phố HCM</div>
+                                        <div class="xuan-dropdown-item">Thành phố HCM</div>
+                                        <div class="xuan-dropdown-item">Đà Nẵng</div>
+                                        <div class="xuan-dropdown-item">Hả Phòng</div>
+                                        <div class="xuan-dropdown-item">Nghệ An</div>
+                                        <div class="xuan-dropdown-item">Ninh Bình</div>
+                                        <div class="xuan-dropdown-item">Bắc Giang</div>
+                                        <div class="xuan-dropdown-item">Vĩnh Phúc</div>
+                                        <div class="xuan-dropdown-item">Quy Nhơn</div>
+                                        <div class="xuan-dropdown-item">Nam Định</div>
+                                        <div class="xuan-dropdown-item">Bắc Ninh</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="curent-accomodation">
+                        <h6>CHỖ Ở HIỆN TẠI <a href="#" style="color: #026b97ed; font-size : 12px; text-transform :initial; font-weight : normal; text-decoration : underline">(Sao chép từ thông tin hộ khẩu thường trú)</a></h6>
+                        <div class="row1">
+                            <div class="wrap-drop-down">
+                                <span>Quốc gia</span>
+                                <div class="drop-down">
+                                    <input type="text" name="name" value="" dataField="CurrentCountry" />
+                                    <span class="icon-drop-down"></span>
+                                    <div class="list-dropdown-item ">
+                                        <div class="xuan-dropdown-item">Việt Nam</div>
+                                        <div class="xuan-dropdown-item">Lào </div>
+                                        <div class="xuan-dropdown-item">Campuchia</div>
+                                        <div class="xuan-dropdown-item">Mỹ</div>
+                                        <div class="xuan-dropdown-item">Anh</div>
+                                        <div class="xuan-dropdown-item">Trung QUốc</div>
+                                        <div class="xuan-dropdown-item">Hàn Quốc</div>
+                                        <div class="xuan-dropdown-item">Nhật Bản</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="wrap-drop-down">
+                                <span>Tỉnh/Thành phố</span>
+                                <div class="drop-down">
+                                    <input type="text" name="name" value="" dataField="CurrentProvince" />
+                                    <span class="icon-drop-down"></span>
+                                    <div class="list-dropdown-item ">
+                                        <div class="xuan-dropdown-item">Hà Nội</div>
+                                        <div class="xuan-dropdown-item">Thành phố HCM</div>
+                                        <div class="xuan-dropdown-item">Thành phố HCM</div>
+                                        <div class="xuan-dropdown-item">Đà Nẵng</div>
+                                        <div class="xuan-dropdown-item">Hả Phòng</div>
+                                        <div class="xuan-dropdown-item">Nghệ An</div>
+                                        <div class="xuan-dropdown-item">Ninh Bình</div>
+                                        <div class="xuan-dropdown-item">Bắc Giang</div>
+                                        <div class="xuan-dropdown-item">Vĩnh Phúc</div>
+                                        <div class="xuan-dropdown-item">Quy Nhơn</div>
+                                        <div class="xuan-dropdown-item">Nam Định</div>
+                                        <div class="xuan-dropdown-item">Bắc Ninh</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row1">
+                            <div class="wrap-drop-down">
+                                <span>Quận/huyện</span>
+                                <div class="drop-down">
+                                    <input type="text" name="name" value="" dataField="CurrentDistrict" />
+                                    <span class="icon-drop-down"></span>
+                                    <div class="list-dropdown-item ">
+                                        <div class="xuan-dropdown-item">Hà Nội</div>
+                                        <div class="xuan-dropdown-item">Thành phố HCM</div>
+                                        <div class="xuan-dropdown-item">Thành phố HCM</div>
+                                        <div class="xuan-dropdown-item">Đà Nẵng</div>
+                                        <div class="xuan-dropdown-item">Hả Phòng</div>
+                                        <div class="xuan-dropdown-item">Nghệ An</div>
+                                        <div class="xuan-dropdown-item">Ninh Bình</div>
+                                        <div class="xuan-dropdown-item">Bắc Giang</div>
+                                        <div class="xuan-dropdown-item">Vĩnh Phúc</div>
+                                        <div class="xuan-dropdown-item">Quy Nhơn</div>
+                                        <div class="xuan-dropdown-item">Nam Định</div>
+                                        <div class="xuan-dropdown-item">Bắc Ninh</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="wrap-drop-down">
+                                <span>Xã/Phường</span>
+                                <div class="drop-down">
+                                    <input type="text" name="name" value="" dataField="CurrentVillage" />
+                                    <span class="icon-drop-down"></span>
+                                    <div class="list-dropdown-item ">
+                                        <div class="xuan-dropdown-item">Hà Nội</div>
+                                        <div class="xuan-dropdown-item">Thành phố HCM</div>
+                                        <div class="xuan-dropdown-item">Thành phố HCM</div>
+                                        <div class="xuan-dropdown-item">Đà Nẵng</div>
+                                        <div class="xuan-dropdown-item">Hả Phòng</div>
+                                        <div class="xuan-dropdown-item">Nghệ An</div>
+                                        <div class="xuan-dropdown-item">Ninh Bình</div>
+                                        <div class="xuan-dropdown-item">Bắc Giang</div>
+                                        <div class="xuan-dropdown-item">Vĩnh Phúc</div>
+                                        <div class="xuan-dropdown-item">Quy Nhơn</div>
+                                        <div class="xuan-dropdown-item">Nam Định</div>
+                                        <div class="xuan-dropdown-item">Bắc Ninh</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wrap-contact">
+                        <h6>Liên hệ khẩn cấp</h6>
+                        <div class="row1">
+                            <div class="normal-input-element">
+                                <span>Họ và tên </span>
+                                <input type="text" name="name" value="" dataField="employeeName" />
+                            </div>
+
+                            <div class="normal-input-element">
+                                <span>ĐT di động</span>
+                                <input type="text" name="name" value="" dataField="empoyeeMobile" />
+                            </div>
+                        </div>
+                        <div class="row1">
+                            <div class="normal-input-element">
+                                <span>Quan hệ</span>
+                                <input type="text" name="name" value="" dataField="employeeName" />
+                            </div>
+
+                            <div class="normal-input-element">
+                                <span>ĐT nhà riêng</span>
+                                <input type="text" name="name" value="" dataField="Phone" />
+                            </div>
+                        </div>
+
+                        <div class="row1">
+                            <div class="normal-input-element">
+                                <span>Email</span>
+                                <input type="text" name="name" value="" dataField="Email" />
+                            </div>
+
+                        </div>
+
+                        <div class="normal-input-element row1">
+                            <span>Địa chỉ</span>
+                            <input type="text" name="name" value="" dataField="CurrentAddress" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--tab 3 Thông tin hồ sơ-->
+            <div class="tab-panel">
+                <div class="wrap-tab-content">
+                    <div class="row1">
+                        <div class="normal-input-element">
+                            <span>Ngày thử việc</span>
+                            <div class="picker-date">
+                                <div class="date-icon-picker"></div>
+                                <input type="text" name="" class="date-picker-input" dataField="JobtrialDate" placeholder="DD/MM/YYYY" autofocus>
+                            </div>
+                        </div>
+
+                        <div class="normal-input-element">
+                            <span>Ngày chính thức</span>
+                            <div class=" picker-date">
+                                <div class="date-icon-picker"></div>
+                                <input type="text" name="" class="date-picker-input" dataField="JobOfficicalDate" placeholder="DD/MM/YYYY">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row1">
+                        <div class="normal-input-element">
+                            <span>Mức lương </span>
+                            <input type="text" name="name" value="" dataField="Salary" />
+                        </div>
+
+                        <div class="normal-input-element">
+                            <span>Tiền đặt cọc</span>
+                            <input type="text" name="name" value="" dataField="DownPayment" />
+                        </div>
+                    </div>
+                    <div class="normal-input-element row1">
+                        <span>Danh sách hồ sơ gốc</span>
+                        <input type="text" name="name" value="" dataField="OriginalDocumentation" />
+                    </div>
+                </div>
+
+            </div>
+            <!--tab 4  Thời gian truy cập-->
+            <div class="tab-panel">
+                <div class="wrap-tab-content  tab-four">
+                    <div class="row-acess">
+                        <div>
+                            <span style="font-weight:bold">Quyền truy cập</span>
+                            <span class="help"></span>
+                        </div>
+                        <div class="radio-choice" dataField="acessType">
+                            <div class="radio-box">
+                                <button class="radio-box-icon free-acess active"></button>
+                                <span class="radio-box-text">Truy cập tự do</span>
+                            </div>
+                            <div class="radio-box">
+                                <button class="radio-box-icon folow-time-slot"></button>
+                                <span class="radio-box-text">Truy cập theo khung giờ</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row-time-acess">
+                        <span style="font-weight :bold">Thời gian truy cập</span>
+                        <!--one row time picker-->
+                        <div class="one-row monday">
+                            <div class="row-acess-component">
+                                <div class="checkbox-component">
+                                    <input type="button" class="checkbox-icon active"></input>
+                                    <span class="checkbox-text">Thứ 2</span>
+                                </div>
+                            </div>
+
+                            <div class="time-picker">
+                                <input type="text" name="name" value="03:00" class="time-picker-input time-start" autofocus />
+                                <span class="time-picker-icon"></span>
+                                <div class="time-choice">
+                                    <div class="time-item">00:00</div>
+                                    <div class="time-item">00:30</div>
+                                    <div class="time-item">01:00</div>
+                                    <div class="time-item">01:30</div>
+                                    <div class="time-item">02:00</div>
+                                    <div class="time-item">02:30</div>
+                                    <div class="time-item">03:00</div>
+                                    <div class="time-item">03:30</div>
+                                    <div class="time-item">04:00</div>
+                                    <div class="time-item">04:30</div>
+                                    <div class="time-item">05:00</div>
+                                    <div class="time-item">05:30</div>
+                                    <div class="time-item">06:00</div>
+                                    <div class="time-item">06:30</div>
+                                    <div class="time-item">07:00</div>
+                                    <div class="time-item">07:30</div>
+                                    <div class="time-item">08:00</div>
+                                    <div class="time-item">08:30</div>
+                                    <div class="time-item">09:00</div>
+                                    <div class="time-item">09:30</div>
+                                    <div class="time-item">10:00</div>
+                                    <div class="time-item">10:30</div>
+                                    <div class="time-item">11:00</div>
+                                    <div class="time-item">11:30</div>
+                                    <div class="time-item">12:00</div>
+                                    <div class="time-item">12:30</div>
+                                    <div class="time-item">13:00</div>
+                                    <div class="time-item">13:30</div>
+                                    <div class="time-item">14:00</div>
+                                    <div class="time-item">14:30</div>
+                                    <div class="time-item">15:00</div>
+                                    <div class="time-item">15:30</div>
+                                    <div class="time-item">16:00</div>
+                                    <div class="time-item">16:30</div>
+                                    <div class="time-item">17:00</div>
+                                    <div class="time-item">17:30</div>
+                                    <div class="time-item">18:00</div>
+                                    <div class="time-item">18:30</div>
+                                    <div class="time-item">19:00</div>
+                                    <div class="time-item">19:30</div>
+                                    <div class="time-item">20:00</div>
+                                    <div class="time-item">20:30</div>
+                                    <div class="time-item">21:00</div>
+                                    <div class="time-item">21:30</div>
+                                    <div class="time-item">22:00</div>
+                                    <div class="time-item">22:30</div>
+                                    <div class="time-item">23:00</div>
+                                    <div class="time-item">23:30</div>
+                                    <div class="time-item">23:59</div>
+                                </div>
+                            </div>
+                            <span>-</span>
+                            <div class="time-picker">
+                                <input type="text" name="name" value="03:00" class="time-picker-input time-end" />
+                                <span class="time-picker-icon"></span>
+                                <div class="time-choice">
+                                    <div class="time-item">00:00</div>
+                                    <div class="time-item">00:30</div>
+                                    <div class="time-item">01:00</div>
+                                    <div class="time-item">01:30</div>
+                                    <div class="time-item">02:00</div>
+                                    <div class="time-item">02:30</div>
+                                    <div class="time-item">03:00</div>
+                                    <div class="time-item">03:30</div>
+                                    <div class="time-item">04:00</div>
+                                    <div class="time-item">04:30</div>
+                                    <div class="time-item">05:00</div>
+                                    <div class="time-item">05:30</div>
+                                    <div class="time-item">06:00</div>
+                                    <div class="time-item">06:30</div>
+                                    <div class="time-item">07:00</div>
+                                    <div class="time-item">07:30</div>
+                                    <div class="time-item">08:00</div>
+                                    <div class="time-item">08:30</div>
+                                    <div class="time-item">09:00</div>
+                                    <div class="time-item">09:30</div>
+                                    <div class="time-item">10:00</div>
+                                    <div class="time-item">10:30</div>
+                                    <div class="time-item">11:00</div>
+                                    <div class="time-item">11:30</div>
+                                    <div class="time-item">12:00</div>
+                                    <div class="time-item">12:30</div>
+                                    <div class="time-item">13:00</div>
+                                    <div class="time-item">13:30</div>
+                                    <div class="time-item">14:00</div>
+                                    <div class="time-item">14:30</div>
+                                    <div class="time-item">15:00</div>
+                                    <div class="time-item">15:30</div>
+                                    <div class="time-item">16:00</div>
+                                    <div class="time-item">16:30</div>
+                                    <div class="time-item">17:00</div>
+                                    <div class="time-item">17:30</div>
+                                    <div class="time-item">18:00</div>
+                                    <div class="time-item">18:30</div>
+                                    <div class="time-item">19:00</div>
+                                    <div class="time-item">19:30</div>
+                                    <div class="time-item">20:00</div>
+                                    <div class="time-item">20:30</div>
+                                    <div class="time-item">21:00</div>
+                                    <div class="time-item">21:30</div>
+                                    <div class="time-item">22:00</div>
+                                    <div class="time-item">22:30</div>
+                                    <div class="time-item">23:00</div>
+                                    <div class="time-item">23:30</div>
+                                    <div class="time-item">23:59</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--one row time picker-->
+                        <div class="one-row Tuesday">
+                            <div class="row-acess-component">
+                                <div class="checkbox-component">
+                                    <input type="button" class="checkbox-icon active" />
+                                    <span class="checkbox-text">Thứ 3</span>
+                                </div>
+                            </div>
+
+                            <div class="time-picker">
+                                <input type="text" name="name" value="03:00" class="time-picker-input time-start" />
+                                <span class="time-picker-icon"></span>
+                                <div class="time-choice">
+                                    <div class="time-item">00:00</div>
+                                    <div class="time-item">00:30</div>
+                                    <div class="time-item">01:00</div>
+                                    <div class="time-item">01:30</div>
+                                    <div class="time-item">02:00</div>
+                                    <div class="time-item">02:30</div>
+                                    <div class="time-item">03:00</div>
+                                    <div class="time-item">03:30</div>
+                                    <div class="time-item">04:00</div>
+                                    <div class="time-item">04:30</div>
+                                    <div class="time-item">05:00</div>
+                                    <div class="time-item">05:30</div>
+                                    <div class="time-item">06:00</div>
+                                    <div class="time-item">06:30</div>
+                                    <div class="time-item">07:00</div>
+                                    <div class="time-item">07:30</div>
+                                    <div class="time-item">08:00</div>
+                                    <div class="time-item">08:30</div>
+                                    <div class="time-item">09:00</div>
+                                    <div class="time-item">09:30</div>
+                                    <div class="time-item">10:00</div>
+                                    <div class="time-item">10:30</div>
+                                    <div class="time-item">11:00</div>
+                                    <div class="time-item">11:30</div>
+                                    <div class="time-item">12:00</div>
+                                    <div class="time-item">12:30</div>
+                                    <div class="time-item">13:00</div>
+                                    <div class="time-item">13:30</div>
+                                    <div class="time-item">14:00</div>
+                                    <div class="time-item">14:30</div>
+                                    <div class="time-item">15:00</div>
+                                    <div class="time-item">15:30</div>
+                                    <div class="time-item">16:00</div>
+                                    <div class="time-item">16:30</div>
+                                    <div class="time-item">17:00</div>
+                                    <div class="time-item">17:30</div>
+                                    <div class="time-item">18:00</div>
+                                    <div class="time-item">18:30</div>
+                                    <div class="time-item">19:00</div>
+                                    <div class="time-item">19:30</div>
+                                    <div class="time-item">20:00</div>
+                                    <div class="time-item">20:30</div>
+                                    <div class="time-item">21:00</div>
+                                    <div class="time-item">21:30</div>
+                                    <div class="time-item">22:00</div>
+                                    <div class="time-item">22:30</div>
+                                    <div class="time-item">23:00</div>
+                                    <div class="time-item">23:30</div>
+                                    <div class="time-item">23:59</div>
+                                </div>
+                            </div>
+                            <span>-</span>
+                            <div class="time-picker">
+                                <input type="text" name="name" value="03:00" class="time-picker-input time-end" />
+                                <span class="time-picker-icon"></span>
+                                <div class="time-choice">
+                                    <div class="time-item">00:00</div>
+                                    <div class="time-item">00:30</div>
+                                    <div class="time-item">01:00</div>
+                                    <div class="time-item">01:30</div>
+                                    <div class="time-item">02:00</div>
+                                    <div class="time-item">02:30</div>
+                                    <div class="time-item">03:00</div>
+                                    <div class="time-item">03:30</div>
+                                    <div class="time-item">04:00</div>
+                                    <div class="time-item">04:30</div>
+                                    <div class="time-item">05:00</div>
+                                    <div class="time-item">05:30</div>
+                                    <div class="time-item">06:00</div>
+                                    <div class="time-item">06:30</div>
+                                    <div class="time-item">07:00</div>
+                                    <div class="time-item">07:30</div>
+                                    <div class="time-item">08:00</div>
+                                    <div class="time-item">08:30</div>
+                                    <div class="time-item">09:00</div>
+                                    <div class="time-item">09:30</div>
+                                    <div class="time-item">10:00</div>
+                                    <div class="time-item">10:30</div>
+                                    <div class="time-item">11:00</div>
+                                    <div class="time-item">11:30</div>
+                                    <div class="time-item">12:00</div>
+                                    <div class="time-item">12:30</div>
+                                    <div class="time-item">13:00</div>
+                                    <div class="time-item">13:30</div>
+                                    <div class="time-item">14:00</div>
+                                    <div class="time-item">14:30</div>
+                                    <div class="time-item">15:00</div>
+                                    <div class="time-item">15:30</div>
+                                    <div class="time-item">16:00</div>
+                                    <div class="time-item">16:30</div>
+                                    <div class="time-item">17:00</div>
+                                    <div class="time-item">17:30</div>
+                                    <div class="time-item">18:00</div>
+                                    <div class="time-item">18:30</div>
+                                    <div class="time-item">19:00</div>
+                                    <div class="time-item">19:30</div>
+                                    <div class="time-item">20:00</div>
+                                    <div class="time-item">20:30</div>
+                                    <div class="time-item">21:00</div>
+                                    <div class="time-item">21:30</div>
+                                    <div class="time-item">22:00</div>
+                                    <div class="time-item">22:30</div>
+                                    <div class="time-item">23:00</div>
+                                    <div class="time-item">23:30</div>
+                                    <div class="time-item">23:59</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--one row time picker-->
+                        <div class="one-row Wednesday">
+                            <div class="row-acess-component">
+                                <div class="checkbox-component">
+                                    <input type="button" class="checkbox-icon active" />
+                                    <span class="checkbox-text">Thứ 4</span>
+                                </div>
+                            </div>
+
+                            <div class="time-picker">
+                                <input type="text" name="name" value="03:00" class="time-picker-input time-start" />
+                                <span class="time-picker-icon"></span>
+                                <div class="time-choice">
+                                    <div class="time-item">00:00</div>
+                                    <div class="time-item">00:30</div>
+                                    <div class="time-item">01:00</div>
+                                    <div class="time-item">01:30</div>
+                                    <div class="time-item">02:00</div>
+                                    <div class="time-item">02:30</div>
+                                    <div class="time-item">03:00</div>
+                                    <div class="time-item">03:30</div>
+                                    <div class="time-item">04:00</div>
+                                    <div class="time-item">04:30</div>
+                                    <div class="time-item">05:00</div>
+                                    <div class="time-item">05:30</div>
+                                    <div class="time-item">06:00</div>
+                                    <div class="time-item">06:30</div>
+                                    <div class="time-item">07:00</div>
+                                    <div class="time-item">07:30</div>
+                                    <div class="time-item">08:00</div>
+                                    <div class="time-item">08:30</div>
+                                    <div class="time-item">09:00</div>
+                                    <div class="time-item">09:30</div>
+                                    <div class="time-item">10:00</div>
+                                    <div class="time-item">10:30</div>
+                                    <div class="time-item">11:00</div>
+                                    <div class="time-item">11:30</div>
+                                    <div class="time-item">12:00</div>
+                                    <div class="time-item">12:30</div>
+                                    <div class="time-item">13:00</div>
+                                    <div class="time-item">13:30</div>
+                                    <div class="time-item">14:00</div>
+                                    <div class="time-item">14:30</div>
+                                    <div class="time-item">15:00</div>
+                                    <div class="time-item">15:30</div>
+                                    <div class="time-item">16:00</div>
+                                    <div class="time-item">16:30</div>
+                                    <div class="time-item">17:00</div>
+                                    <div class="time-item">17:30</div>
+                                    <div class="time-item">18:00</div>
+                                    <div class="time-item">18:30</div>
+                                    <div class="time-item">19:00</div>
+                                    <div class="time-item">19:30</div>
+                                    <div class="time-item">20:00</div>
+                                    <div class="time-item">20:30</div>
+                                    <div class="time-item">21:00</div>
+                                    <div class="time-item">21:30</div>
+                                    <div class="time-item">22:00</div>
+                                    <div class="time-item">22:30</div>
+                                    <div class="time-item">23:00</div>
+                                    <div class="time-item">23:30</div>
+                                    <div class="time-item">23:59</div>
+                                </div>
+                            </div>
+                            <span>-</span>
+                            <div class="time-picker">
+                                <input type="text" name="name" value="03:00" class="time-picker-input time-end" />
+                                <span class="time-picker-icon"></span>
+                                <div class="time-choice">
+                                    <div class="time-item">00:00</div>
+                                    <div class="time-item">00:30</div>
+                                    <div class="time-item">01:00</div>
+                                    <div class="time-item">01:30</div>
+                                    <div class="time-item">02:00</div>
+                                    <div class="time-item">02:30</div>
+                                    <div class="time-item">03:00</div>
+                                    <div class="time-item">03:30</div>
+                                    <div class="time-item">04:00</div>
+                                    <div class="time-item">04:30</div>
+                                    <div class="time-item">05:00</div>
+                                    <div class="time-item">05:30</div>
+                                    <div class="time-item">06:00</div>
+                                    <div class="time-item">06:30</div>
+                                    <div class="time-item">07:00</div>
+                                    <div class="time-item">07:30</div>
+                                    <div class="time-item">08:00</div>
+                                    <div class="time-item">08:30</div>
+                                    <div class="time-item">09:00</div>
+                                    <div class="time-item">09:30</div>
+                                    <div class="time-item">10:00</div>
+                                    <div class="time-item">10:30</div>
+                                    <div class="time-item">11:00</div>
+                                    <div class="time-item">11:30</div>
+                                    <div class="time-item">12:00</div>
+                                    <div class="time-item">12:30</div>
+                                    <div class="time-item">13:00</div>
+                                    <div class="time-item">13:30</div>
+                                    <div class="time-item">14:00</div>
+                                    <div class="time-item">14:30</div>
+                                    <div class="time-item">15:00</div>
+                                    <div class="time-item">15:30</div>
+                                    <div class="time-item">16:00</div>
+                                    <div class="time-item">16:30</div>
+                                    <div class="time-item">17:00</div>
+                                    <div class="time-item">17:30</div>
+                                    <div class="time-item">18:00</div>
+                                    <div class="time-item">18:30</div>
+                                    <div class="time-item">19:00</div>
+                                    <div class="time-item">19:30</div>
+                                    <div class="time-item">20:00</div>
+                                    <div class="time-item">20:30</div>
+                                    <div class="time-item">21:00</div>
+                                    <div class="time-item">21:30</div>
+                                    <div class="time-item">22:00</div>
+                                    <div class="time-item">22:30</div>
+                                    <div class="time-item">23:00</div>
+                                    <div class="time-item">23:30</div>
+                                    <div class="time-item">23:59</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--one row time picker-->
+                        <div class="one-row Thursday">
+                            <div class="row-acess-component">
+                                <div class="checkbox-component">
+                                    <input type="button" class="checkbox-icon active" />
+                                    <span class="checkbox-text">Thứ 5</span>
+                                </div>
+                            </div>
+
+                            <div class="time-picker">
+                                <input type="text" name="name" value="03:00" class="time-picker-input time-start" />
+                                <span class="time-picker-icon"></span>
+                                <div class="time-choice">
+                                    <div class="time-item">00:00</div>
+                                    <div class="time-item">00:30</div>
+                                    <div class="time-item">01:00</div>
+                                    <div class="time-item">01:30</div>
+                                    <div class="time-item">02:00</div>
+                                    <div class="time-item">02:30</div>
+                                    <div class="time-item">03:00</div>
+                                    <div class="time-item">03:30</div>
+                                    <div class="time-item">04:00</div>
+                                    <div class="time-item">04:30</div>
+                                    <div class="time-item">05:00</div>
+                                    <div class="time-item">05:30</div>
+                                    <div class="time-item">06:00</div>
+                                    <div class="time-item">06:30</div>
+                                    <div class="time-item">07:00</div>
+                                    <div class="time-item">07:30</div>
+                                    <div class="time-item">08:00</div>
+                                    <div class="time-item">08:30</div>
+                                    <div class="time-item">09:00</div>
+                                    <div class="time-item">09:30</div>
+                                    <div class="time-item">10:00</div>
+                                    <div class="time-item">10:30</div>
+                                    <div class="time-item">11:00</div>
+                                    <div class="time-item">11:30</div>
+                                    <div class="time-item">12:00</div>
+                                    <div class="time-item">12:30</div>
+                                    <div class="time-item">13:00</div>
+                                    <div class="time-item">13:30</div>
+                                    <div class="time-item">14:00</div>
+                                    <div class="time-item">14:30</div>
+                                    <div class="time-item">15:00</div>
+                                    <div class="time-item">15:30</div>
+                                    <div class="time-item">16:00</div>
+                                    <div class="time-item">16:30</div>
+                                    <div class="time-item">17:00</div>
+                                    <div class="time-item">17:30</div>
+                                    <div class="time-item">18:00</div>
+                                    <div class="time-item">18:30</div>
+                                    <div class="time-item">19:00</div>
+                                    <div class="time-item">19:30</div>
+                                    <div class="time-item">20:00</div>
+                                    <div class="time-item">20:30</div>
+                                    <div class="time-item">21:00</div>
+                                    <div class="time-item">21:30</div>
+                                    <div class="time-item">22:00</div>
+                                    <div class="time-item">22:30</div>
+                                    <div class="time-item">23:00</div>
+                                    <div class="time-item">23:30</div>
+                                    <div class="time-item">23:59</div>
+                                </div>
+                            </div>
+                            <span>-</span>
+                            <div class="time-picker">
+                                <input type="text" name="name" value="03:00" class="time-picker-input time-end" />
+                                <span class="time-picker-icon"></span>
+                                <div class="time-choice">
+                                    <div class="time-item">00:00</div>
+                                    <div class="time-item">00:30</div>
+                                    <div class="time-item">01:00</div>
+                                    <div class="time-item">01:30</div>
+                                    <div class="time-item">02:00</div>
+                                    <div class="time-item">02:30</div>
+                                    <div class="time-item">03:00</div>
+                                    <div class="time-item">03:30</div>
+                                    <div class="time-item">04:00</div>
+                                    <div class="time-item">04:30</div>
+                                    <div class="time-item">05:00</div>
+                                    <div class="time-item">05:30</div>
+                                    <div class="time-item">06:00</div>
+                                    <div class="time-item">06:30</div>
+                                    <div class="time-item">07:00</div>
+                                    <div class="time-item">07:30</div>
+                                    <div class="time-item">08:00</div>
+                                    <div class="time-item">08:30</div>
+                                    <div class="time-item">09:00</div>
+                                    <div class="time-item">09:30</div>
+                                    <div class="time-item">10:00</div>
+                                    <div class="time-item">10:30</div>
+                                    <div class="time-item">11:00</div>
+                                    <div class="time-item">11:30</div>
+                                    <div class="time-item">12:00</div>
+                                    <div class="time-item">12:30</div>
+                                    <div class="time-item">13:00</div>
+                                    <div class="time-item">13:30</div>
+                                    <div class="time-item">14:00</div>
+                                    <div class="time-item">14:30</div>
+                                    <div class="time-item">15:00</div>
+                                    <div class="time-item">15:30</div>
+                                    <div class="time-item">16:00</div>
+                                    <div class="time-item">16:30</div>
+                                    <div class="time-item">17:00</div>
+                                    <div class="time-item">17:30</div>
+                                    <div class="time-item">18:00</div>
+                                    <div class="time-item">18:30</div>
+                                    <div class="time-item">19:00</div>
+                                    <div class="time-item">19:30</div>
+                                    <div class="time-item">20:00</div>
+                                    <div class="time-item">20:30</div>
+                                    <div class="time-item">21:00</div>
+                                    <div class="time-item">21:30</div>
+                                    <div class="time-item">22:00</div>
+                                    <div class="time-item">22:30</div>
+                                    <div class="time-item">23:00</div>
+                                    <div class="time-item">23:30</div>
+                                    <div class="time-item">23:59</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--one row time picker-->
+                        <div class="one-row Friday">
+                            <div class="row-acess-component">
+                                <div class="checkbox-component">
+                                    <input type="button" class="checkbox-icon active" />
+                                    <span class="checkbox-text">Thứ 6</span>
+                                </div>
+                            </div>
+
+                            <div class="time-picker">
+                                <input type="text" name="name" value="03:00" class="time-picker-input time-start" />
+                                <span class="time-picker-icon"></span>
+                                <div class="time-choice">
+                                    <div class="time-item">00:00</div>
+                                    <div class="time-item">00:30</div>
+                                    <div class="time-item">01:00</div>
+                                    <div class="time-item">01:30</div>
+                                    <div class="time-item">02:00</div>
+                                    <div class="time-item">02:30</div>
+                                    <div class="time-item">03:00</div>
+                                    <div class="time-item">03:30</div>
+                                    <div class="time-item">04:00</div>
+                                    <div class="time-item">04:30</div>
+                                    <div class="time-item">05:00</div>
+                                    <div class="time-item">05:30</div>
+                                    <div class="time-item">06:00</div>
+                                    <div class="time-item">06:30</div>
+                                    <div class="time-item">07:00</div>
+                                    <div class="time-item">07:30</div>
+                                    <div class="time-item">08:00</div>
+                                    <div class="time-item">08:30</div>
+                                    <div class="time-item">09:00</div>
+                                    <div class="time-item">09:30</div>
+                                    <div class="time-item">10:00</div>
+                                    <div class="time-item">10:30</div>
+                                    <div class="time-item">11:00</div>
+                                    <div class="time-item">11:30</div>
+                                    <div class="time-item">12:00</div>
+                                    <div class="time-item">12:30</div>
+                                    <div class="time-item">13:00</div>
+                                    <div class="time-item">13:30</div>
+                                    <div class="time-item">14:00</div>
+                                    <div class="time-item">14:30</div>
+                                    <div class="time-item">15:00</div>
+                                    <div class="time-item">15:30</div>
+                                    <div class="time-item">16:00</div>
+                                    <div class="time-item">16:30</div>
+                                    <div class="time-item">17:00</div>
+                                    <div class="time-item">17:30</div>
+                                    <div class="time-item">18:00</div>
+                                    <div class="time-item">18:30</div>
+                                    <div class="time-item">19:00</div>
+                                    <div class="time-item">19:30</div>
+                                    <div class="time-item">20:00</div>
+                                    <div class="time-item">20:30</div>
+                                    <div class="time-item">21:00</div>
+                                    <div class="time-item">21:30</div>
+                                    <div class="time-item">22:00</div>
+                                    <div class="time-item">22:30</div>
+                                    <div class="time-item">23:00</div>
+                                    <div class="time-item">23:30</div>
+                                    <div class="time-item">23:59</div>
+                                </div>
+                            </div>
+                            <span>-</span>
+                            <div class="time-picker">
+                                <input type="text" name="name" value="03:00" class="time-picker-input time-end" />
+                                <span class="time-picker-icon"></span>
+                                <div class="time-choice">
+                                    <div class="time-item">00:00</div>
+                                    <div class="time-item">00:30</div>
+                                    <div class="time-item">01:00</div>
+                                    <div class="time-item">01:30</div>
+                                    <div class="time-item">02:00</div>
+                                    <div class="time-item">02:30</div>
+                                    <div class="time-item">03:00</div>
+                                    <div class="time-item">03:30</div>
+                                    <div class="time-item">04:00</div>
+                                    <div class="time-item">04:30</div>
+                                    <div class="time-item">05:00</div>
+                                    <div class="time-item">05:30</div>
+                                    <div class="time-item">06:00</div>
+                                    <div class="time-item">06:30</div>
+                                    <div class="time-item">07:00</div>
+                                    <div class="time-item">07:30</div>
+                                    <div class="time-item">08:00</div>
+                                    <div class="time-item">08:30</div>
+                                    <div class="time-item">09:00</div>
+                                    <div class="time-item">09:30</div>
+                                    <div class="time-item">10:00</div>
+                                    <div class="time-item">10:30</div>
+                                    <div class="time-item">11:00</div>
+                                    <div class="time-item">11:30</div>
+                                    <div class="time-item">12:00</div>
+                                    <div class="time-item">12:30</div>
+                                    <div class="time-item">13:00</div>
+                                    <div class="time-item">13:30</div>
+                                    <div class="time-item">14:00</div>
+                                    <div class="time-item">14:30</div>
+                                    <div class="time-item">15:00</div>
+                                    <div class="time-item">15:30</div>
+                                    <div class="time-item">16:00</div>
+                                    <div class="time-item">16:30</div>
+                                    <div class="time-item">17:00</div>
+                                    <div class="time-item">17:30</div>
+                                    <div class="time-item">18:00</div>
+                                    <div class="time-item">18:30</div>
+                                    <div class="time-item">19:00</div>
+                                    <div class="time-item">19:30</div>
+                                    <div class="time-item">20:00</div>
+                                    <div class="time-item">20:30</div>
+                                    <div class="time-item">21:00</div>
+                                    <div class="time-item">21:30</div>
+                                    <div class="time-item">22:00</div>
+                                    <div class="time-item">22:30</div>
+                                    <div class="time-item">23:00</div>
+                                    <div class="time-item">23:30</div>
+                                    <div class="time-item">23:59</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--one row time picker-->
+                        <div class="one-row Saturday">
+                            <div class="row-acess-component">
+                                <div class="checkbox-component">
+                                    <input type="button" class="checkbox-icon active" />
+                                    <span class="checkbox-text">Thứ 7</span>
+                                </div>
+                            </div>
+
+                            <div class="time-picker">
+                                <input type="text" name="name" value="03:00" class="time-picker-input time-start" />
+                                <span class="time-picker-icon"></span>
+                                <div class="time-choice">
+                                    <div class="time-item">00:00</div>
+                                    <div class="time-item">00:30</div>
+                                    <div class="time-item">01:00</div>
+                                    <div class="time-item">01:30</div>
+                                    <div class="time-item">02:00</div>
+                                    <div class="time-item">02:30</div>
+                                    <div class="time-item">03:00</div>
+                                    <div class="time-item">03:30</div>
+                                    <div class="time-item">04:00</div>
+                                    <div class="time-item">04:30</div>
+                                    <div class="time-item">05:00</div>
+                                    <div class="time-item">05:30</div>
+                                    <div class="time-item">06:00</div>
+                                    <div class="time-item">06:30</div>
+                                    <div class="time-item">07:00</div>
+                                    <div class="time-item">07:30</div>
+                                    <div class="time-item">08:00</div>
+                                    <div class="time-item">08:30</div>
+                                    <div class="time-item">09:00</div>
+                                    <div class="time-item">09:30</div>
+                                    <div class="time-item">10:00</div>
+                                    <div class="time-item">10:30</div>
+                                    <div class="time-item">11:00</div>
+                                    <div class="time-item">11:30</div>
+                                    <div class="time-item">12:00</div>
+                                    <div class="time-item">12:30</div>
+                                    <div class="time-item">13:00</div>
+                                    <div class="time-item">13:30</div>
+                                    <div class="time-item">14:00</div>
+                                    <div class="time-item">14:30</div>
+                                    <div class="time-item">15:00</div>
+                                    <div class="time-item">15:30</div>
+                                    <div class="time-item">16:00</div>
+                                    <div class="time-item">16:30</div>
+                                    <div class="time-item">17:00</div>
+                                    <div class="time-item">17:30</div>
+                                    <div class="time-item">18:00</div>
+                                    <div class="time-item">18:30</div>
+                                    <div class="time-item">19:00</div>
+                                    <div class="time-item">19:30</div>
+                                    <div class="time-item">20:00</div>
+                                    <div class="time-item">20:30</div>
+                                    <div class="time-item">21:00</div>
+                                    <div class="time-item">21:30</div>
+                                    <div class="time-item">22:00</div>
+                                    <div class="time-item">22:30</div>
+                                    <div class="time-item">23:00</div>
+                                    <div class="time-item">23:30</div>
+                                    <div class="time-item">23:59</div>
+                                </div>
+                            </div>
+                            <span>-</span>
+                            <div class="time-picker">
+                                <input type="text" name="name" value="03:00" class="time-picker-input time-end" />
+                                <span class="time-picker-icon"></span>
+                                <div class="time-choice">
+                                    <div class="time-item">00:00</div>
+                                    <div class="time-item">00:30</div>
+                                    <div class="time-item">01:00</div>
+                                    <div class="time-item">01:30</div>
+                                    <div class="time-item">02:00</div>
+                                    <div class="time-item">02:30</div>
+                                    <div class="time-item">03:00</div>
+                                    <div class="time-item">03:30</div>
+                                    <div class="time-item">04:00</div>
+                                    <div class="time-item">04:30</div>
+                                    <div class="time-item">05:00</div>
+                                    <div class="time-item">05:30</div>
+                                    <div class="time-item">06:00</div>
+                                    <div class="time-item">06:30</div>
+                                    <div class="time-item">07:00</div>
+                                    <div class="time-item">07:30</div>
+                                    <div class="time-item">08:00</div>
+                                    <div class="time-item">08:30</div>
+                                    <div class="time-item">09:00</div>
+                                    <div class="time-item">09:30</div>
+                                    <div class="time-item">10:00</div>
+                                    <div class="time-item">10:30</div>
+                                    <div class="time-item">11:00</div>
+                                    <div class="time-item">11:30</div>
+                                    <div class="time-item">12:00</div>
+                                    <div class="time-item">12:30</div>
+                                    <div class="time-item">13:00</div>
+                                    <div class="time-item">13:30</div>
+                                    <div class="time-item">14:00</div>
+                                    <div class="time-item">14:30</div>
+                                    <div class="time-item">15:00</div>
+                                    <div class="time-item">15:30</div>
+                                    <div class="time-item">16:00</div>
+                                    <div class="time-item">16:30</div>
+                                    <div class="time-item">17:00</div>
+                                    <div class="time-item">17:30</div>
+                                    <div class="time-item">18:00</div>
+                                    <div class="time-item">18:30</div>
+                                    <div class="time-item">19:00</div>
+                                    <div class="time-item">19:30</div>
+                                    <div class="time-item">20:00</div>
+                                    <div class="time-item">20:30</div>
+                                    <div class="time-item">21:00</div>
+                                    <div class="time-item">21:30</div>
+                                    <div class="time-item">22:00</div>
+                                    <div class="time-item">22:30</div>
+                                    <div class="time-item">23:00</div>
+                                    <div class="time-item">23:30</div>
+                                    <div class="time-item">23:59</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--one row time picker-->
+                        <div class="one-row Sunday">
+                            <div class="row-acess-component">
+                                <div class="checkbox-component">
+                                    <input type="button" class="checkbox-icon active" />
+                                    <span class="checkbox-text">Chủ nhật</span>
+                                </div>
+                            </div>
+
+                            <div class="time-picker">
+                                <input type="text" name="name" value="03:00" class="time-picker-input time-start" />
+                                <span class="time-picker-icon"></span>
+                                <div class="time-choice">
+                                    <div class="time-item">00:00</div>
+                                    <div class="time-item">00:30</div>
+                                    <div class="time-item">01:00</div>
+                                    <div class="time-item">01:30</div>
+                                    <div class="time-item">02:00</div>
+                                    <div class="time-item">02:30</div>
+                                    <div class="time-item">03:00</div>
+                                    <div class="time-item">03:30</div>
+                                    <div class="time-item">04:00</div>
+                                    <div class="time-item">04:30</div>
+                                    <div class="time-item">05:00</div>
+                                    <div class="time-item">05:30</div>
+                                    <div class="time-item">06:00</div>
+                                    <div class="time-item">06:30</div>
+                                    <div class="time-item">07:00</div>
+                                    <div class="time-item">07:30</div>
+                                    <div class="time-item">08:00</div>
+                                    <div class="time-item">08:30</div>
+                                    <div class="time-item">09:00</div>
+                                    <div class="time-item">09:30</div>
+                                    <div class="time-item">10:00</div>
+                                    <div class="time-item">10:30</div>
+                                    <div class="time-item">11:00</div>
+                                    <div class="time-item">11:30</div>
+                                    <div class="time-item">12:00</div>
+                                    <div class="time-item">12:30</div>
+                                    <div class="time-item">13:00</div>
+                                    <div class="time-item">13:30</div>
+                                    <div class="time-item">14:00</div>
+                                    <div class="time-item">14:30</div>
+                                    <div class="time-item">15:00</div>
+                                    <div class="time-item">15:30</div>
+                                    <div class="time-item">16:00</div>
+                                    <div class="time-item">16:30</div>
+                                    <div class="time-item">17:00</div>
+                                    <div class="time-item">17:30</div>
+                                    <div class="time-item">18:00</div>
+                                    <div class="time-item">18:30</div>
+                                    <div class="time-item">19:00</div>
+                                    <div class="time-item">19:30</div>
+                                    <div class="time-item">20:00</div>
+                                    <div class="time-item">20:30</div>
+                                    <div class="time-item">21:00</div>
+                                    <div class="time-item">21:30</div>
+                                    <div class="time-item">22:00</div>
+                                    <div class="time-item">22:30</div>
+                                    <div class="time-item">23:00</div>
+                                    <div class="time-item">23:30</div>
+                                    <div class="time-item">23:59</div>
+                                </div>
+                            </div>
+                            <span>-</span>
+                            <div class="time-picker">
+                                <input type="text" name="name" value="03:00" class="time-picker-input time-end" />
+                                <span class="time-picker-icon"></span>
+                                <div class="time-choice">
+                                    <div class="time-item">00:00</div>
+                                    <div class="time-item">00:30</div>
+                                    <div class="time-item">01:00</div>
+                                    <div class="time-item">01:30</div>
+                                    <div class="time-item">02:00</div>
+                                    <div class="time-item">02:30</div>
+                                    <div class="time-item">03:00</div>
+                                    <div class="time-item">03:30</div>
+                                    <div class="time-item">04:00</div>
+                                    <div class="time-item">04:30</div>
+                                    <div class="time-item">05:00</div>
+                                    <div class="time-item">05:30</div>
+                                    <div class="time-item">06:00</div>
+                                    <div class="time-item">06:30</div>
+                                    <div class="time-item">07:00</div>
+                                    <div class="time-item">07:30</div>
+                                    <div class="time-item">08:00</div>
+                                    <div class="time-item">08:30</div>
+                                    <div class="time-item">09:00</div>
+                                    <div class="time-item">09:30</div>
+                                    <div class="time-item">10:00</div>
+                                    <div class="time-item">10:30</div>
+                                    <div class="time-item">11:00</div>
+                                    <div class="time-item">11:30</div>
+                                    <div class="time-item">12:00</div>
+                                    <div class="time-item">12:30</div>
+                                    <div class="time-item">13:00</div>
+                                    <div class="time-item">13:30</div>
+                                    <div class="time-item">14:00</div>
+                                    <div class="time-item">14:30</div>
+                                    <div class="time-item">15:00</div>
+                                    <div class="time-item">15:30</div>
+                                    <div class="time-item">16:00</div>
+                                    <div class="time-item">16:30</div>
+                                    <div class="time-item">17:00</div>
+                                    <div class="time-item">17:30</div>
+                                    <div class="time-item">18:00</div>
+                                    <div class="time-item">18:30</div>
+                                    <div class="time-item">19:00</div>
+                                    <div class="time-item">19:30</div>
+                                    <div class="time-item">20:00</div>
+                                    <div class="time-item">20:30</div>
+                                    <div class="time-item">21:00</div>
+                                    <div class="time-item">21:30</div>
+                                    <div class="time-item">22:00</div>
+                                    <div class="time-item">22:30</div>
+                                    <div class="time-item">23:00</div>
+                                    <div class="time-item">23:30</div>
+                                    <div class="time-item">23:59</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--sublialog for add dialog-->
+    <div id="subdialog" style="display:none">
+        <div class="wrap">
+            <div class="row-role">
+                <h6>Vai Trò bán hàng</h6>
+                <div class="wrap-checkbox">
+                    <div class="check-box-component">
+                        <div class="checkbox-component">
+                            <span class="checkbox-icon"></span>
+                            <span class="checkbox-text">Nhân viên bán hàng</span>
+                        </div>
+                        <div>
+                            <span>Tư vấn bán hàng</span>
+                        </div>
+                    </div>
+                    <div class="check-box-component">
+                        <div class="checkbox-component">
+                            <span class="checkbox-icon"></span>
+                            <span class="checkbox-text">Thu ngân</span>
+                        </div>
+                        <div>
+                            <span>Tư vấn bán hàng, thu tiền</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row2">
+                <h6>Vai trò quản lý</h6>
+                <div class="wrap-checkbox">
+                    <div class="left-colum">
+                        <div class="check-box-component">
+                            <div class="checkbox-component">
+                                <span class="checkbox-icon"></span>
+                                <span class="checkbox-text">Quản lý hàng hóa</span>
+                            </div>
+                            <div>
+                                <span>Tạo lập chỉnh sửa danh mục hàng hóa và in tem nhãn</span>
+                            </div>
+                        </div>
+                        <div class="check-box-component">
+                            <div class="checkbox-component">
+                                <span class="checkbox-icon"></span>
+                                <span class="checkbox-text">Quản lý cửa hàng</span>
+                            </div>
+                            <div>
+                                <span>Quản lý tất cả các hoạt động của cửa hàng</span>
+                            </div>
+                        </div>
+                        <div class="check-box-component">
+                            <div class="checkbox-component">
+                                <span class="checkbox-icon"></span>
+                                <span class="checkbox-text">Mua hàng</span>
+                            </div>
+                            <div>
+                                <span>Lập đơn đặt hàng và nhập hàng</span>
+                            </div>
+                        </div>
+                        <div class="check-box-component">
+                            <div class="checkbox-component">
+                                <span class="checkbox-icon"></span>
+                                <span class="checkbox-text">Quản lý kho</span>
+                            </div>
+                            <div>
+                                <span>Nhập-xuất hàng hóa, quàn lý tồn kho</span>
+                            </div>
+                        </div>
+                        <div class="check-box-component">
+                            <div class="checkbox-component">
+                                <span class="checkbox-icon"></span>
+                                <span class="checkbox-text">Kế toán</span>
+                            </div>
+                            <div>
+                                <span>Lập đơn đặt hàng, nhập hàng, nhập - xuất hàng hóa, quản lý kho và các khoản thu chi</span>
+                            </div>
+                        </div>
+                        <div class="check-box-component">
+                            <div class="checkbox-component">
+                                <span class="checkbox-icon"></span>
+                                <span class="checkbox-text">Quản lý quỹ tiền mặt</span>
+                            </div>
+                            <div>
+                                <span>Thu chi tiền mặt và quản lý tiền mặt</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="right-colum">
+                        <div class="check-box-component">
+                            <div class="checkbox-component">
+                                <span class="checkbox-icon"></span>
+                                <span class="checkbox-text">Quản lý quỹ tiền gửi</span>
+                            </div>
+                            <div>
+                                <span>Thu chi tiền gửi và quản lý tiền gửi ngân hàng</span>
+                            </div>
+                        </div>
+                        <div class="check-box-component">
+                            <div class="checkbox-component">
+                                <span class="checkbox-icon"></span>
+                                <span class="checkbox-text">Quản lý khuyến mại</span>
+                            </div>
+                            <div>
+                                <span>Tạo lập và chỉnh sửa các chương trình khuyến mại</span>
+                            </div>
+                        </div>
+                        <div class="check-box-component">
+                            <div class="checkbox-component">
+                                <span class="checkbox-icon"></span>
+                                <span class="checkbox-text">Quản lý chi phí</span>
+                            </div>
+                            <div>
+                                <span>Tổng hợp các khoản chi phí phát sinh hàng tháng</span>
+                            </div>
+                        </div>
+                        <div class="check-box-component">
+                            <div class="checkbox-component">
+                                <span class="checkbox-icon"></span>
+                                <span class="checkbox-text">Quản lý kết quả kinh doanh</span>
+                            </div>
+                            <div>
+                                <span>Theo dõi báo cáo của cửa hàng</span>
+                            </div>
+                        </div>
+                        <div class="check-box-component">
+                            <div class="checkbox-component">
+                                <span class="checkbox-icon"></span>
+                                <span class="checkbox-text">Quản lý chuỗi</span>
+                            </div>
+                            <div>
+                                <span>Quản lý của hoạt động của tất cả các cửa hàng trong chuỗi</span>
+                            </div>
+                        </div>
+                        <div class="check-box-component">
+                            <div class="checkbox-component">
+                                <span class="checkbox-icon"></span>
+                                <span class="checkbox-text">Quản lý hệ thống</span>
+                            </div>
+                            <div>
+                                <span>Thực hiện tất cả chức năng trên toàn bộ hệ thống</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--dialog delete-->
+    <div id="dialog-delete" style="display:none; text-align:center;line-height : 100%;">
+        <div style="margin-top : 10px; display : flex; justify-content : center; align-items: center">
+            <span class="question-delete-icon"></span>
+            <div>
+                <span> Bạn có chắc muốn xóa nhân viên</span>
+                <span style="color:red; font-weight : bold" class="row-content-dialog"></span>
+                <span>không ?</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!--dialog save or not-->
+    <div id="dialog-question" style="display:none; text-align:center;line-height : 100%;">
+        <div style="margin-top : 10px; display : flex; justify-content : center; align-items: center">
+            <span class="question-delete-icon"></span>
+            <div>
+                <span>Dữ liệu của bạn đã thay đổi , bạn có muốn lưu lại trước khi rời đi không</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!--dialog save or not-->
+    <div id="dialog-question-edit" style="display:none; text-align:center;line-height : 100%;">
+        <div style="margin-top : 10px; display : flex; justify-content : center; align-items: center">
+            <span class="question-delete-icon"></span>
+            <div>
+                <span>Dữ liệu của bạn đã thay đổi , bạn có muốn lưu lại trước khi rời đi không</span>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../scripts/lib/jquery-3.3.1.min.js"></script>
+    <script src="../scripts/lib/jquery-ui.min.js"></script>
+    <script src="../Scripts/views/employeePage/callApi.js"></script>
+    <script src="../Scripts/common/common.js"></script>
+    <script src="../Scripts/Views/table.js"></script>
+    <script src="../Scripts/Views/filter.js"></script>
+    <script src="../Scripts/base/dialog.js"></script>
+    <script src="../Scripts/Views/employeePage/employee.js"></script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Sổ quỹ tiền</title>
+    <link href="/CSS/lib/jquery-ui.min.css" rel="stylesheet" />
+    <link href="/CSS/common/dialog.css" rel="stylesheet" />
+    <link href="/CSS/common/dropdown.css" rel="stylesheet" />
+    <link href="/CSS/common/toolbar.css" rel="stylesheet" />
+    <link href="/CSS/common/table.css" rel="stylesheet" />
+    <link href="/CSS/common/filter.css" rel="stylesheet" />
+    <link href="/CSS/common/tab.css" rel="stylesheet" />
+    <link href="/CSS/common/buttons.css" rel="stylesheet" />
+    <link href="/CSS/Views/inward.css" rel="stylesheet" />
+    <link href="/CSS/common/common.css" rel="stylesheet" />
+
+</head>
+<body>
+    <!--phần header -->
+    <div class="header flex-center">
+        <div class="logo-mshopkeeper">
+            <div class="logo-img"></div>
+        </div>
+        <div class="header-content">
+            <div class="header-left">
+            </div>
+            <div class="header-right flex-center">
+                <div class="branch flex-center">
+                    <div>Tất cả chi nhánh</div>
+                    <div class="arow-down-line"></div>
+                </div>
+
+                <div class="user-setting flex-center">
+                    <div class="user-img"></div>
+                    <div class="user-name">Nguyễn Huy Thông</div>
+                    <div class="arow-down-line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main" style="display: flex">
+        <!--phần sideBar-->
+        <div class="misa-sidebar">
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-overview"></div>
+                <div class="sidebar-menu-title">Tổng quan</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-buy"></div>
+                <div class="sidebar-menu-title">Mua hàng</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-inventory"></div>
+                <div class="sidebar-menu-title">Kho</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-cash"></div>
+                <div class="sidebar-menu-title">Quỹ tiền</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-cost"></div>
+                <div class="sidebar-menu-title">Chi phí</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-promotion"></div>
+                <div class="sidebar-menu-title">Khuyến mại</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-dictionary"></div>
+                <div class="sidebar-menu-title">Danh mục</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-report"></div>
+                <div class="sidebar-menu-title">Báo cáo</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-setting"></div>
+                <div class="sidebar-menu-title">Thiết lập</div>
+            </div>
+            <div class="sidebar-menu flex-center">
+                <div class="sidebar-menu-img icon-menu-product"></div>
+                <div class="sidebar-menu-title">Hàng hóa</div>
+            </div>
+        </div>
+        <!--phần container-->
+        <div class="main-container">
+            <div class="content">
+                <!--phần filter-->
+                <div class="filter-data"></div>
+                <!--phần table-->
+                <div style="height: calc(100% - 25px);">
+                    <div class="table-page">
+                        <div class="table-container">
+                            <table class="tableMoneyBook" style=" border: 1px solid #d0d0d0;height:100%">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <div>Ngày chứng từ</div>
+                                        </th>
+                                        <th>
+                                            <div>Mã phiếu thu</div>
+                                        </th>
+                                        <th>
+                                            <div>Mã phiếu chi</div>
+                                        <th>
+                                            <div>Diễn giải</div>
+                                        </th>
+                                        <th>
+                                            <div>Số tiền thu</div>
+                                        <th>
+                                            <div>Số tiền chi</div>
+                                        </th>
+                                        <th>
+                                            <div>Số tiền còn lại</div>
+                                        </th>
+                                        <th>
+                                            <div>Đối tượng</div>
+                                        </th>
+                                        <th>
+                                            <div>Nhân viên thu/chi</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="font-weight: bold ">
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>Số tồn đầu kỳ</td>
+                                        <td>0</td>
+                                        <td></td>
+                                        <td>300000000</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="row-even">
+                                        <td>27/02/2017</td>
+                                        <td>PT00002456</td>
+                                        <td></td>
+                                        <td>Bán hàng</td>
+                                        <td>1.000.000</td>
+                                        <td>0</td>
+                                        <td>301.000.000</td>
+                                        <td>Anh Hùng</td>
+                                        <td>Nguyễn Huy Thông</td>
+                                    </tr>
+                                    <tr>
+                                        <td>27/02/2017</td>
+                                        <td></td>
+                                        <td>PC00004</td>
+                                        <td></td>
+                                        <td>0</td>
+                                        <td>500.000</td>
+                                        <td>300.500.000</td>
+                                        <td>Chị Huyền</td>
+                                        <td>Nguyễn Huy Bình</td>
+                                    </tr>
+                                    <tr style="height: auto; background-color: #fff">
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>1.000.000</td>
+                                        <td>500.000</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr style="background-color: #fff">
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>Số tiền còn lại cuối kỳ</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>300.000.000</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+                        <div class="show-option flex-center">
+                            <div class="option-left">
+                                <div class="page-option flex-center">
+                                    <div class="flex-center">
+                                        <div class="square">&#8810</div>
+                                        <div class="square">&lt;</div>
+                                    </div>
+                                    <div>Trang <span style="border: 1px solid #000; padding:1px 8px; font-weight: bold">1</span> trên <span>1</span></div>
+                                    <div class="flex-center">
+                                        <div class="square">&gt;</div>
+                                        <div class="square">&#8811</div>
+                                    </div>
+                                    <div class="square page-reload">
+                                    </div>
+                                    <div class="page-numrecord">
+                                        Số bản ghi
+                                        <select>
+                                            <option value="value">5</option>
+                                            <option value="value">10</option>
+                                            <option value="value" selected>15</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="option-right">1-2 trong 2 kết quả</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Scripts/lib/jquery-3.3.1.min.js"></script>
+    <script src="../Scripts/lib/jquery-ui.min.js"></script>
+    <script src="../Scripts/base/dialog.js"></script>
+    <script src="../Scripts/Views/table.js"></script>
+    <script src="../Scripts/Views/filter.js"></script>
+    <script src="../Scripts/Views/tab.js"></script>
+    <script src="../Scripts/Views/inward.js"></script>
+    <script src="../Scripts/common/common.js"></script>
+</body>
+</html>

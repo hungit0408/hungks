@@ -1,0 +1,313 @@
+﻿/*CreatedBy: NNLam (28/4/2019)*/
+/*Editby::after NDCong (29/04/2019)*/
+/*updateBy::after NNLam (05/05/2019)*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*css cho áp dụng cung cả page*/
+body {
+    font-size: 13px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #e5e6eb;
+    font-family: Roboto-Regular,Arial, Helvetica, sans-serif !important;
+    /*position: absolute;*/
+}
+/*class css cho việc hiển thị từ trái qua phải*/
+.flex-center {
+    display: flex;
+    align-items: center;
+}
+
+/*CSS cho phần header*/
+.header {
+    height: 48px;
+    width: 100%;
+    display: flex;
+    background-color: #fff;
+}
+    /*header trái*/
+    .header .header-left {
+        float: left;
+        height: 48px;
+        width: 100px;
+        background-color: #006189;
+        text-align: center;
+        padding-top: 10px;
+    }
+    /*header bên phải*/
+    .header .header-right {
+        position: absolute;
+        right: 8px;
+        left: auto;
+        display: flex;
+        height: 48px;
+        align-items: center;
+    }
+/*logo mshopkeeper*/
+.logo-mshopkeeper {
+    background-image: url('../../Contents/Images/logo-mshopkeeper.png');
+    background-size: cover;
+    transform: scale(1.5,1.5);
+    width: 24px;
+    height: 19px;
+    left: 38px;
+    top: 14px;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    position: absolute;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+}
+
+/*css cho images mũi tên xổ xuống*/
+.arow-down-line {
+    background-image: url('../../Contents/Images/arrow-down-line.png');
+    width: 10px;
+    height: 5px;
+    margin-left: 5px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+}
+.account{
+    position: relative;
+    margin-top: 12px;
+}
+/*css phần chọn chi nhánh*/
+.branch {
+    position: relative;
+    height: 100%;
+    display: flex;
+    margin-right: 8px;
+    align-items: center;
+    text-align: center;
+}
+/*css cho phần vavata */
+.img-account {
+    margin-top: -2px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+/*userloginInfo*/
+.info-account-header {
+    position: relative;
+    text-align: center;
+    align-items:center;
+    height:100%;
+    margin-left: 3px;
+    display: flex;
+}
+/*Kết thúc CSS phần header*/
+/*----------------------------------------------------------------------------------------------------------------------------*/
+/*CSS cho phần sidebar*/
+.misa-sidebar {
+    height: 100%;
+    width: 100px;
+    position: absolute;
+    text-align: center;
+    background-color: #0973b9;
+}
+
+    .misa-sidebar ul {
+        padding: 0;
+    }
+
+    /*list item of menu*/ 
+    .misa-sidebar .left-menu li {
+        list-style-type: none;
+        background-color: #0973b9;
+        color: #fff;
+        height: 40px;
+        align-items: center;
+    }
+        /*setting hover*/
+        .misa-sidebar .left-menu li:hover {
+            cursor: pointer;
+            background-color: #006189;
+        }
+        /*setting sidebar-menu*/
+        .misa-sidebar .left-menu .sidebar-menu {
+            display: flex;
+            position: relative;
+            width: 100px;
+            height: 59.5px;
+            align-items: center;
+        }
+
+    /*setting text color-profile menu trái*/
+    .misa-sidebar .left-menu .text-menu {
+        top: 33px;
+        position: absolute;
+        text-align: center;
+        height: 26px;
+        width: 100%;
+        bottom: 2px;
+        font-size: 13px;
+    }
+
+    /*setting import icon dùng chung*/
+    .misa-sidebar .left-menu .icon-menu {
+        background-image: url('../../Contents/Images/slibarmenu.png');
+        width: 22px;
+        height: 33px;
+        left: 38px;
+        top: 10px;
+        line-height: 20px;
+        font-size: 14px;
+        font-weight: 400;
+        position: absolute;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        color: #fff;
+        text-align: center;
+    }
+/*css phần hiển thị icon cho menu trái*/
+/*icon overview*/
+.icon-menu-overview {
+    background-position: 0 -3px;
+}
+/*icon buy*/
+.icon-menu-buy {
+    background-position: 0 -43px;
+}
+/*icon chức năng kho*/
+.icon-menu-inventory {
+    background-position: 0 -81px;
+}
+/*icon chức năng quỹ tiền*/
+.icon-menu-cash {
+    background-position: 0 -123px;
+}
+/*icon chức năng chi phí*/
+.icon-menu-cost {
+    background-position: 0 -163px;
+}
+/*icon chức năng khuyến mãi*/
+.icon-menu-promotion {
+    background-position: 0 -202px;
+}
+/*icon chức năng danh mục*/
+.icon-menu-dictionary {
+    background-position: 0 -242px;
+}
+/*icon chức năng báo cáo*/
+.icon-menu-report {
+    background-position: 0 -281px;
+}
+/*icon chức năng setting*/
+.icon-menu-setting {
+    background-position: 0 -323px;
+}
+/*icon chức năng sản phẩm*/
+.icon-menu-product {
+    background-position: 0 -355px;
+}
+/*css cho menu sản phẩm*/
+.menu-product {
+    margin-top: 3px;
+    border-top: 1.5px solid #006189;
+}
+
+/*Kết thúc CSS phần sidebar*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*Bắt đầu phần css cho nội dung*/
+.container {
+    position: absolute;
+    height: calc(100% - 48px) ;
+    max-width: 100%;
+    margin-left: 0px;
+    padding-left: 0px;
+    display: flex
+}
+    /*content*/
+    .container .conntent {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 100px;
+        right: 0;
+        padding: 8px;
+        max-width: 100%;
+        max-height:100%;
+    }
+
+    /*css phần filter*/
+.conntent .misa-filter {
+    position: relative;
+    
+    top: 0px;
+    bottom: 0px;
+    height: 50px;
+    width: 100%;
+    background-color: #fff;
+}
+/*css cho thẻ select*/
+.select-obj {
+    border-color: #ccc;
+    height: 27px;
+    flex-basis: 181px !important;
+}
+/*loading page voucher*/
+.loadingPageVoucher {
+    background-color: #ccc;
+    background-image: url('../../Contents/Images/loading.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    opacity: 0.4;
+    height: 100%;
+    width:100%;
+    position:absolute;
+    top:60px;
+    /*margin-right: 3px;*/
+    z-index: 2;
+}
+.loading {
+    background-color: #ccc;
+    background-image: url('../../Contents/Images/loading.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    opacity: 0.4;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    position: relative;
+}
+select.selPageNumber {
+    -webkit-appearance: none;
+    background: url(../../../Contents/Icons/arrow-down-line.png) no-repeat;
+    background-position: right 5px center;
+    height: 26px;
+    border-radius: 3px;
+    border: 1px solid #80808061;
+    margin-left: 3px;
+    padding: 0 20px 0 5px;
+    cursor: pointer;
+    
+}
+/*ẩn*/
+.nonDisplay{
+    display:none;
+}
+.selectNumberRowData {
+    margin-left: 3px;
+    /* height: 24px; */
+    border: 1px solid #026b97;
+    height: 24px;
+    width: 50px;
+    border-radius: 3px;
+}

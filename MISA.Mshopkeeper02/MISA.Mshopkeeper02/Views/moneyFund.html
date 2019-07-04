@@ -1,0 +1,974 @@
+﻿<!--CreatedBy: NNLam (28/04/2019)-->
+<!--UpdatedBy : NNLam (29/04/2018)-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Quỹ tiền</title>
+    <link href="/CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="/CSS/lib/jquery-ui.min.css" rel="stylesheet" />
+    <link href="/CSS/common/toolbar.css" rel="stylesheet" />
+    <link href="/CSS/common/grid.css" rel="stylesheet" />
+    <link href="/CSS/Views/index.css" rel="stylesheet" />
+    <link href="/CSS/common/dropdown.css" rel="stylesheet" />
+    <link href="/CSS/common/filter.css" rel="stylesheet" />
+    <link href="/CSS/common/dialog.css" rel="stylesheet" />
+    <link href="/CSS/common/buttons.css" rel="stylesheet" />
+    <link href="/CSS/common/tab.css" rel="stylesheet" />
+    <link href="/CSS/common/common.css" rel="stylesheet" />
+    <link href="/CSS/Views/index.css" rel="stylesheet" />
+    <link href="/CSS/common/common.css" rel="stylesheet" />
+</head>
+<body>
+    <!--header-->
+    <div class="header">
+        <div class="header-left">
+            <a class="logo-mshopkeeper">
+            </a>
+        </div>
+        <div class="header-right">
+            <div class="branch">
+                <p class="account">Tất cả chi nhánh</p>
+                <div class="arow-down-line"></div>
+            </div>
+            <img src="../../Contents/Images/EmployeeImage_2.png" class="img-account" />
+            <div class="info-account-header">
+                <span>Nguyễn Huy Thông</span>
+                <div class="arow-down-line"></div>
+            </div>
+            <div class="small-icon"></div>
+        </div>
+    </div>
+    <!--phần container-->
+    <div class="container">
+        <!--menu bên trái-->
+        <div class="misa-sidebar">
+            <!--<div class="left-menu">
+                            <ul>
+                                <li class="sidebar-menu menu-overview">
+                                    <div>
+                                        <div class="icon-menu icon-menu-overview "></div>
+                                        <div class="text-menu">
+                                            Tổng quan
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="sidebar-menu menu-buy">
+                                    <div>
+                                        <div class="icon-menu icon-menu-buy"></div>
+                                        <div class="text-menu">
+                                            Mua hàng
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="sidebar-menu menu-inventory">
+                                    <div>
+                                        <div class="icon-menu icon-menu-inventory"></div>
+                                        <div class="text-menu">
+                                            Kho
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="sidebar-menu menu-cash">
+                                    <div>
+                                        <div class="icon-menu icon-menu-cash"></div>
+                                        <div class="text-menu">
+                                            Quỹ tiền
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="sidebar-menu menu-cost">
+                                    <div>
+                                        <div class="icon-menu icon-menu-cost"></div>
+                                        <div class="text-menu">
+                                            Chi phí
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="sidebar-menu menu-promotion">
+                                    <div>
+                                        <div class="icon-menu icon-menu-promotion"></div>
+                                        <div class="text-menu">
+                                            Khuyến mại
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="sidebar-menu menu-dictionary">
+                                    <div>
+                                        <div class="icon-menu icon-menu-dictionary"></div>
+                                        <div class="text-menu">
+                                            Danh mục
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="sidebar-menu menu-report">
+                                    <div>
+            <script src="../Scripts/Views/sidebar.js"></script>
+                                        <div class="icon-menu icon-menu-report"></div>
+                                        <div class="text-menu">
+                                            Báo cáo
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="sidebar-menu menu-setting">
+                                    <div>
+                                        <div class="icon-menu icon-menu-setting"></div>
+                                        <div class="text-menu">
+                                            Thiết lập
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="sidebar-menu menu-product">
+                                    <div>
+                                        <div class="icon-menu icon-menu-product"></div>
+                                        <div class="text-menu">
+                                            Sản phẩm
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>-->
+        </div>
+        <!--phần nội dung-->
+        <div class="conntent">
+            <!--toolbar-->
+            <div class="misa-toolbar" id="Money_Fund_ID">
+
+            </div>
+            <!--filter-->
+            <div class="filter-data">
+
+            </div>
+            <!--chứa nội dung table-->
+            <div class="grid ">
+                <div class="" name="loading"></div>
+                <div class="grid-table table-list-voucher " style="z-index:90">
+                    <table id="tblMoneyFund" recordId="MoneyFundID">
+                        <!--phần tiêu đề và filter option của table-->
+                        <thead>
+                            <tr>
+                                <th class="col-colspan-cb th-resizeable">
+                                    <div class="misa-column" style="border-left: 0px;" fieldData="CheckBox">
+                                        <input class="filter-input-checkbox " type="checkbox" name="" value="" id="ckbRoot" />
+                                    </div>
+                                </th>
+                                <th class="col-colspan th-resizeable">
+                                    <div class="misa-column" fieldData="RefDate">
+                                        <div class="column-title">Ngày</div>
+                                        <div class="column-filter date-pickers">
+                                            <input class="filter-input input-date-picker filterPage refDate" style="text-align: center" />
+                                            <!--<div class="filter-option icon-calendar"></div>-->
+                                        </div>
+                                    </div>
+                                </th>
+                                <th class="col-colspan th-resizeable">
+                                    <div class="misa-column" fieldData="RefNo">
+                                        <div class="column-title">Mã Chứng từ</div>
+                                        <div class="column-filter">
+                                            <div class="filter-option icon-search"></div>
+                                            <input class="filter-input filterPage" name="inpFilterRefName"/>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th class="col-colspan-lct th-resizeable">
+                                    <div class="misa-column" fieldData="RefTypeName">
+                                        <div class="column-title">Loại chứng từ</div>
+                                        <div class="column-filter">
+                                            <input class="filter-input filterPage" id="DocumentTypeId" type="text" list="DocumentType" value="Tất cả" />
+                                            <div class="filter-option icon-arow-down-line dropbtn" onclick="myDropdown('DocumentTypes')">
+                                                <img src="/Contents/Images/arrow-down-line.png" style="margin-top:5px" />
+                                            </div>
+                                            <!--sẽ đưa ra js dùng chung khi có database-->
+                                            <select id="DocumentTypes" ng-model="selectItem" class="dropdown-content filterPage" multiple onchange="changeValue('DocumentTypes','DocumentTypeId')">
+                                                <option value="" selected>Tất cả</option>
+                                                <option value="14">Phiếu thu tiền mặt</option>
+                                                <option value="15">Phiếu thu nợ - tiền mặt</option>
+                                                <option value="18">Phiếu chi tiền mặt</option>
+                                                <option value="19">Phiếu trả nợ - tiền mặt</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th class="col-colspan-tt th-resizeable">
+                                    <div class="misa-column" fieldData="TotalAmount" dataType="money">
+                                        <div class="column-title">Tổng tiền</div>
+                                        <div class="column-filter">
+                                            <div class="filt-optionOther">
+                                                <div class="filt-compare-value">=</div>
+                                                <div class="filt-compare-container" style="display: none">
+                                                    <div>
+                                                        <span class="btth">=</span> : Bằng
+                                                    </div>
+                                                    <div>
+                                                        <span class="btth"><</span> : Nhỏ hơn
+                                                    </div>
+                                                    <div>
+                                                        <span class="btth">&le;</span> : Nhỏ hơn hoặc bằng
+                                                    </div>
+                                                    <div>
+                                                        <span class="btth">></span> : Lớn hơn
+                                                    </div>
+                                                    <div>
+                                                        <span class="btth">&ge;</span> : Lớn hơn hoặc bằng
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input class="filter-input filterPage" name="inpFilterTotalAmount"/>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th class="col-colspan-obj th-resizeable">
+                                    <div class="misa-column" fieldData="VendorName">
+                                        <div class="column-title">Đối tượng</div>
+                                        <div class="column-filter">
+                                            <div class="filt-optionOther icon-star ab"></div>
+                                            <input class="filter-input filterPage " name="inpFilterAccountObjectName" />
+
+                                        </div>
+                                    </div>
+                                </th>
+                                <th class="col-colspan-reason th-resizeable">
+                                    <div class="misa-column" fieldData="Description" border-right: 1px solid #e9e9e9;">
+                                        <div class="column-title">Lý do</div>
+                                        <div class="column-filter">
+                                            <input class="filter-input filterPage" id="ReasonId" type="text" list="DocumentType" value="" />
+                                            <div class="filter-option icon-arow-down-line dropbtn" onclick="myDropdown('Reasons')">
+                                                <img src="/Contents/Images/arrow-down-line.png" style="margin-top:5px" />
+                                            </div>
+                                            <!--sẽ đưa ra js dùng chung khi có database-->
+                                            <select id="Reasons" ng-model="selectItem" class="dropdown-content filterPage" multiple onchange="changeValue('Reasons','ReasonId')">
+                                                <option value="0" selected></option>
+                                                <option value="1">Thu cọc</option>
+                                                <option value="2">Thu nợ của khách hàng</option>
+                                                <option value="3">a</option>
+                                                <option value="4">b</option>
+                                                <option value="5">c</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th style="width:17px"></th>
+                            </tr>
+                        </thead>
+                        <!--phần tbody-->
+                        <tbody id="tbodyListVoucher"></tbody>
+                        <!--phần tfoot-->
+                        <tfoot width:100%;" id="tfootListVoucher" class=""></tfoot>
+                    </table>
+                </div>
+
+                <div class="show-option flex-center " style=" width:100%;">
+                    <div class="option-left">
+                        <div class="left-arrow">
+                            <span class="arrow-icon arrow-left-double"></span>
+                            <span class="arrow-icon arrow-left-single"></span>
+                            <span style="margin-left: 16px; margin-right: -9px;">Trang</span>
+                        </div>
+                        <div class="curent-page">
+                            <input type="text" name="pageNumber" value="1" />
+                            <span>trên </span><span name="pageINT" style="margin-left: 2px">1</span>
+                        </div>
+                        <div class="right-arrow">
+                            <span class="arrow-icon arrow-right-single"></span>
+                            <span class="arrow-icon arrow-right-double"></span>
+                            <span class="load-data-icon" style="border: 1px solid #026b97;"></span>
+                            <select class="numberRow selectNumberRowData">
+                                <option value="15">15</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="option-right"><span name="rowINT">5</span><span>-</span><span name="selectRowINT">15</span><span> trong </span><span name="totalRowINT">30</span><span> kết quả</span></div>
+                </div>
+                <div class="grid-fooder fooder-detail">
+                    <div class="grid-fooder-detail">
+                        <div class="ct-detail"> Chi tiết</div>
+                    </div>
+                    <div style="border:1px solid #d0d0d0; height: 100%; background-color:#fff">
+                        <div class="loading-detail"></div>
+                        <table class="moneyFundDetail">
+                            <thead>
+                                <tr class="th-moneyFunDetail">
+                                    <th style="width:70%">
+                                        Diễn Giải
+                                    </th>
+                                    <th style="width:15%">
+                                        Số tiền
+                                    </th>
+                                    <th style="width:15%">
+                                        Mục thu/Chi
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbodyVoucherDetail" class="">
+
+                                <tr style="height: 32px; padding: 0 24px"><td class="text-align-left" name="Description"></td><td class="text-align-center" name="TotalAmount"></td><td class="text-align-left" name="Item"></td></tr>
+                                <tr style="height: auto"></tr>
+                            </tbody>
+                            <tfoot id="tfootVoucherDetail">
+
+                                <tr class="hightlight" style="height: 32px"><td></td><td class="text-align-center" style="font-weight: bold;" name="MoneyNumberInTfoot"></td><td></td></tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--phần dialog-->
+    <div id="dialogform" style="display: none">
+        <!--phần toolbar của dialog-->
+        <div class="misa-toolbar">
+            <div class="toolbar-item disable">
+                <div class="toolbar-item-img btn-before"></div>
+                <div class="toolbar-item-title">Trước</div>
+                <div class="toolbar-item-dropdown"></div>
+            </div>
+            <div class="toolbar-item disable">
+                <div class="toolbar-item-title">Sau</div>
+                <div class="toolbar-item-img btn-after"></div>
+                <div class="toolbar-item-dropdown"></div>
+            </div>
+            <div class="toolbar-item btn-addOfDialog ">
+                <div class="toolbar-item-img btn-add"></div>
+                <div class="toolbar-item-title">Thêm mới</div>
+                <div class="toolbar-item-dropdown"></div>
+            </div>
+            <div class="toolbar-item btn-editOfDialog" disabled="disabled">
+
+                <div class="toolbar-item-img btn-edit"></div>
+                <div class="toolbar-item-title">Sửa</div>
+
+            </div>
+            <div class="toolbar-item btn-saveOfDialog">
+                <div class="toolbar-item-img btn-save"></div>
+                <div class="toolbar-item-title">Lưu</div>
+            </div>
+            <div class="toolbar-item btn-deleteOfDialog">
+
+                <div class="toolbar-item-img btn-delete"></div>
+                <div class="toolbar-item-title">Xóa</div>
+
+            </div>
+            <div class="toolbar-item disable btn-stopOfDialog">
+                <div class="toolbar-item-img btn-stop"></div>
+                <div class="toolbar-item-title">Hoãn</div>
+            </div>
+            <div class="toolbar-item disable btn-printOfDialog">
+
+                <div class="toolbar-item-img btn-print"></div>
+                <div class="toolbar-item-title">In</div>
+                <div class="toolbar-item-dropdown"></div>
+
+            </div>
+            <div class="toolbar-item btn-helpOfDialog">
+                <div class="toolbar-item-img btn-help"></div>
+                <div class="toolbar-item-title">Trợ giúp</div>
+            </div>
+            <div class="toolbar-item btn-closeOfDialog">
+                <div class="toolbar-item-img btn-close"></div>
+                <div class="toolbar-item-title">Đóng</div>
+            </div>
+        </div>
+        <!--phần container của dialog-->
+        <div class="ui-container">
+            <div class="flex-center row-container">
+                <div style="width: 120px" name="Marked">Mục đích chi</div>
+                <div class="flex-center purpose-select">
+                    <div style="margin-top: 9px;">
+                        <input type="radio" id="moneyFundOther" name="rdMoneyFund" value="moneyFundOther" />
+                        <label>Khác</label>
+                    </div>
+                    <div style="margin-top: 9px;">
+                        <input type="radio" id="moneyFundPay" name="rdMoneyFund" value="moneyFundPay" />
+                        <label name="actionMoney">Trả nợ</label>
+                    </div>
+                    <div class="selectVoucher" name="selectVoucher">Chọn hóa đơn trả nợ</div>
+                </div>
+            </div>
+            <div class="flex row-container">
+                <div class="information">
+                    <div class="title">Thông tin chung</div>
+                    <div class="">
+                        <div class="information-row object-select-data">
+                            <div class="label changeObj"></div>
+                            <div class="input-container2 w-50 obj-when-disable action-isdisable" style="margin-right: 5px;">
+                                <input type="text" class="isDisabled " name="inpObjCode" value="">
+                                <div class="arow-down-line2"></div>
+                                <div class="search-icon selectObj"></div>
+                            </div>
+                            <div class="input-container2 w-50 action-isdisable">
+                                <input class="isDisabled" type="text" name="inpObjName" value="" />
+                            </div>
+                        </div>
+                        <div class="information-row">
+                            <div class="label" name="personAction">Người nhận</div>
+                            <div class="input-container2 action-isdisable">
+                                <input class="isDisabled" type="text" name="inpPersonAction" value="" />
+                            </div>
+                        </div>
+                        <div class="information-row">
+                            <div class="label">Địa chỉ</div>
+                            <div class="input-container2 action-isdisable">
+                                <input class="isDisabled" type="text" name="inpAddressOfObject" value="" />
+                            </div>
+                        </div>
+                        <div class="information-row">
+                            <div class="label" name="reason">Lý do chi</div>
+                            <div class="input-container2 action-isdisable">
+                                <input class="isDisabled" type="text" name="inpReason" value="" />
+                            </div>
+                        </div>
+                        <div class="information-row employee-select-data">
+                            <div class="label" name="employeeAction">Nhân viên chi</div>
+                            <div class="input-container2 w-50 obj-when-disable action-isdisable" style="margin-right: 5px;">
+                                <input class="isDisabled" type="text" name="inpEmployeeRoleAction" value="" />
+                                <div class="arow-down-line2"></div>
+                                <div class="search-icon select-employee"></div>
+                            </div>
+                            <div class="input-container2 w-50 action-isdisable">
+                                <input class="isDisabled" id="employeeSpend" type="text" name="inpEmployeeNameAction" value="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="voucher">
+                    <div class="title">Chứng từ</div>
+                    <div>
+                        <div class="information-row">
+                            <div class="label" name="divVoucherNumber">Số phiếu chi</div>
+                            <div class="input-container2 action-isdisable">
+                                <input type="text" name="inpVoucherNumber" value="" />
+                            </div>
+                        </div>
+                        <div class="information-row">
+                            <div class="label" name="divVoucherDate">Ngày chi</div>
+                            <div class="input-container2 action-isdisable">
+                                <input type="text" id="VoucherCreatedDate" name="inpdate" value="" class="input-date-picker" />
+                                <!--<div class="date-icon-picker"></div>-->
+                            </div>
+                        </div>
+                        <div class="information-row documentNumber">
+                            <div class="label">
+                                <input class="voucherNumber" type="checkbox" checked /> Tính vào
+                            </div>
+                            <div class="input-container2 action-isdisable">
+                                <input type="text" id="inpdocumentNumberNameId" name="inpItem" value="Công nợ" />
+                                <div class="filter-option icon-arow-down-line dropbtn" onclick="myDropdown('seldocumentNumberNameId')">
+                                    <img src="/Contents/Images/arrow-down-line.png" style="margin-right: 5px" />
+                                </div>
+                                <select id="seldocumentNumberNameId" ng-model="selectItem" class="dropdown-content action-isdisable" multiple onchange="changeValue('seldocumentNumberNameId','inpdocumentNumberNameId')">
+                                    <option value="1" selected>Công nợ</option>
+                                    <option value="2">0</option>
+                                    <option value="3">a</option>
+                                    <option value="4">b</option>
+                                    <option value="5">c</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-container">
+                <div class="title">Chi tiết</div>
+                <div class="table-form-detail">
+                    <div class="table-detail customer-page">
+                        <div class="tab-container">
+                            <div class="tab-buttons">
+                                <button class="active">Chi tiết</button>
+                                <button>Chứng từ</button>
+                            </div>
+                            <!--tab chi tiết-->
+                            <div class="tab-panel first-tab">
+                                <div style="border: 1px solid #d0d0d0">
+                                    <table style="width:100%; height: 170px; ">
+                                        <thead>
+                                            <tr style="height: 27px;">
+                                                <th width="40%">Diễn giải</th>
+                                                <th width="20%">Số tiền </th>
+                                                <th width="40%" name="item">Mục chi </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="detail-table-ref">
+                                            <tr style="height: 27px;">
+                                                <td name="inpItem"></td>
+                                                <td name="tdMoney" class="text-align-right"></td>
+                                                <td name="tdItem"></td>
+                                            </tr>
+                                            <tr></tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td></td>
+                                                <td name="tdMoney" class="text-align-right"></td>
+                                                <td></td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+
+                            </div>
+                            <!--tab chứng từ-->
+                            <div class="tab-panel">
+                                <!--phần table-->
+                                <div style="border: 1px solid #d0d0d0">
+                                    <table style="width:100%; height: 170px;" id="tbReckoningDetail">
+                                        <thead>
+                                            <tr style="height: 27px;">
+                                                <th width="18%" fieldData="Created">Ngày chứng từ </th>
+                                                <th width="28%" class="border-table-tab" fieldData="InvoiceCode">Số chứng từ</th>
+                                                <th width="18%" name="payableNumber" fieldData="Debit">số phải trả  </th>
+                                                <th width="18%" name="unpaidNumber" fieldData="PaidNumber">số chưa trả </th>
+                                                <th width="18%" name="payNumber" fieldData="Pay">số trả  </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="ListReckoning">
+                                            <tr>
+                                                <td name="RefDate">aaa</td>
+                                                <td class="border-table-tab" name="RefNo">aad</td>
+                                                <td name="Debit">dd</td>
+                                                <td name="PaidNumber">đ</td>
+                                                <td name="Pay">dd</td>
+                                            </tr>
+                                            <tr>
+                                                <td name="RefDate">aaa</td>
+                                                <td class="border-table-tab" name="RefNo">aad</td>
+                                                <td name="Debit">dd</td>
+                                                <td name="PaidNumber">đ</td>
+                                                <td name="Pay">dd</td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td></td>
+                                                <td class="border-table-tab"></td>
+                                                <td name="tdTfootDebit" class="text-align-right"></td>
+                                                <td name="tdTfootPaidNumber" class="text-align-right"></td>
+                                                <td name="tdTfootPay" class="text-align-right"></td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="table-OtherDetail">
+                    <table style="width:100%; height: 201px;">
+                        <thead>
+                            <tr style="height: 27px;">
+                                <th width="40%">Diễn giải</th>
+                                <th width="20%">Số tiền </th>
+                                <th width="40%" name="item">Mục chi </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="height:30px; text-align: left">
+                                <td class="text-align-left input-in-td"><input class="tfoot-inputTxt input-td" name="inpReason" type="text" placeholder="Nhập diễn giải" /></td>
+                                <td name="tdMoney" class="text-align-right input-in-td"><input type="number" name="tfootAmount2" style="text-align: right" class="tfoot-inputTxt input-td" /></td>
+                                <td name="tdItem" class="input-in-td"><input type="text" class="tfoot-inputTxt input-td" /></td>
+                            </tr>
+                            <tr style="background-color: #fff">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td></td>
+                                <td name="tdMoney" class="text-align-right"></td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--dialog chọn phiếu trả nợ-->
+    <div id="dialgoSelectVoucher">
+        <div class="filterDataOfDialog">
+            <div style="width: 50%; height:100%;">
+                <div class="information-row">
+                    <div class="label">Nhà cung cấp</div>
+                    <div class="input-container2">
+                        <input type="text" name="imp-objectType" value="" />
+                        <div class="arow-down-line2" id="imp-objectTypeId" style="margin-right: 3px; margin-left: 3px"></div>
+                        <div>
+                            <table class="tb-ObjectType" style="border: 1px solid #000; width: 309px; overflow: auto">
+                                <thead>
+                                    <tr>
+                                        <th>Mã</th>
+                                        <th>Tên</th>
+                                        <th>Loại</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody-imp-objectTypeId">
+                                    <tr class="onRow">
+                                        <td name="ObjectCode">R0001</td>
+                                        <td name="ObjectName">Giao hàng nhanh</td>
+                                        <td name="ObjectType">Đối tác Giao hàng</td>
+                                    </tr>
+                                    <tr class="onRow">
+                                        <td>R0002</td>
+                                        <td>Giao hàng tiết kiệm</td>
+                                        <td>Đối tác Giao hàng</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 50%; height:100%; display: flex; margin-top: 10px;">
+                <div class="information-row">
+                    <div class="label2" style="margin-left:29px">Ngày chi</div>
+                    <div class="input-container w-30">
+                        <input type="text" name="inpdate" value="" class="input-date-picker" />
+                        <!--<div class="date-icon-picker"></div>-->
+                    </div>
+                    <div class="rectangle filter-dataDialog">
+                        Lấy dữ liệu
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="filterDataOfDialog">
+            <div style="width: 50%; height:100%;">
+                <div class="information-row">
+                    <div class="label">Số trả</div>
+                    <div class="input-container">
+                        <input style="text-align: right" type="number" min="0" name="payNumber" id="ab" value="0" disabled="disabled" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui-container-table">
+            <table class="table-select-voucher">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox" id="select-all" name="ckbCheckAll" onclick="getCkbRowName('ckbVoucher')" /></th>
+                        <th>Ngày chứng từ</th>
+                        <th>Số chứng từ</th>
+                        <th>Số phải trả</th>
+                        <th>Số chưa trả</th>
+                        <th>Số trả</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="height: 27px">
+                        <td><input type="checkbox" name="ckbVoucher" value="" /></td>
+                        <td class="col-color text-align-center">14/04/2017</td>
+                        <td class="col-color text-align-left">17000000001</td>
+                        <td class="col-color text-align-right">200.000</td>
+                        <td class="col-color text-align-right">200.000</td>
+                        <td class=" input-in-td">
+                            <input class="input-td text-align-right" name="inpMoneyInVoucher" type="number" min="0" placeholder="0" />
+                        </td>
+                    </tr>
+                    <tr style="height: 27px">
+                        <td><input type="checkbox" name="ckbVoucher" value="" /></td>
+                        <td class="col-color text-align-center">14/04/2017</td>
+                        <td class="col-color text-align-left">17000000002</td>
+                        <td class="col-color text-align-right">300.000</td>
+                        <td class="col-color text-align-right">100.000</td>
+                        <td class=" input-in-td">
+                            <input class="input-td text-align-right" name="inpMoneyInVoucher" type="number" min="0" placeholder="0" />
+                        </td>
+                    </tr>
+                    <tr style="height: auto">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="text-align-right">500.000</td>
+                        <td class="text-align-right">300.000</td>
+                        <td class="text-align-right">0</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <!--dialog chọn đối tượng trả nợ-->
+    <div id="dialogSelectObject" class="dialog-select" style="display: none;">
+        <div class="ui-container">
+            <div class="flex-center row-container" style="justify-content: space-between">
+                <div>Loại đối tượng</div>
+                <select class="py-md-1 select-obj">
+                    <option value="1">Nhà cung cấp</option>
+                    <option value="4">Nhân viên</option>
+                    <option value="3">Khách hàng</option>
+                </select>
+                <div class="input-container2" style="width: 41%;">
+                    <input type="text" name="inpAccountObjectName" value="" placeholder="Nhập mã đối tượng, tên đối tượng" />
+                </div>
+                <div class="rectangle flex-center search-object">
+                    <div class="search-icon-blue">
+                    </div>
+                    <div class="search-object-text">Tìm kiếm</div>
+                </div>
+            </div>
+            <table id="table-select-object" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Mã đối tượng</th>
+                        <th>Tên đối tượng</th>
+                        <th>Loại đối tượng</th>
+                        <th>Địa chỉ</th>
+                    </tr>
+                </thead>
+                <tbody class="accountObject"></tbody>
+            </table>
+            <!--<div class="show-option flex-center" style="width: 100%;">
+                <div class="option-left">
+                    <div class="left-arrow">
+                        <span class="arrow-icon arrow-left-double"></span>
+                        <span class="arrow-icon arrow-left-single"></span>
+                    </div>
+                    <div class="curent-page">
+                        <span style="margin-right:3px">Trang</span>
+                        <input type="text" name="name" value="1" />
+                        <span>trên 1</span>
+                    </div>
+                    <div class="right-arrow">
+                        <span class="arrow-icon arrow-right-single"></span>
+                        <span class="arrow-icon arrow-right-double"></span>
+                        <span class="load-data-icon"></span>
+                        <select class="selPageNumber" style="width: 43px;flex-basis: 3px;">
+                            <option value="value">15</option>
+                            <option value="value">25</option>
+                            <option value="value">50</option>
+                            <option value="value">100</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="option-right" style="margin-right: 4px;">5-15 trong 30 kết quả</div>
+            </div>-->
+        </div>
+    </div>
+    <!--dialog chọn employee -->
+    <div id="dialogSelectEmployee" class="dialog-select" style="display: none;">
+        <div class="ui-container">
+            <div class="flex-center row-container" style="justify-content: space-between">
+                <div style="margin-left: 11px">Employee</div>
+                <div class="input-container2" style="width:70%;">
+                    <input type="text" name="inpAccountEmployeeName" value="" placeholder="Nhập mã đối tượng, tên đối tượng" />
+                </div>
+                <div class="rectangle flex-center search-employee">
+                    <div class="search-icon-blue">
+                    </div>
+                    <div class="search-object-text">Tìm kiếm</div>
+                </div>
+            </div>
+            <table id="table-select-Employee" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th style="width: 21px"></th>
+                        <th style="width: 100px">Mã Nhân viên</th>
+                        <th style="width: 164px">Tên Nhân viên</th>
+                        <th style="width: 100px">Vai trò</th>
+                        <th>Địa chỉ</th>
+                    </tr>
+                </thead>
+                <tbody class="accountEmployee">
+                  
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="dialogNotification" style="display: none">
+        <div class="conten-dialog-notifi">
+            <div class="iconQuestion "></div>
+            <div class="conntent-notifi"> </div>
+        </div>
+    </div>
+    <script src="/Scripts/lib/jquery-3.3.1.min.js"></script>
+    <script src="/Scripts/lib/jquery-ui.min.js"></script>
+    <script src="/Scripts/common/common.js"></script>
+    <script src="/Scripts/Views/sidebar.js"></script>
+    <script src="/Scripts/Views/toolbar.js"></script>
+    <script src="/Scripts/Views/table.js"></script>
+    <script src="/Scripts/Views/dropdown.js"></script>
+    <script src="/Scripts/Views/filter.js"></script>
+    <script src="/Scripts/base/dialog.js"></script>
+    <script src="/Scripts/Views/tab.js"></script>
+    <script src="/Scripts/Views/moneyFund.js"></script>
+    <!--js hiển thị dialog-->
+    <script>
+        $(document).ready(function () {
+            $('.selectVoucher:not(.disable)').on('click', function () {
+                dialogSelectVoucher.Open();
+            });
+            $('.selectObj:not(.disable)').on('click', function () {
+                dialogSelectObj.Open();
+            }); 
+            $('.select-employee:not(.disable)').on('click', function () {
+                dialogSelectEmployee.Open();
+            });
+        })
+        var buttonsDialogSelectVoucher = [
+            {
+                html: '<span class="button-icon btt-selectVoucher"></span ><span class="button-title">Chọn</span>',
+                class: "one-button select",
+                click: function () {
+                    var bool = false;
+                    $('input[name="ckbVoucher"]').each(function () {
+                        if (this.checked) {
+                            bool = true;
+                            return false;
+                        }
+                    });
+                    if (bool) {
+                        $('.isDisabled').attr('disabled', false);
+                        dialogSelectVoucher.Close();
+                    } else {
+                        alert("bạn chưa chọn hóa đơn");
+                    }
+
+                }
+            },
+            {
+                html: '<span class="button-icon"></span><span class="button-title">Hủy bỏ</span>',
+                class: "one-button cancel",
+                click: function () {
+                    //debugger
+                    $(this).dialog('close');
+                }
+            },
+            {
+                html: '<span class="button-icon"></span><span class="button-title">Trợ giúp</span>',
+                class: "one-button help",
+                click: function () {
+
+                }
+            }
+        ];
+        var buttonsDialogSelectObject = [
+            {
+                html: '<span class="button-icon btt-selectObject"></span ><span class="button-title">Chọn</span>',
+                class: "one-button select dialogSelectObj",
+                click: function () {
+                    var bool = false;
+                    $('input[name="ckbObject"]').each(function () {
+                        if (this.checked) {
+                            bool = true;
+                            return false;
+                        }
+                    });
+                    if (bool) {
+                        $('.isDisabled').attr('disabled', false);
+                        var a = new VoucherDialog();
+                        a.selectObjectOk();
+                        dialogSelectObj.Close();
+                        
+                    } else {
+                        alert("bạn chưa chọn đối tượng");
+                    }
+
+                }
+            },
+            {
+                html: '<span class="button-icon"></span><span class="button-title">Hủy bỏ</span>',
+                class: "one-button cancel",
+                click: function () {
+                    //debugger
+                    $(this).dialog('close');
+                }
+            },
+            {
+                html: '<span class="button-icon"></span><span class="button-title">Trợ giúp</span>',
+                class: "one-button help",
+                click: function () {
+
+                }
+            }
+        ];
+        var buttonsDialogSelectEmployee = [
+            {
+                html: '<span class="button-icon btt-selectEmployee"></span ><span class="button-title">Chọn</span>',
+                class: "one-button select dialogSelectEmployee",
+                click: function () {
+                    var bool = false;
+                    $('input[name="ckbEmployee"]').each(function () {
+                        if (this.checked) {
+                            bool = true;
+                            return false;
+                        }
+                    });
+                    if (bool) {
+                        $('.isDisabled').attr('disabled', false);
+                        var a = new VoucherDialog();
+                        a.selectEmployeeOk();
+                        dialogSelectEmployee.Close();
+
+                    } else {
+                        alert("bạn chưa chọn nhan vien");
+                    }
+
+                }
+            },
+            {
+                html: '<span class="button-icon"></span><span class="button-title">Hủy bỏ</span>',
+                class: "one-button cancel",
+                click: function () {
+                    //debugger
+                    $(this).dialog('close');
+                }
+            },
+            {
+                html: '<span class="button-icon"></span><span class="button-title">Trợ giúp</span>',
+                class: "one-button help",
+                click: function () {
+
+                }
+            }
+        ];
+        var buttonsDialogDeleteVoucher = [
+            {
+                html: '<span class="button-icon btt-deletevoucher"></span ><span class="button-title">Xóa</span>',
+                class: "one-button delete",
+                click: function () {
+                    var _voucherPage = new VoucherPage();
+                    _voucherPage.deleteVoucher();
+                    $(this).dialog('close');
+                }
+            },
+            {
+                html: '<span class="button-icon"></span><span class="button-title">Hủy bỏ</span>',
+                class: "one-button cancel",
+                click: function () {
+                    //debugger
+                    $(this).dialog('close');
+                }
+            }
+        ];
+        $(function () {
+            $(".th-resizeable").resizable();
+        });
+        //dialog Chọn hóa đơn trả nợ
+        var dialogSelectVoucher = new Dialog('#dialgoSelectVoucher', "Chọn hóa đơn trả nợ", 800, 500, buttonsDialogSelectVoucher);
+        //dialog chọn đối tượng
+        var dialogSelectObj = new Dialog('#dialogSelectObject', "Chọn đối tượng ", 800, 500, buttonsDialogSelectObject);
+        var dialogSelectEmployee = new Dialog('#dialogSelectEmployee', "Chọn Nhân viên", 800, 500, buttonsDialogSelectEmployee);
+        var dialogDeleteVoucher = new Dialog('#dialogNotification', "Xóa dữ liệu", 400, 156, buttonsDialogDeleteVoucher);
+    </script>
+</body>
+</html>

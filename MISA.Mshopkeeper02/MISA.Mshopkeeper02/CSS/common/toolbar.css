@@ -1,0 +1,122 @@
+﻿/*CreatedBy: NDCong (28/4/2019)*/
+.misa-toolbar {
+    display: flex;
+    background-color: #026b97;
+    height: 36px;
+    width: 100%;
+    font-size: 13px;
+}
+
+    .misa-toolbar button {
+        border: none;
+        background: none;
+    }
+
+    .misa-toolbar .toolbar-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        border-right: 1px solid #1882ae;
+        padding: 0 7px;
+        cursor: pointer;
+        user-select: none;
+    }
+        /*kyls edit 29/05/2019*/
+        .misa-toolbar .toolbar-item.disable, .misa-toolbar .toolbar-item[disabled], .disable {
+            opacity: 0.5;
+            cursor: default;
+        }
+
+        .misa-toolbar .toolbar-item div:not(:last-child) {
+            margin-right: 4px;
+        }
+
+        .misa-toolbar .toolbar-item:last-child {
+            border-right: none;
+        }
+
+        /*kyls edit 29/05/2019*/
+        .misa-toolbar div.toolbar-item:hover:not(.disable){
+            background-color: #0088c2;
+        }
+
+        .toolbar-item:hover:not([disabled]) {
+            background-color: #0088c2;
+        }
+
+        .misa-toolbar .toolbar-item .toolbar-item-img {
+            min-width: 16px;
+            height: 16px;
+            background-image: url('../../Contents/Icons/common-icon.png');
+            background-repeat: no-repeat;
+        }
+
+        .misa-toolbar .toolbar-item .toolbar-item-title {
+            padding: 0 5px;
+            white-space: nowrap;
+        }
+
+        .misa-toolbar .toolbar-item .toolbar-item-dropdown {
+            min-width: 8px;
+            height: 8px;
+            border: 4px solid;
+            border-color: #fff transparent transparent transparent;
+            margin-top: 4px;
+        }
+/*background cho từng button*/
+.toolbar-item-img.btn-add {
+    background-position: -1px -127px;
+}
+
+.toolbar-item-img.btn-duplicate {
+    background-position: -976px -127px;
+}
+
+.toolbar-item-img.btn-view {
+    background-position: -1602px -127px;
+}
+
+.toolbar-item-img.btn-edit {
+    background-position: -77px -203px;
+}
+
+.toolbar-item-img.btn-delete {
+    background-position: -1076px -127px;
+}
+
+.toolbar-item-img.btn-load {
+    background-position: -876px -127px;
+}
+
+.toolbar-item-img.btn-printcode {
+    background-position: -27px -50px;
+}
+
+.toolbar-item-img.btn-print {
+    background-position: -77px -51px;
+}
+
+.toolbar-item-img.btn-help {
+    background-position: -176px -202px;
+}
+
+.toolbar-item-img.btn-close {
+    background-position: -275px -127px;
+}
+
+.toolbar-item-img.btn-after {
+    background-position: -430px -127px;
+}
+
+.toolbar-item-img.btn-before {
+    background-position: -476px -127px;
+}
+
+.toolbar-item-img.btn-stop {
+    background-position: -176px -202px;
+}
+
+.toolbar-item-img.btn-save {
+    background-position: -325px -127px;
+}

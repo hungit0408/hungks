@@ -1,0 +1,41 @@
+﻿.tab-container {
+    width: 100%;
+}
+
+    .tab-container .tab-buttons {
+        height: 38px;
+        background: #f6f6f6;
+    }
+
+        .tab-container .tab-buttons button {
+            height: 94%;
+            cursor: pointer;
+            float: left;
+            border: none;
+            padding: 8px;
+            outline: none;
+            position: relative;
+            background: #f6f6f6;
+            font-weight: 600;
+        }
+
+            .tab-container .tab-buttons button:hover {
+                background: #d0d0d0b5;
+                color: #026b97;
+            }
+
+            .tab-container .tab-buttons button.active {
+                border-bottom: 2px solid #026b97;
+                color: #026b97;
+            }
+
+.tab-panel {
+    clear: left;
+    text-align: center;
+    display: none;
+    height: 100%;
+}
+
+div.tab-panel.first-tab {
+    display: block;
+}

@@ -1,0 +1,495 @@
+﻿/*CSS cho phần dialog*/
+.ui-dialog {
+    padding: 0;
+}
+
+    .ui-dialog .ui-dialog-content {
+        padding: 0;
+    }
+
+    .ui-dialog .ui-dialog-buttonpane {
+        padding: 8px;
+    }
+
+        .ui-dialog .ui-dialog-buttonpane button {
+            margin: 0;
+        }
+
+.ui-resizable-handle.ui-resizable-se.ui-icon.ui-icon-gripsmall-diagonal-se {
+    display: none !important;
+}
+
+.ui-dialog-buttonset .one-button:not(:last-child) {
+    margin-right: 3px;
+}
+
+.ui-dialog-buttonset .one-button.help {
+    padding: 7px 0;
+    border: none;
+    left: 8px;
+}
+
+.ui-container {
+    width: 100%;
+    padding: 8px;
+    height: 100%;
+}
+
+.ui-autocomplete {
+    max-height: 200px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+}
+
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+}
+/*CSS form thêm phiếu nhập kho điều chuyển */
+.row-container:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.purpose-select div:first-child {
+    margin-right: 35px;
+}
+
+.selectVoucher {
+    margin-left: 10px;
+    border: 2px solid #026b97 !important;
+    border-radius: 3px;
+    color: #026b97 !important;
+    padding: 7px 10px 6px;
+    cursor: pointer;
+    visibility: hidden;
+    user-select: none;
+}
+
+.title {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 5px 0;
+    line-height: 24px;
+}
+
+.row-container .information {
+    min-width: 70%;
+    border-right: 2px solid #ccc;
+    padding-right: 10px;
+}
+
+.row-container .voucher {
+    min-width: 30%;
+    padding-left: 10px;
+}
+
+.information-row {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+    .information-row .label {
+        min-width: 120px;
+        padding-left: 15px;
+    }
+
+    .information-row .labelAuto {
+        width: auto;
+        padding-left: 15px;
+    }
+    .information-row .input-container2 {
+        position: relative;
+        border: 1px solid #d0d0d0;
+        display: flex;
+        align-items: center;
+        border-radius: 2px;
+        width: calc(100% - 120px);
+    }
+    .information-row .input-container2.w-50 {
+        width: 50%;
+    }
+
+        .information-row .input-container2.w-50:not(:last-child) {
+            margin-right: 5px;
+        }
+    .information-row .input-container2.w-30 {
+        width: 30%;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .information-row .input-container2 input {
+        width: 100%;
+        padding: 7px 8px 6px;
+        border: none;
+        outline: none;
+        line-height: 1.5em;
+    }
+
+        .information-row .input-container2 .search-icon {
+            min-width: 16px;
+            height: 16px;
+            background-image: url('../../Contents/Images/common-icon.png');
+            background-repeat: no-repeat;
+            background-position: -352px -2px;
+            margin: 0 3px;
+        }
+/*CSS cho các dialog chọn*/
+.dialog-select .input-container2 {
+    border: 1px solid #ccc;
+}
+
+    .dialog-select .input-container2 input {
+        padding: 5px 10px;
+        border: none;
+        width: 100%;
+    }
+.input-container2 input[disabled] {
+    background-color: #ccc;
+}
+.input-container2 input:focus {
+    border-color: rgb(143, 176, 231);
+}
+.input-container {
+    position: relative;
+    flex: 1;
+}
+
+    .input-container.w-50 {
+        flex: 0.5;
+    }
+
+        .input-container.w-50:not(:last-child) {
+            margin-right: 5px;
+        }
+
+    .input-container.w-30 {
+        width: 30%;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .input-container input {
+        width: 100%;
+        padding: 7px 8px 6px;
+        border-radius: 3px;
+        border: 1px solid #d0d0d0;
+        outline: none;
+        line-height: 1.5em;
+    }
+
+    .input-container input:focus {
+        border-color: rgb(143,176,231);
+    }
+
+        .input-container input[disabled] {
+            background-color: #e4e4e4;
+
+        }
+
+        .input-container input[disabled] ~ button {
+            visibility: hidden;
+        }
+
+        .input-container.right-icon input {
+            padding-right: 40px;
+        }
+
+    .input-container button, .input-container span {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+
+    .input-container button, .input-container span {
+        right: 4px;
+    }
+
+    .input-container .arow-down-line {
+        right: 24px;
+    }
+
+    input[field-data="AccountObjectName"] {
+        text-overflow: ellipsis;
+    }
+/*CSS cho menu chọn thời gian*/
+.time-container {
+    position: absolute;
+    width: 100px;
+    height: 300px;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px #ccc;
+    top: 35px;
+    left: 40px;
+    z-index: 999;
+    overflow: hidden auto;
+    padding: 1px;
+}
+
+    .time-container .time-item {
+        color: #000;
+        padding: 3px 5px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+        .time-container .time-item:hover {
+            color: #fff;
+            background-color: #0088c2;
+        }
+
+.table-form-detail {
+    height: 225px;
+    overflow: hidden auto;
+}
+
+    .table-form-detail table {
+        height: 100%;
+    }
+
+        .table-form-detail table tbody tr {
+            background-color: #fff;
+        }
+
+        .table-form-detail table tbody tr.product {
+            max-height: 28px;
+        }
+
+        .table-form-detail table tr td:first-child {
+            text-align: left;
+        }
+
+        .table-form-detail table tr.product td:nth-child(2) {
+            background-color: #eeeeee;
+        }
+
+        .table-form-detail table tr.product td:nth-child(3) {
+            background-color: #eeeeee;
+        }
+
+        .table-form-detail table tr.product td:nth-child(4) {
+            background-color: #eeeeee;
+        }
+
+        .table-form-detail table tfoot {
+            font-weight: bold;
+        }
+
+tr.row-template {
+    height: 100%;
+}
+
+tr.row-search {
+    height: 35px;
+}
+
+#form-add-detail tr td input {
+    border: none;
+}
+
+/*#form-add-detail tr td span {
+    visibility: hidden;
+}
+
+#form-add-detail input:focus ~ span {
+    visibility: visible;
+}*/
+
+    tr.row-search td {
+        padding: 0;
+    }
+
+tr.product td:nth-child(6) {
+    padding: 0;
+}
+
+    tr.product td:nth-child(6) input {
+        width: 80px;
+        line-height: 1.5rem;
+    }
+
+tr.product td:nth-child(5) {
+    padding: 0;
+    padding-right: 8px;
+}
+
+    tr.product td:nth-child(5) input {
+        width: 80px;
+        line-height: 1.5rem;
+    }
+
+    #dialogform .ui-container {
+        height: calc(100% - 36px);
+    }
+/*CSS cho các dialog chọn*/
+    .dialog-select .input-container input {
+        padding: 4px 10px;
+        width: 100%;
+    }
+
+.dialog-select .search-object {
+    justify-content: center;
+    color: #026b97;
+    border-color: #026b97;
+}
+
+.dialog-select table tbody tr.paging-row td {
+    padding: 0 !important;
+}
+
+.dialog-select table tbody tr {
+    background-color: #fff;
+}
+
+
+.dialog-select .show-option {
+    border: 1px solid #ccc;
+}
+/*CSS cho dialog chọn chứng từ*/
+#dialgoSelectVoucher .ui-container {
+    height: calc(100% - 45px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+    #dialgoSelectVoucher table#table-select-voucher tr.store-select td {
+        height: 35px;
+    }
+/*CSS cho dialog chọn đối tượng*/
+#dialogSelectObject .input-container {
+    flex-basis: 230px;
+}
+
+    #dialogSelectObject .input-container input {
+        padding: 4px 10px;
+        width: 100%;
+    }
+
+#dialogSelectObject select {
+    flex-basis: 140px;
+}
+
+#dialogSelectObject .search-object {
+    justify-content: center;
+    color: #026b97;
+    border-color: #026b97;
+}
+
+#dialogSelectObject .show-option {
+    border: 1px solid #ccc;
+}
+
+#dialogSelectObject .table-object-wrapper {
+    height: calc(100% - 40px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+}
+
+
+#dialogSelectObject table tbody tr.object-select td {
+    height: 35px;
+}
+
+#dialogSelectObject .show-option {
+    border: 1px solid #ccc;
+}
+
+/*CSS chung cho dialog hàng hóa*/
+.dialogProduct .table {
+    height: calc(100% - 52px);
+    overflow: hidden auto;
+    margin: 0;
+}
+
+.dialogProduct table .row-template {
+    height: 100%;
+}
+
+.dialogProduct select {
+    flex-basis: 200px;
+}
+
+.dialogProduct .input-container {
+    margin: 0 5px;
+}
+
+.dialogProduct table tr.row-product {
+    height: 40px;
+}
+
+.dialogProduct .select-status {
+    border-color: none;
+    font-weight: 500;
+    height: 20px !important;
+}
+
+.dialogProduct table tr td .number-child {
+    min-width: 20px;
+    height: 16px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 16px;
+    color: #fff;
+    background-color: #808080;
+    margin-left: 15px;
+    border-radius: 2px;
+}
+
+.dialogProduct table tr.product-child td:first-child {
+    padding-left: 40px;
+}
+/*CSS dialog chọn hàng hóa*/
+#dialogSelectProduct .select-status {
+    color: #026b97;
+}
+/*phần table child*/
+.row-child-container > td {
+    border: none !important;
+    padding: 0 !important;
+    margin: 0;
+}
+/*CSS dialog xem hàng hóa đã chọn*/
+#dialogConfirmProduct .table {
+    height: calc(100% - 54px)
+}
+
+#dialogConfirmProduct .icon-minus {
+    margin-right: 5px;
+}
+
+#dialogConfirmProduct .icon-plus {
+    margin-right: 5px;
+}
+
+.arow-down-line2 {
+    min-width: 10px;
+    height: 5px;
+    background-image: url(../../Contents/Images/arrow-down-line.png);
+    background-repeat: no-repeat
+}
+/*css phần số phiếu thu/chi*/
+.voucherNumber {
+    margin-top: 1px;
+}
+
+    .voucherNumber input[name = "inpVoucherNumber"]:checked {
+        color: #026b97;
+    }
+
+.filterDataOfDialog {
+    width: 100%;
+    height: 45px !important;
+    padding: 8px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+}

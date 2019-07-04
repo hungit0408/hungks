@@ -1,0 +1,370 @@
+﻿<head>
+    <meta charset="utf-8" />
+    <title>Kiểm kê</title>
+    <link href="/CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="/CSS/lib/jquery-ui.min.css" rel="stylesheet" />
+    <link href="/CSS/common/toolbar.css" rel="stylesheet" />
+    <link href="/CSS/common/grid.css" rel="stylesheet" />
+    <link href="/CSS/Views/index.css" rel="stylesheet" />
+    <link href="/CSS/common/dropdown.css" rel="stylesheet" />
+    <link href="/CSS/common/filter.css" rel="stylesheet" />
+    <link href="/CSS/common/dialog.css" rel="stylesheet" />
+    <link href="/CSS/common/buttons.css" rel="stylesheet" />
+    <link href="/CSS/common/tab.css" rel="stylesheet" />
+    <link href="/CSS/common/common.css" rel="stylesheet" />
+    <link href="/CSS/Views/index.css" rel="stylesheet" />
+    <link href="/CSS/common/common.css" rel="stylesheet" />
+</head>
+<body>
+    <!--header-->
+    <div class="header">
+        <div class="header-left">
+            <a class="logo-mshopkeeper">
+            </a>
+        </div>
+        <div class="header-right">
+            <div class="branch">
+                <p class="account">Tất cả chi nhánh</p>
+                <div class="arow-down-line"></div>
+            </div>
+            <img src="../../Contents/Images/EmployeeImage_2.png" class="img-account" />
+            <div class="info-account-header">
+                <span>Nguyễn Huy Thông</span>
+                <div class="arow-down-line"></div>
+            </div>
+            <div class="small-icon"></div>
+        </div>
+    </div>
+    <!--phần container-->
+    <div class="container">
+        <!--menu bên trái-->
+        <div class="misa-sidebar">
+
+        </div>
+        <!--phần nội dung-->
+        <div class="conntent">
+            <!--toolbar-->
+            <div class="misa-toolbar" id="Money_Fund_ID">
+
+            </div>
+            <!--filter-->
+            <div class="filter-data">
+
+            </div>
+            <!--chứa nội dung table-->
+            <div class="grid">
+                <div class="grid-table">
+                    <table id="tblMoneyFund" recordId="MoneyFundID">
+                        <!--phần tiêu đề và filter option của table-->
+                        <thead>
+                            <tr>
+                                <th class="col-colspan-cb th-resizeable">
+                                    <div class="misa-column" style="border-left: 0px;" fieldData="CheckBox">
+                                        <input class="filter-input-checkbox" type="checkbox" name="" value="" id="ckbRoot" />
+                                    </div>
+                                </th>
+                                <th class="col-colspan th-resizeable">
+                                    <div class="misa-column" fieldData="Date">
+                                        <div class="column-title">Ngày</div>
+                                        <div class="column-filter date-pickers">
+                                            <input class="filter-input input-date-picker" />
+                                            <!--<div class="filter-option icon-calendar"></div>-->
+                                        </div>
+                                    </div>
+                                </th>
+                                <th class="col-colspan th-resizeable" style="width: 180px">
+                                    <div class="misa-column" fieldData="DocumentCode">
+                                        <div class="column-title">Số phiếu kiểm kê</div>
+                                        <div class="column-filter">
+                                            <div class="filter-option icon-search"></div>
+                                            <input class="filter-input" />
+                                        </div>
+                                    </div>
+                                </th>
+                                <th class="col-colspan-lct th-resizeable">
+                                    <div class="misa-column" fieldData="DocumentType">
+                                        <div class="column-title">Kiểm kê đến ngày</div>
+                                        <div class="column-filter">
+                                            <input class="filter-input" id="DocumentTypeId" type="text" list="DocumentType" value="a" />
+                                            <div class="filter-option icon-arow-down-line dropbtn" onclick="myDropdown('DocumentTypes')">
+                                                <img src="/Contents/Images/arrow-down-line.png" style="margin-top:5px" />
+                                            </div>
+                                            <!--sẽ đưa ra js dùng chung khi có database-->
+                                            <select id="DocumentTypes" ng-model="selectItem" class="dropdown-content" multiple onchange="changeValue('DocumentTypes','DocumentTypeId')">
+                                                <option value="1" selected>a</option>
+                                                <option value="2">b</option>
+                                                <option value="3">c</option>
+                                                <option value="4">d</option>
+                                                <option value="5">e</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th class="col-colspan-total th-resizeable" style="width: 400px">
+                                    <div class="misa-column" fieldData="TotalAmount" dataType="money">
+                                        <div class="column-title">Mục đích</div>
+
+                                    </div>
+                                </th>
+
+                                <th class="col-colspan-reason th-resizeable">
+                                    <div class="misa-column" fieldData="Reason" border-right: 1px solid #e9e9e9;">
+                                        <div class="column-title">Trạng thái</div>
+                                        <div class="column-filter">
+                                            <input class="filter-input" id="ReasonId" type="text" list="DocumentType" value="việc đột xuất" />
+                                            <div class="filter-option icon-arow-down-line dropbtn" onclick="myDropdown('Reasons')">
+                                                <img src="/Contents/Images/arrow-down-line.png" style="margin-top:5px" />
+                                            </div>
+                                            <!--sẽ đưa ra js dùng chung khi có database-->
+                                            <select id="Reasons" ng-model="selectItem" class="dropdown-content" multiple onchange="changeValue('Reasons','ReasonId')">
+                                                <option value="1" selected>việc đột xuất</option>
+                                                <option value="2">do hàng kém chất lượng</option>
+                                                <option value="3">a</option>
+                                                <option value="4">b</option>
+                                                <option value="5">c</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <!--phần tbody-->
+                        <tbody>
+                            <tr>
+                                <td class="col-colspan-cb col0">
+                                    <input class="filter-input-checkbox" type="checkbox" name="ckbRow" value="" />
+                                </td>
+                                <td class="col-colspan col1"></td>
+                                <td class="col-colspan col2"></td>
+                                <td class="col-colspan-lct col3"></td>
+                                <td class="col-colspan-total col4"></td>
+                                <td class="col-colspan col5"></td>
+                            </tr>
+                            <tr class="row-even">
+                                <td>
+                                    <input class="filter-input-checkbox" type="checkbox" name="ckbRow" value="" />
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input class="filter-input-checkbox" type="checkbox" name="ckbRow" value="" />
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="row-even">
+                                <td>
+                                    <input class="filter-input-checkbox" type="checkbox" name="ckbRow" value="" />
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input class="filter-input-checkbox" type="checkbox" name="ckbRow" value="" />
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="row-even">
+                                <td>
+                                    <input class="filter-input-checkbox" type="checkbox" name="ckbRow" value="" />
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input class="filter-input-checkbox" type="checkbox" name="ckbRow" value="" />
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input class="filter-input-checkbox" type="checkbox" name="ckbRow" value="" />
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input class="filter-input-checkbox" type="checkbox" name="ckbRow" value="" />
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input class="filter-input-checkbox" type="checkbox" name="ckbRow" value="" />
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input class="filter-input-checkbox" type="checkbox" name="ckbRow" value="" />
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                        <!--phần tfoot-->
+                        <tfoot width:100%;">
+                            <tr style="background-color: #e2e2e2;">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="show-option flex-center">
+                    <div class="option-left">
+                        <div class="page-option flex-center">
+                            <div class="flex-center">
+                                <div class="square">&#8810</div>
+                                <div class="square">&lt;</div>
+                            </div>
+                            <div>Trang <span style="border: 1px solid #000; padding:1px 8px; font-weight: bold">1</span> trên <span>1</span></div>
+                            <div class="flex-center">
+                                <div class="square">&gt;</div>
+                                <div class="square">&#8811</div>
+                            </div>
+                            <div class="square">
+                                &#8635;
+                            </div>
+                            <div>
+                                Số bản ghi
+                                <select>
+                                    <option value="value">5</option>
+                                    <option value="value">10</option>
+                                    <option value="value">15</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="page-reload"></div>
+                        <div class="page-numrecord"></div>
+                    </div>
+                    <div class="option-right">5-15 trong 30 kết quả</div>
+                </div>
+                <h6 style="margin-top: 10px; font-weight:bold; font-size : 14px;">Chi tiết</h6>
+                <div class="table-detail customer-page">
+                    <div class="tab-container">
+                        <div class="tab-buttons">
+                            <button class="active">Chi tiết</button>
+                            <button>Thành viên tham gia</button>
+                        </div>
+                        <!--chi tiết content-->
+                        <div class="tab-panel first-tab">
+                            <table style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Mệnh giá</th>
+                                        <th>Số lượng</th>
+                                        <th> Thành viên</th>
+                                        <th> Diễn giải</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <!--thành viên tham gia content-->
+                        <div class="tab-panel">
+                            <table style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Họ tên</th>
+                                        <th>Chức danh</th>
+                                        <th> Đại diện</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/Scripts/lib/jquery-3.3.1.min.js"></script>
+    <script src="/Scripts/lib/jquery-ui.min.js"></script>
+    <script src="/Scripts/common/common.js"></script>
+    <script src="/Scripts/Views/sidebar.js"></script>
+    <script src="/Scripts/Views/toolbar.js"></script>
+    <script src="/Scripts/Views/table.js"></script>
+    <script src="/Scripts/Views/dropdown.js"></script>
+    <script src="/Scripts/Views/filter.js"></script>
+    <script src="/Scripts/base/dialog.js"></script>
+    <script src="/Scripts/Views/tab.js"></script>
+    <script src="/Scripts/Views/moneyFund.js"></script>
+</body>

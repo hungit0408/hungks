@@ -1,0 +1,348 @@
+﻿
+.flex-center {
+    display: flex;
+    align-items: center;
+}
+
+table {
+    width: 100%;
+    /*table-layout: auto;*/
+    border-spacing: 0;
+}
+
+    table input {
+        border: none;
+    }
+
+    table thead tr:first-child th {
+        border-top: 1px solid #e1e1e1;
+    }
+
+td, th {
+    border-right: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 8px;
+    white-space: nowrap;
+}
+
+tr td:first-child, tr th:first-child {
+    border-left: 1px solid #e1e1e1;
+}
+
+thead th {
+    text-align: center;
+}
+
+
+#xuan-resize thead tr:first-child {
+    background-color: #f6f6f6;
+    border-top: 1px solid #e1e1e1;
+}
+
+tbody tr {
+    user-select: none;
+}
+
+    tbody tr:nth-child(even) {
+        background-color: #F3F3F3;
+    }
+
+
+    tbody tr.row-selected {
+        background-color: #c3ecff;
+        border-color: #ffefbb;
+    }
+
+
+
+tfoot {
+    background-color: #fcdeb8;
+    font-weight: bold;
+}
+
+    tfoot tr td {
+        background-color: #fcdeb8;
+        padding: 8px;
+        text-align: center;
+    }
+
+        tfoot tr td:not(:last-child) {
+            border-right: 1px solid #F1C387;
+        }
+/*setting table màn moneyBook*/
+.table-page {
+    height: 100%;
+}
+
+table.tableMoneyBook tbody tr {
+    height: 30px;
+}
+    /*dòng chẵn màu #f0f0f0*/
+    table.tableMoneyBook tbody tr:nth-child(even) {
+        background-color: #f0f0f0;
+    }
+    /*dòng lẻ màu trắng*/
+    table.tableMoneyBook tbody tr:nth-child(odd) {
+        background-color: #fff;
+    }
+/*setting chiều cao cho dòng phần tfoot*/
+table.tableMoneyBook tfoot tr {
+    height: 30px;
+}
+/*-----------------------------------------*/
+/*CSS cho từng đối tượng filter*/
+.filter {
+    min-width: 25px;
+    height: 25px;
+    /*border: 1px solid #cccccc;*/
+    margin-right: 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+.fil-text {
+    width: 100%;
+}
+
+    .fil-text input {
+        padding: 5px;
+        border: 1px solid #fff;
+        height: 100%;
+        width: 100%;
+        outline: none;
+    }
+
+        .fil-text input:focus {
+            border: 1px solid #41a7d1;
+        }
+
+thead td select, thead th select {
+    text-align: center;
+    padding: 5px;
+    border: none;
+    width: 100%;
+}
+
+    thead td select:focus {
+        outline: none;
+    }
+
+
+
+tr.product {
+    height: 35px;
+}
+/*CSS filter search*/
+.filter-sreach {
+    width: 25px;
+    height: 25px;
+    background-image: url('../../Contents/Images/common-icon.png');
+    background-repeat: no-repeat;
+    background-position: -348px 3px;
+}
+/*CSS filter với biểu thức so sánh*/
+.filter.filt-compare {
+    border-right: 1px solid #e1e1e1;
+}
+
+.filter .filt-compare-value {
+    text-align: center;
+    line-height: 25px;
+    margin: 0 auto;
+}
+
+
+.filt-compare-container {
+    background-color: #fff;
+    position: absolute;
+    z-index: 999;
+    top: 30px;
+    width: 180px;
+    font-size: 12px;
+    box-shadow: 2px 2px 2px #aaaaaa;
+    border-radius: 5px;
+}
+
+
+
+    .filt-compare-container div {
+        padding: 8px;
+        font-size: 14px;
+        cursor: pointer;
+        font-weight: normal;
+        text-align: left;
+    }
+
+        .filt-compare-container div:hover {
+            color: #fff;
+            background-color: #026b97;
+        }
+
+/*CSS filter với date picker*/
+.date-icon-picker {
+    min-width: 16px;
+    height: 16px;
+    background: #fff url('../../Contents/Icons/common-icon.png') -3px -177px no-repeat;
+    background-repeat: no-repeat;
+    margin-left: 5px;
+}
+
+/*CSS phần phân trang table*/
+.show-option {
+    max-width: 100%;
+    padding: 0 8px;
+    min-height: 36px;
+    background-color: #fff;
+    justify-content: space-between;
+}
+
+
+.option-left {
+    display: flex;
+    justify-content: space-between;
+}
+
+    .option-left > div {
+        margin-right: 15px;
+    }
+
+.left-arrow > span, .right-arrow > span, .left-arrow > button, .right-arrow > button {
+    margin-left: 3px;
+    color: #4b4c4c;
+}
+
+.option-left .left-arrow, .option-left .right-arrow, .curent-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .curent-page input {
+        width: 50px;
+        border: 1px solid #d0d0d0;
+        height: 26px;
+        border-radius: 3px;
+        outline: none;
+        margin: 0 3px;
+        padding: 0px 3px;
+        text-align: center;
+    }
+
+
+.arrow-icon {
+    border: 1px solid #026b97;
+    height: 24px;
+    min-width: 24px;
+    border-radius: 3px;
+    cursor : pointer;
+}
+
+.load-data-icon {
+    border: 1px solid #026b97;
+    height: 24px;
+    min-width: 24px;
+    border-radius: 3px;
+}
+
+.arrow-icon.arrow-left-double {
+    background: url('../../Contents/Icons/common-icon.png') no-repeat -650px -150px;
+}
+
+.arrow-icon.arrow-left-single {
+    background: url('../../Contents/Icons/common-icon.png') no-repeat -700px -150px;
+}
+
+.arrow-icon.arrow-right-double {
+    background: url('../../Contents/Icons/common-icon.png') no-repeat -799px -150px;
+}
+
+.arrow-icon.arrow-right-single {
+    background: url('../../Contents/Icons/common-icon.png') no-repeat -749px -150px;
+}
+
+.load-data-icon {
+    background: url('../../Contents/Icons/common-icon.png') no-repeat -850px -124px;
+}
+
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url('../../../Contents/Icons/arrow-down-line.png') no-repeat;
+    background-position: right 5px center;
+    height: 26px;
+    border-radius: 3px;
+    border: 1px solid #92bdd0;
+    margin-left: 3px;
+    padding: 0 20px 0 5px;
+    cursor: pointer;
+}
+
+option:hover {
+    background: grey !important;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+/*kyls create 18/05/2019*/
+tbody tr:hover {
+    /*background-color: #d5e8e8;*/
+}
+
+.table-container table thead tr th > div:first-child {
+    padding: 7px 10px 8px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+table td.text-center {
+    text-align: center;
+}
+
+table td.text-left {
+    text-align: left;
+}
+
+table td.text-right {
+    text-align: right;
+}
+
+/*mouse right click*/
+#right-mouse {
+    position: absolute;
+    width: 130px;
+    height: 182px;
+    background-color: #ffffff;
+    border: 1px solid #d0d0d0;
+    z-index: 10000;
+}
+
+    #right-mouse > div {
+        height: 30px;
+        line-height: 30px;
+    }
+
+.page-option div.disable
+/* #right-mouse{
+    top: 0;
+    left: 930px;
+} */
+/*up-down quatity*/
+#form-add-detail span.col-numbers {
+    width: 80%;
+    text-align: center;
+}
+
+#form-add-detail span.icon-up-down {
+    width: 20%;
+    text-align: right;
+}
+
+/*end*/
+
+/*previous & next page*/
+.option-left div.square:hover:not(.disable) {
+    border: 2px solid #4c5052;
+    cursor: pointer;
+}
+/*end*/

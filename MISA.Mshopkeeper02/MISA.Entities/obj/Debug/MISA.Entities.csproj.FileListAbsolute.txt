@@ -1,0 +1,6 @@
+C:\Users\ndcong\Source\Workspaces\Misa.Mshopkeeper02\MISA.Mshopkeeper02\MISA.Entities\obj\Debug\MISA.Entities.csprojAssemblyReference.cache
+C:\Users\ndcong\Source\Workspaces\Misa.Mshopkeeper02\MISA.Mshopkeeper02\MISA.Entities\obj\Debug\MISA.Entities.csproj.CoreCompileInputs.cache
+C:\Users\ndcong\Source\Workspaces\Misa.Mshopkeeper02\MISA.Mshopkeeper02\MISA.Entities\bin\Debug\MISA.Entities.dll
+C:\Users\ndcong\Source\Workspaces\Misa.Mshopkeeper02\MISA.Mshopkeeper02\MISA.Entities\bin\Debug\MISA.Entities.pdb
+C:\Users\ndcong\Source\Workspaces\Misa.Mshopkeeper02\MISA.Mshopkeeper02\MISA.Entities\obj\Debug\MISA.Entities.dll
+C:\Users\ndcong\Source\Workspaces\Misa.Mshopkeeper02\MISA.Mshopkeeper02\MISA.Entities\obj\Debug\MISA.Entities.pdb
